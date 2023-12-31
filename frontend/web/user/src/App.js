@@ -9,6 +9,7 @@ import Register from './Pages/Register/Register';
 import ForgotPass from './Pages/Forgot/ForgotPass';
 import UserAct from './Pages/UserAct/UserAct';
 import Product from './Pages/Product/Product';
+import NotFound from './Pages/Error/NotFound';
 function App() {
   return (
     <>
@@ -18,9 +19,10 @@ function App() {
         {/* <Products /> */}
         {/* <Login/> */}
         {/* <Register/> */}
-        <ForgotPass/>
+        {/* <ForgotPass/> */}
         {/* <UserAct/> */}
         {/* <Product/> */}
+        <NotFound/>
       </BrowserRouter>
     </>
   );
