@@ -16,8 +16,8 @@ function App() {
         {/* <Navbar /> */}
         {/* <Checkout /> */}
         {/* <Products /> */}
-        <Login/>
-        {/* <Register/> */}
+        {/* <Login/> */}
+        <Register/>
         {/* <ForgotPass/> */}
         {/* <UserAct/> */}
         {/* <Product/> */}

@@ -10,10 +10,10 @@ export default function Login() {
                     <div className="col-xl-5 col-xxl-4">
                         <div className="authentication-login min-vh-100 bg-body row justify-content-center align-items-center p-4">
                             <div className="col-sm-8 col-md-6 col-xl-9">
-                                <div className="d-flex justify-content-center align-items-center">
+                                <div className="d-flex justify-content-center align-items-center  mb-5">
                                     <img src={logo} className="light-logo  w-75" alt="Logo-light" />
                                 </div>
-                                <p className="mt-4 mb-9">Lets Login In </p>
+                                {/* <p className="mt-4 mb-9">Lets Login In </p> */}
                                 <div className="row">
                                     <div className="col-6 mb-2 mb-sm-0">
                                         <a className="btn btn-white text-dark border fw-normal d-flex align-items-center justify-content-center rounded-2 py-8" href="javascript:void(0)" role="button">
@@ -54,7 +54,7 @@ export default function Login() {
                                     </div>
                                     <a href="../horizontal/index.html" className="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign In</a>
                                     <div className="d-flex align-items-center justify-content-center">
-                                        <p className="fs-4 mb-0 fw-medium">New to Modernize?</p>
+                                        <p className="fs-4 mb-0 fw-medium">New to HelaShop?</p>
                                         <a className="text-primary fw-medium ms-2" href="../horizontal/authentication-register.html">Create an account</a>
                                     </div>
                                 </form>
