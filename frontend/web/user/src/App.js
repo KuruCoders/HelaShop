@@ -14,15 +14,15 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {/* <Navbar /> */}
+        <Navbar />
         {/* <Checkout /> */}
-        {/* <Products /> */}
+        <Products />
         {/* <Login/> */}
         {/* <Register/> */}
         {/* <ForgotPass/> */}
         {/* <UserAct/> */}
         {/* <Product/> */}
-        <NotFound/>
+        {/* <NotFound/> */}
       </BrowserRouter>
     </>
   );

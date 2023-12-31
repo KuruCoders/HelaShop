@@ -1,12 +1,13 @@
 import React from 'react'
+import iconOnly from '../../logos/iconOnly.svg'
 
 function Navbar() {
   return (
     <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary shadow-sm mw-100" >
       <div className="container d-lg-flex justify-content-lg-center">
-        <a className="navbar-brand" href="#">
-          <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width={30} height={24} className="d-inline-block align-text-top" />
-          <span className='fw-bolder text-uppercase ms-2'>helashop</span>
+        <a className="navbar-brand d-flex justify-content-center align-items-center" href="#">
+          <img src={iconOnly} alt="Logo" width={50} height={30} className="d-inline-block align-text-top" />
+          <span className='fw-bolder text-primary text-uppercase fs-6'>| helashop</span>
         </a>
 
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
