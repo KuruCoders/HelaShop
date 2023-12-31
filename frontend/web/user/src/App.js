@@ -17,8 +17,8 @@ function App() {
         {/* <Checkout /> */}
         {/* <Products /> */}
         {/* <Login/> */}
-        <Register/>
-        {/* <ForgotPass/> */}
+        {/* <Register/> */}
+        <ForgotPass/>
         {/* <UserAct/> */}
         {/* <Product/> */}
       </BrowserRouter>

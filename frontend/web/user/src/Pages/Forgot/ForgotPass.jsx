@@ -1,15 +1,21 @@
 import React from 'react'
 
+import logoDark from '../../logos/dark-logo.svg'
+import logo from '../../logos/logoAll.svg'
+import background from '../../logos/background.jpg'
 export default function ForgotPass() {
     return (
         <div className="position-relative overflow-hidden radial-gradient min-vh-100 w-100">
             <div className="position-relative z-index-5">
                 <div className="row">
-                    
-                    <div className="col-lg-6 col-xl-4 col-xxl-3">
+
+                    <div className="col-xl-3 px-2 bg-white">
                         <div className="card mb-0 shadow-none rounded-0 min-vh-100 h-100">
                             <div className="d-flex align-items-center w-100 h-100">
                                 <div className="card-body">
+                                    <div className="d-flex justify-content-center align-items-center  mb-5">
+                                        <img src={logo} className="light-logo  w-75" alt="Logo-light" />
+                                    </div>
                                     <div className="mb-5">
                                         <h2 className="fw-bolder fs-7 mb-3">Forgot your password?</h2>
                                         <p className="mb-0 ">
@@ -28,11 +34,9 @@ export default function ForgotPass() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-6 col-xl-8 col-xxl-9">
-                       
-                        <div className="d-none d-lg-flex align-items-center justify-content-center" style={{ height: 'calc(100vh - 80px)' }}>
-                            <img src="../assets/images/backgrounds/login-security.svg" alt className="img-fluid" width={500} />
-                        </div>
+                    <div className="d-none d-xl-block col-xl-9 px-0">
+                        <img src={logoDark} className="position-absolute" alt="Logo-light" style={{ right: 15, bottom: 10 }} width={100} />
+                        <img src={background} alt="" className="w-100 h-100" style={{ objectFit: 'cover' }} />
                     </div>
                 </div>
             </div>
