@@ -13,14 +13,14 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        {/* <Navbar /> */}
         {/* <Checkout /> */}
         {/* <Products /> */}
-        {/* <Login/> */}
+        <Login/>
         {/* <Register/> */}
         {/* <ForgotPass/> */}
         {/* <UserAct/> */}
-        <Product/>
+        {/* <Product/> */}
       </BrowserRouter>
     </>
   );
