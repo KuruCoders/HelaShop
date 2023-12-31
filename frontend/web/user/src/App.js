@@ -8,6 +8,7 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import ForgotPass from './Pages/Forgot/ForgotPass';
 import UserAct from './Pages/UserAct/UserAct';
+import Product from './Pages/Product/Product';
 function App() {
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
         {/* <Register/> */}
         {/* <ForgotPass/> */}
         {/* <UserAct/> */}
+        <Product/>
       </BrowserRouter>
     </>
   );
