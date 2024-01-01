@@ -10,9 +10,9 @@ export default function Login() {
                     <div className="col-md-8 col-lg-6 col-xxl-3">
                         <div className="card mb-0">
                             <div className="card-body">
-                                <a href="./index.html" className="text-nowrap logo-img text-center d-block py-3 w-100">
+                                <NavLink to={'/login'} className="text-nowrap logo-img text-center d-block py-3 w-100">
                                     <img src={logo} width={180} alt="loogo" />
-                                </a>
+                                </NavLink>
                                 <p className="text-center">Admin Login</p>
                                 <form>
                                     <div className="mb-3">
@@ -30,7 +30,7 @@ export default function Login() {
                                     <button type='button' className="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</button>
                                     <div className="d-flex align-items-center justify-content-center">
                                         <p className="fs-4 mb-0 fw-bold">Admin SignUp</p>
-                                        <NavLink to={'/register'} className="text-primary fw-bold ms-2" href="./authentication-register.html">Create an account</NavLink>
+                                        <NavLink to={'/register'} className="text-primary fw-bold ms-2">Create an account</NavLink>
                                     </div>
                                 </form>
                             </div>
