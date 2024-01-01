@@ -7,16 +7,16 @@ import Sidebar from './Components/SideBar/Sidebar';
 import UserManag from './Pages/UserManag/UserManag';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
+import Main from './Pages/Main/Main';
 
 function App() {
   return (
     <>
-      {/* <Sidebar /> */}
-      {/* <Header /> */}
       {/* <Dashboard /> */}
       {/* <UserManag /> */}
       {/* <Login/> */}
-      <Register/>
+      {/* <Register/> */}
+      <Main/>
    </>
   );
 }
