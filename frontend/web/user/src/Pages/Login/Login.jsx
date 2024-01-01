@@ -2,6 +2,8 @@ import React from 'react'
 import logoDark from '../../logos/dark-logo.svg'
 import logo from '../../logos/logoAll.svg'
 import background from '../../logos/background.jpg'
+import { NavLink } from 'react-router-dom'
+
 export default function Login() {
     return (
         <div className="position-relative overflow-hidden radial-gradient min-vh-100 w-100">
@@ -16,16 +18,16 @@ export default function Login() {
                                 {/* <p className="mt-4 mb-9">Lets Login In </p> */}
                                 <div className="row">
                                     <div className="col-6 mb-2 mb-sm-0">
-                                        <a className="btn btn-white text-dark border fw-normal d-flex align-items-center justify-content-center rounded-2 py-8" href="javascript:void(0)" role="button">
-                                            <img src="../assets/images/svgs/google-icon.svg" alt className="img-fluid me-2" width={18} height={18} />
+                                        <NavLink className="btn btn-white text-dark border fw-normal d-flex align-items-center justify-content-center rounded-2 py-8"  >
+                                            <img src="../assets/images/svgs/google-icon.svg" alt='google' className="img-fluid me-2" width={18} height={18} />
                                             <span className="d-none d-sm-block me-1 flex-shrink-0">Sign in with</span>Google
-                                        </a>
+                                        </NavLink>
                                     </div>
                                     <div className="col-6">
-                                        <a className="btn btn-white text-dark border fw-normal d-flex align-items-center justify-content-center rounded-2 py-8" href="javascript:void(0)" role="button">
-                                            <img src="../assets/images/svgs/facebook-icon.svg" alt className="img-fluid me-2" width={18} height={18} />
+                                        <NavLink className="btn btn-white text-dark border fw-normal d-flex align-items-center justify-content-center rounded-2 py-8"  >
+                                            <img src="../assets/images/svgs/facebook-icon.svg" alt='fblogo' className="img-fluid me-2" width={18} height={18} />
                                             <span className="d-none d-sm-block me-1 flex-shrink-0">Sign in with</span>FB
-                                        </a>
+                                        </NavLink>
                                     </div>
                                 </div>
                                 <div className="position-relative text-center my-4">
@@ -50,12 +52,12 @@ export default function Login() {
                                                 Remeber this Device
                                             </label>
                                         </div>
-                                        <a className="text-primary fw-medium" href="../horizontal/authentication-forgot-password.html">Forgot Password ?</a>
+                                        <NavLink to={'/forgot'} className="text-primary fw-medium">Forgot Password ?</NavLink>
                                     </div>
-                                    <a href="../horizontal/index.html" className="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign In</a>
+                                    <button  className="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign In</button>
                                     <div className="d-flex align-items-center justify-content-center">
                                         <p className="fs-4 mb-0 fw-medium">New to HelaShop?</p>
-                                        <a className="text-primary fw-medium ms-2" href="../horizontal/authentication-register.html">Create an account</a>
+                                        <NavLink to={'/register'} className="text-primary fw-medium ms-2">Create an account</NavLink>
                                     </div>
                                 </form>
                             </div>
