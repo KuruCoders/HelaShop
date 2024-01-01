@@ -10,7 +10,10 @@ import InventoryManag from './Pages/InventoryManag/InventoryManag';
 import StaffManag from './Pages/StaffManag/StaffManag';
 import Profile from './Pages/MyProfile/Profile';
 import NotFound from './Pages/Error/NotFound';
-import { BrowserRouter, Routes,Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Act from './Pages/MyProfile/Account/Act';
+import Bills from './Pages/MyProfile/Billing/Bills';
+import Notification from './Pages/MyProfile/Notification/Notification';
 
 function App() {
   return (
@@ -23,15 +26,19 @@ function App() {
           <Route path='/main' element={<Main />}>
             <Route index element={<Dashboard />} />
             <Route path='user' element={<UserManag />} />
-            <Route path='payment' element={<PaymentManag/>}/>
-            <Route path='inventory' element={<InventoryManag/>}/>
-            <Route path='staff' element={<StaffManag/>}/>
-            <Route path='profile' element={<Profile/>}/>
+            <Route path='payment' element={<PaymentManag />} />
+            <Route path='inventory' element={<InventoryManag />} />
+            <Route path='staff' element={<StaffManag />} />
+            <Route path='profile' element={<Profile />}>
+              <Route index element={ <Act/> } />
+              <Route path='notification' element={ <Notification/> } />
+              <Route path='bill' element={ <Bills/> } />
+            </Route>
           </Route>
-          <Route path='*' element={<NotFound/>}/>
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-   </>
+    </>
   );
 }
 

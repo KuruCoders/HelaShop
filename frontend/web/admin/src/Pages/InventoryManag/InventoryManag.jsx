@@ -1,8 +1,8 @@
 import React from 'react'
 
 export default function InventoryManag() {
-  return (
-<div className="body-wrapper">
+    return (
+        <div className="body-wrapper">
             <div className="container-fluid">
                 {/*  Row 1 */}
                 <div className="row">
@@ -46,7 +46,7 @@ export default function InventoryManag() {
                                                 <td className="border-bottom-0" ><h6 className="fw-semibold mb-0">2</h6></td>
                                                 <td className="border-bottom-0" >
                                                     <h6 className="fw-semibold mb-1">Andrew McDownland</h6>
-                                                    
+
                                                 </td>
                                                 <td className="border-bottom-0" >
                                                     <p className="mb-0 fw-normal">Real Homes WP Theme</p>
@@ -59,12 +59,12 @@ export default function InventoryManag() {
                                                 <td className="border-bottom-0" >
                                                     <h6 className="fw-semibold mb-0 fs-4">$24.5k</h6>
                                                 </td>
-                                                <td  className="border-bottom-0 d-flex flex-column  d-md-flex flex-md-row justify-content-evenly align-items-center">
+                                                <td className="border-bottom-0 d-flex flex-column  d-md-flex flex-md-row justify-content-evenly align-items-center">
                                                     <button className='btn btn-warning'>Edit</button>
                                                     <button className='btn btn-danger'>Delete</button>
                                                 </td>
                                             </tr>
-                                            
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -74,5 +74,5 @@ export default function InventoryManag() {
                 </div>
             </div>
         </div>
-  )
+    )
 }
