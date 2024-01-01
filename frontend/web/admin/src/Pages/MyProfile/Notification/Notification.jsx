@@ -3,7 +3,7 @@ import React from 'react'
 export default function Notification() {
     return (
         <div className="row justify-content-center">
-            <div className="col-lg-12">
+            <div className="col-lg-6">
                 <div className="card">
                     <div className="card-body p-4">
                         <h4 className="fw-semibold mb-3">Notification Preferences</h4>
@@ -92,55 +92,13 @@ export default function Notification() {
                     </div>
                 </div>
             </div>
-            <div className="col-lg-9">
-                <div className="card">
-                    <div className="card-body p-4">
-                        <h4 className="fw-semibold mb-3">Date &amp; Time</h4>
-                        <p>Time zones and calendar display settings.</p>
-                        <div className="d-flex align-items-center justify-content-between mt-7">
-                            <div className="d-flex align-items-center gap-3">
-                                <div className="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
-                                    <i className="ti ti-clock-hour-4 text-dark d-block fs-7" width={22} height={22} />
-                                </div>
-                                <div>
-                                    <p className="mb-0">Time zone</p>
-                                    <h5 className="fs-4 fw-semibold">(UTC + 02:00) Athens, Bucharet</h5>
-                                </div>
-                            </div>
-                            <a className="text-dark fs-6 d-flex align-items-center justify-content-center bg-transparent p-2 fs-4 rounded-circle" href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Download">
-                                <i className="ti ti-download" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="col-lg-9">
-                <div className="card">
-                    <div className="card-body p-4">
-                        <h4 className="fw-semibold mb-3">Ignore Tracking</h4>
-                        <div className="d-flex align-items-center justify-content-between mt-7">
-                            <div className="d-flex align-items-center gap-3">
-                                <div className="text-bg-light rounded-1 p-6 d-flex align-items-center justify-content-center">
-                                    <i className="ti ti-player-pause text-dark d-block fs-7" width={22} height={22} />
-                                </div>
-                                <div>
-                                    <h5 className="fs-4 fw-semibold">Ignore Browser Tracking</h5>
-                                    <p className="mb-0">Browser Cookie</p>
-                                </div>
-                            </div>
-                            <div className="form-check form-switch mb-0">
-                                <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked5" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="col-12">
+
+            {/* <div className="col-12">
                 <div className="d-flex align-items-center justify-content-end gap-3">
                     <button className="btn btn-primary">Save</button>
                     <button className="btn bg-danger-subtle text-danger">Cancel</button>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
