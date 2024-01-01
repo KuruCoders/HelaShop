@@ -25,12 +25,14 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path='/main' element={<Main />}>
             <Route index element={<Dashboard />} />
+            <Route path='dashboard' element={<Dashboard />} />
             <Route path='user' element={<UserManag />} />
             <Route path='payment' element={<PaymentManag />} />
             <Route path='inventory' element={<InventoryManag />} />
             <Route path='staff' element={<StaffManag />} />
             <Route path='profile' element={<Profile />}>
               <Route index element={ <Act/> } />
+              <Route path='account' element={ <Act/> } />
               <Route path='notification' element={ <Notification/> } />
               <Route path='bill' element={ <Bills/> } />
             </Route>

@@ -6,7 +6,7 @@ export default function ProHeader() {
         <div className="card">
             <ul className="nav nav-pills my-2 ms-3">
                 <li className="nav-item" >
-                    <NavLink to={'/main/profile'} className="nav-link position-relative rounded-0  d-flex align-items-center justify-content-center rounded-2 fs-3" end={true}>
+                    <NavLink to={'/main/profile/account'} className="nav-link position-relative rounded-0  d-flex align-items-center justify-content-center rounded-2 fs-3" end={true}>
                         <i className="ti ti-user-circle mx-2 mx-md-0 me-md-2 fs-6" />
                         <span className="d-none d-md-block">Account</span>
                     </NavLink>

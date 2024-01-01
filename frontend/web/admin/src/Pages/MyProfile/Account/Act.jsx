@@ -1,5 +1,5 @@
 import React from 'react'
-
+import propic from '../../../logos/user-1.jpg'
 export default function Act() {
     return (
         <div className="row">
@@ -10,7 +10,7 @@ export default function Act() {
                             <h5 className="card-title fw-semibold">Change Profile</h5>
                             <p className="card-subtitle mb-2">Change your profile picture from here</p>
                             <div className="text-center">
-                                <img src="../assets/images/profile/user-1.jpg" alt="propic" className="img-fluid rounded-circle" width={120} height={120} />
+                                <img src={propic} alt="propic" className="img-fluid rounded-circle" width={120} height={120} />
                                 <div className="d-flex align-items-center justify-content-center my-4 gap-3">
                                     <button className="btn btn-primary">Upload</button>
                                     <button className="btn btn-outline-danger">Reset</button>
