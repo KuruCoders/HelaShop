@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-
+import propic from '../../logos/user-1.jpg'
 export default function Header() {
     return (
         <header className="app-header w-100 shadow-sm">
@@ -22,11 +22,11 @@ export default function Header() {
                         </li>
                         <li className="nav-item dropdown">
                             <NavLink className="nav-link nav-icon-hover" id="drop2" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../assets/images/profile/user-1.jpg" alt='prologo' width={35} height={35} className="rounded-circle" />
+                                <img src={propic} alt='prologo' width={35} height={35} className="rounded-circle" />
                             </NavLink>
                             <div className="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" style={{ backgroundColor: "white" }} aria-labelledby="drop2">
                                 <div className="message-body">
-                                    <NavLink to={'/main/profile'} className="d-flex align-items-center gap-2 dropdown-item">
+                                    <NavLink to={'/main/profile/account'} className="d-flex align-items-center gap-2 dropdown-item">
                                         <i className="ti ti-user fs-6" />
                                         <p className="mb-0 fs-3">My Profile</p>
                                     </NavLink>

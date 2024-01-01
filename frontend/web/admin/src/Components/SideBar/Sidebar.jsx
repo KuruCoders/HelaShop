@@ -8,7 +8,7 @@ export default function Sidebar() {
             {/* Sidebar scroll*/}
             <div>
                 <div className="brand-logo d-flex align-items-center justify-content-between">
-                    <NavLink to={'/main'}  className="text-nowrap logo-img">
+                    <NavLink to={'/main/dashboard'}  className="text-nowrap logo-img">
                         <img src={logo} alt='logo' width={180}  />
                     </NavLink>
                     <div className="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
@@ -23,7 +23,7 @@ export default function Sidebar() {
                             <span className="hide-menu">Home</span>
                         </li>
                         <li className="sidebar-item">
-                            <NavLink to={'/main'} className="sidebar-link"  aria-expanded="false" end={true}>
+                            <NavLink to={'/main/dashboard'} className="sidebar-link"  aria-expanded="false" end={true}>
                                 <span>
                                     <i className="ti ti-layout-dashboard" />
                                 </span>
@@ -67,7 +67,7 @@ export default function Sidebar() {
                             <span className="hide-menu">AUTH</span>
                         </li>
                         <li className="sidebar-item">
-                            <NavLink to={'/main/profile'} className="sidebar-link"  aria-expanded="false">
+                            <NavLink to={'/main/profile/account'} className="sidebar-link"  aria-expanded="false">
                                 <span>
                                     <i className="ti ti-user-plus" />
                                 </span>
