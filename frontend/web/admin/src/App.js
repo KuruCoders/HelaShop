@@ -1,19 +1,16 @@
 
 import './App.css';
 import Dashboard from './Pages/Dashboard/Dashboard';
-import Footer from './Components/Footer/Footer';
-import Header from './Components/Header/Header';
-import Sidebar from './Components/SideBar/Sidebar';
 import UserManag from './Pages/UserManag/UserManag';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import Main from './Pages/Main/Main';
-import { BrowserRouter, Routes,Route } from 'react-router-dom';
 import PaymentManag from './Pages/PaymentManag/PaymentManag';
 import InventoryManag from './Pages/InventoryManag/InventoryManag';
 import StaffManag from './Pages/StaffManag/StaffManag';
 import Profile from './Pages/MyProfile/Profile';
 import NotFound from './Pages/Error/NotFound';
+import { BrowserRouter, Routes,Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -21,6 +18,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path='/main' element={<Main />}>
             <Route index element={<Dashboard />} />
             <Route path='user' element={<UserManag />} />
