@@ -8,6 +8,7 @@ export default function Main() {
       <>
           <Header />
           <Sidebar />
+          {/* fills the componenets based on the path */}
           <Outlet/>
     </>
   )

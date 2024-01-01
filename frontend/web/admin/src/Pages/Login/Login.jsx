@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../../logos/logoAll.svg'
+import { NavLink } from 'react-router-dom'
 
 export default function Login() {
     return (
@@ -26,10 +27,10 @@ export default function Login() {
                                         
                                         <a className="text-primary fw-bold" href="./index.html">Forgot Password ?</a>
                                     </div>
-                                    <a href="./index.html" className="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</a>
+                                    <button type='button' className="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</button>
                                     <div className="d-flex align-items-center justify-content-center">
                                         <p className="fs-4 mb-0 fw-bold">Admin SignUp</p>
-                                        <a className="text-primary fw-bold ms-2" href="./authentication-register.html">Create an account</a>
+                                        <NavLink to={'/register'} className="text-primary fw-bold ms-2" href="./authentication-register.html">Create an account</NavLink>
                                     </div>
                                 </form>
                             </div>

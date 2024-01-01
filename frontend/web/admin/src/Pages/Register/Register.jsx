@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../../logos/logoAll.svg'
-
+import { NavLink } from 'react-router-dom'
 export default function Register() {
     return (
         <div className="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
@@ -26,10 +26,10 @@ export default function Register() {
                                         <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                                         <input type="password" className="form-control" id="exampleInputPassword1" />
                                     </div>
-                                    <a href="./index.html" className="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign Up</a>
+                                    <button type='button' className="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign Up</button>
                                     <div className="d-flex align-items-center justify-content-center">
                                         <p className="fs-4 mb-0 fw-bold">Already have an Account?</p>
-                                        <a className="text-primary fw-bold ms-2" href="./authentication-login.html">Sign In</a>
+                                        <NavLink className="text-primary fw-bold ms-2" to={'/login'}>Sign In</NavLink>
                                     </div>
                                 </form>
                             </div>
