@@ -15,7 +15,7 @@ function Navbar() {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav nav-underline mx-auto mb-2 mt-3 mt-lg-0 mb-lg-0">
+          <ul className="navbar-nav nav-pills mx-auto mb-2 mt-3 mt-lg-0 mb-lg-0">
             <li className="nav-item mx-lg-3">
               <NavLink to={'/main'} className="nav-link"  end={true}>Home</NavLink>
             </li>
