@@ -3,7 +3,7 @@ import logo from '../../logos/logoAll.svg'
 
 export default function Sidebar() {
     return (
-        <aside className="left-sidebar">
+        <aside className="left-sidebar shadow-sm">
             {/* Sidebar scroll*/}
             <div>
                 <div className="brand-logo d-flex align-items-center justify-content-between">
