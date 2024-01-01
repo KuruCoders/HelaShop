@@ -1,6 +1,6 @@
 import React from 'react'
 import errorimg from '../../logos/errorimg.svg'
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function NotFound() {
