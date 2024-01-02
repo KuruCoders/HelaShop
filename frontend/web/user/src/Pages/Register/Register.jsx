@@ -2,12 +2,15 @@ import React from 'react'
 import logoDark from '../../logos/dark-logo.svg'
 import logo from '../../logos/logoAll.svg'
 import background from '../../logos/background.jpg'
+import { NavLink } from 'react-router-dom'
+
+
 export default function Register() {
     return (
         <div className="position-relative overflow-hidden radial-gradient min-vh-100 w-100">
             <div className="position-relative z-index-5">
                 <div className="row">
-                   
+
                     <div className="col-xl-5 col-xxl-4">
                         <div className="authentication-login min-vh-100 bg-body row justify-content-center align-items-center p-4">
                             <div className="col-sm-8 col-md-6 col-xl-9">
@@ -16,16 +19,16 @@ export default function Register() {
                                 </div>
                                 <div className="row">
                                     <div className="col-6 mb-2 mb-sm-0">
-                                        <a className="btn btn-white text-dark border fw-normal d-flex align-items-center justify-content-center rounded-2 py-8" href="javascript:void(0)" role="button">
-                                            <img src="../assets/images/svgs/google-icon.svg" alt className="img-fluid me-2" width={18} height={18} />
+                                        <NavLink className="btn btn-white text-dark border fw-normal d-flex align-items-center justify-content-center rounded-2 py-8"  >
+                                            <img src="../assets/images/svgs/google-icon.svg" alt='google' className="img-fluid me-2" width={18} height={18} />
                                             <span className="d-none d-sm-block me-1 flex-shrink-0">Sign in with</span>Google
-                                        </a>
+                                        </NavLink>
                                     </div>
                                     <div className="col-6">
-                                        <a className="btn btn-white text-dark border fw-normal d-flex align-items-center justify-content-center rounded-2 py-8" href="javascript:void(0)" role="button">
-                                            <img src="../assets/images/svgs/facebook-icon.svg" alt className="img-fluid me-2" width={18} height={18} />
+                                        <NavLink className="btn btn-white text-dark border fw-normal d-flex align-items-center justify-content-center rounded-2 py-8"  >
+                                            <img src="../assets/images/svgs/facebook-icon.svg" alt='fblogo' className="img-fluid me-2" width={18} height={18} />
                                             <span className="d-none d-sm-block me-1 flex-shrink-0">Sign in with</span>FB
-                                        </a>
+                                        </NavLink>
                                     </div>
                                 </div>
                                 <div className="position-relative text-center my-4">
@@ -46,10 +49,10 @@ export default function Register() {
                                         <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                                         <input type="password" className="form-control" id="exampleInputPassword1" />
                                     </div>
-                                    <a href="./authentication-login.html" className="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign Up</a>
+                                    <button  className="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign Up</button>
                                     <div className="d-flex align-items-center">
                                         <p className="fs-4 mb-0 text-dark">Already have an Account?</p>
-                                        <a className="text-primary fw-medium ms-2" href="./authentication-login.html">Sign In</a>
+                                        <NavLink to={'/login'} className="text-primary fw-medium ms-2" >Sign In</NavLink>
                                     </div>
                                 </form>
                             </div>

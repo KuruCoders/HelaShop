@@ -1,9 +1,17 @@
 import React from 'react'
-
 import logoDark from '../../logos/dark-logo.svg'
 import logo from '../../logos/logoAll.svg'
 import background from '../../logos/background.jpg'
+import { useNavigate } from 'react-router-dom'
+
+
 export default function ForgotPass() {
+
+    let navigate = useNavigate();
+    const handleBack = () => {
+        navigate(-1);
+    }
+
     return (
         <div className="position-relative overflow-hidden radial-gradient min-vh-100 w-100">
             <div className="position-relative z-index-5">
@@ -27,8 +35,8 @@ export default function ForgotPass() {
                                             <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
                                             <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                                         </div>
-                                        <a href="javascript:void(0)" className="btn btn-primary w-100 py-8 mb-3">Forgot Password</a>
-                                        <a href="./authentication-login.html" className="btn bg-primary-subtle text-primary w-100 py-8">Back to Login</a>
+                                        <button type='button' className="btn btn-primary w-100 py-8 mb-3">Forgot Password</button>
+                                        <button type='button' onClick={handleBack} className="btn bg-primary-subtle text-primary w-100 py-8">Back to Login</button>
                                     </form>
                                 </div>
                             </div>
