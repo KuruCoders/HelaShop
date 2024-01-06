@@ -1,10 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logoDark from '../../logos/dark-logo.svg'
 import logo from '../../logos/logoAll.svg'
 import background from '../../logos/background.jpg'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import LoginValidator from '../../Validation/LoginValidator'
 
 export default function Login() {
+
+    const navigate = useNavigate();
+    const errorsInit = {
+        email: { required: false, message: null },
+        password: { required: false, message: null },
+    }
+    const errApiMsg = { required: false, message: null }
+    const initValues = {
+        email: "",
+        password: ""
+    }
+    const [values, setValues] = useState(initValues)
+    const [errors, setErrors] = useState(errorsInit);
+    const [loading, setLoading] = useState(false);
+    const [errApiRes, setApiRes] = useState(errApiMsg)
+    const handleInputs = (e) => {
+        const changeOgj = { ...values, [e.target.name]: e.target.value };
+        setValues(changeOgj);
+        setErrors(LoginValidator.validateLogin(values))
+        setApiRes(errApiMsg);
+    }
     return (
         <div className="position-relative overflow-hidden radial-gradient min-vh-100 w-100">
             <div className="position-relative z-index-5">
@@ -36,25 +58,39 @@ export default function Login() {
                                         with</p>
                                     <span className="border-top w-100 position-absolute top-50 start-50 translate-middle" />
                                 </div>
-                                <form>
+                                {/* was-validated needs-validation */}
+                                <form className='needs-validation' noValidate autoComplete='off'>
                                     <div className="mb-3">
                                         <label htmlFor="exampleInputEmail1" className="form-label">Username</label>
-                                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                                    </div>
-                                    <div className="mb-4">
-                                        <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                                        <input type="password" className="form-control" id="exampleInputPassword1" />
-                                    </div>
-                                    <div className="d-flex align-items-center justify-content-between mb-4">
-                                        <div className="form-check">
-                                            <input className="form-check-input primary" type="checkbox" defaultValue id="flexCheckChecked" defaultChecked />
-                                            <label className="form-check-label text-dark" htmlFor="flexCheckChecked">
-                                                Remeber this Device
-                                            </label>
+                                        <input onChange={handleInputs}
+                                            name="email"
+                                            type="email"
+                                            value={values.email}
+                                            className={`form-control ${errors.email.required ? 'is-invalid' : ''}`}
+                                            id="exampleInputEmail1"
+                                            aria-describedby="emailHelp"
+                                            required />
+                                        <div class="invalid-feedback">
+                                            {errors.email.message}
                                         </div>
-                                        <NavLink to={'/forgot'} className="text-primary fw-medium">Forgot Password ?</NavLink>
                                     </div>
-                                    <button  className="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign In</button>
+                                    <div className="mb-1">
+                                        <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+                                        <input onChange={handleInputs}
+                                            name='password'
+                                            type="password"
+                                            value={values.password}
+                                            className={`form-control ${errors.password.required ? 'is-invalid' : ''}`}
+                                            id="exampleInputPassword1"
+                                            required />
+                                        <div class="invalid-feedback">
+                                            {errors.password.message}
+                                        </div>
+                                    </div>
+                                    <div className="d-flex align-items-center justify-content-end mb-4">
+                                        <NavLink to={'/forgot'} className="text-primary fs-2">Forgot Password ?</NavLink>
+                                    </div>
+                                    <button type='button' className="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign In</button>
                                     <div className="d-flex align-items-center justify-content-center">
                                         <p className="fs-4 mb-0 fw-medium">New to HelaShop?</p>
                                         <NavLink to={'/register'} className="text-primary fw-medium ms-2">Create an account</NavLink>
