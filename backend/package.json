@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "the backend of HELASHOP",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "author": "mosh",
   "license": "ISC",
