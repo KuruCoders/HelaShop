@@ -12,7 +12,8 @@ class ResTypes {
     invalid_code: { message: "Invalid verification code" }
   };
   successMessages = {
-    user_created: { message: "User created successfully" },
+    user_created: { message: "User created" },
+    verify_email: { message: "Please Verify email" },
     login_successful: { message: "Login successful" },
     data_retrieved: { message: "Data retrieved successfully" },
   };

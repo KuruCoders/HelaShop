@@ -32,6 +32,8 @@ const userSchema = new mongoose.Schema(
             type: Boolean,
             default: false
         },
+        verifyRegisterToken: String,
+        registerExpire:Date,
         isActive: {
             type: Boolean,
             default: true
@@ -43,7 +45,9 @@ const userSchema = new mongoose.Schema(
         role: {
             type: String,
             enum:roleType
-        }
+        },
+        resetPasswordToken: String,
+        resetPasswordExpire: Date,
     },
     {
         versionKey: '__v',
