@@ -165,3 +165,4 @@
 2024.01.07	18:38:27	4c36298a-7eb3-47a8-8c30-3f51b97de3b9	POST	::1	undefined	/register	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:5281ms
 2024.01.07	18:38:36	078493cd-6648-4a63-b8f3-73dddc7fff37	GET	::1	undefined	/verifyEmail/p5vew62j	Status:201	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:351ms
 2024.01.07	18:41:20	e80cf4ad-90b4-4287-8363-d93b47d37b0e	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:302ms
+2024.01.07	18:45:52	da878ff5-9b01-452b-9e6e-80c819d61ff3	POST	::1	undefined	/login	Status:400	User-Agent:PostmanRuntime/7.36.0	Duration:11ms
