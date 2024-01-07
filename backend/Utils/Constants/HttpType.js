@@ -77,8 +77,13 @@ class HttpType {
 
   static getStatus(code) {
     const status = Object.values(this).find((error) => error.code === code);
-    return status ? status.message : "Unknown Status Code";
+    return status ? status.message : "Unknown Status Message";
+  }
+
+  static getMessage(msg) {
+    const message = Object.values(this).find((errMsg) => errMsg.message === msg)
+    return message ? message.code : "Unknown Code"
   }
 }
 
-export default HttpType;
+export default HttpType ;
