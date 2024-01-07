@@ -126,3 +126,28 @@
 2024.01.07	16:47:50	0f5b8e73-f3e8-41fa-b9fd-65775066517a	POST	::1	undefined	/register	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:5273ms
 2024.01.07	16:47:58	f2374aa3-ec1d-4e41-9c33-343936115b5b	GET	::1	undefined	/verifyEmail/d2p16jai	Status:201	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:334ms
 2024.01.07	16:48:29	1f9aec88-c9ee-468f-bf67-d9128446f0f2	GET	::1	undefined	/verifyEmail/d2p16jai	Status:403	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:174ms
+2024.01.07	17:40:55	2dbc0dd8-c01f-408b-9d58-d04ad9093434	POST	::1	undefined	/login	Status:403	User-Agent:PostmanRuntime/7.36.0	Duration:3ms
+2024.01.07	17:52:28	569c305a-1eb2-4052-a458-8ed58c7d2e93	POST	::1	undefined	/login	Status:403	User-Agent:PostmanRuntime/7.36.0	Duration:11ms
+2024.01.07	17:53:15	beb6bb2f-dadd-4864-89b7-68de8dff8fba	POST	::1	undefined	/login	Status:403	User-Agent:PostmanRuntime/7.36.0	Duration:11ms
+2024.01.07	17:53:47	42844bc8-c641-4709-85fb-a7d7b276999a	POST	::1	undefined	/login	Status:403	User-Agent:PostmanRuntime/7.36.0	Duration:16ms
+2024.01.07	17:55:26	89818f04-0aed-47ef-9295-0ad6ec9f810d	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:134ms
+2024.01.07	17:56:28	83c54c22-1c95-4401-8c9e-2022397b1a54	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:189ms
+2024.01.07	17:57:10	b53d8b4b-bcd9-4c04-abf9-2a19efd2974b	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:179ms
+2024.01.07	17:57:48	5c94fd1c-2f89-4778-8cdc-b1b50fb4be05	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:138ms
+2024.01.07	17:58:15	84931f89-5636-444d-9fc2-0483ca887501	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:144ms
+2024.01.07	17:58:25	ef3efd52-120e-4eb9-a0b5-99a8d3ae69b7	POST	::1	undefined	/login	Status:400	User-Agent:PostmanRuntime/7.36.0	Duration:3ms
+2024.01.07	17:58:29	1f696fb4-3c9a-4bab-88ab-4efc88b39584	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:188ms
+2024.01.07	17:59:20	c107f170-137a-4d50-b23f-55ddee70e8f0	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:307ms
+2024.01.07	17:59:36	5a4e63c4-5b18-45d9-bde1-fbe62cec24f9	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:320ms
+2024.01.07	18:00:03	ce5e241c-a63d-4b83-b951-60e593df82f3	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:329ms
+2024.01.07	18:00:11	bef008e3-4af5-4eb4-8fad-586317ee3d86	POST	::1	undefined	/login	Status:404	User-Agent:PostmanRuntime/7.36.0	Duration:170ms
+2024.01.07	18:00:17	8846d86d-98f9-483f-b459-d509c247bde8	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:271ms
+2024.01.07	18:00:48	06a5e5af-ec60-41fb-8bdc-3cb166e81cfc	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:3182ms
+2024.01.07	18:00:52	fbca2312-1d67-4ce6-9555-d568e1224909	POST	::1	undefined	/login	Status:404	User-Agent:PostmanRuntime/7.36.0	Duration:160ms
+2024.01.07	18:01:11	42762ddd-2c77-4771-9585-02f1fcdb97d1	POST	::1	undefined	/login	Status:404	User-Agent:PostmanRuntime/7.36.0	Duration:163ms
+2024.01.07	18:01:30	cd3cf1db-7ff2-4b2b-b9b9-33c0a9cee6fe	POST	::1	undefined	/login	Status:404	User-Agent:PostmanRuntime/7.36.0	Duration:1049ms
+2024.01.07	18:01:47	4bc65957-b2b4-461c-9c02-6b72f3edbedd	POST	::1	undefined	/login	Status:404	User-Agent:PostmanRuntime/7.36.0	Duration:2920ms
+2024.01.07	18:01:53	a4aca4ec-acf5-4cce-9785-da7b144c3804	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:288ms
+2024.01.07	18:02:42	7a40f954-f451-4dfc-b345-81c9e81e5367	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:293ms
+2024.01.07	18:03:18	5da9059c-6530-4aaa-ae68-34421e2b1078	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:1176ms
+2024.01.07	18:03:34	8f9db7dc-fb7a-4d9e-a78f-286f2fc14212	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:2506ms

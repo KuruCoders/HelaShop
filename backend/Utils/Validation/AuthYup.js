@@ -8,6 +8,10 @@ class AuthYup {
         password: yup.string().required(),
         email: yup.string().required(),
     })
+    loginSchema = yup.object({
+        password: yup.string().required(),
+        email: yup.string().required(),
+    })
 }
 
 
