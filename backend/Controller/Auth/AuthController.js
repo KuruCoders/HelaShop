@@ -61,7 +61,7 @@ class AuthController {
         
         const result = await User.updateOne(
             { verifyRegisterToken: token },
-            {$set:{isVerfied:true,verifyRegisterToken:''}}
+            {$set:{isVerfied:true,verifyRegisterToken:"verified",registerExpire:""}}
         )
         if (result) {
             return res.status(201).send(successEmailTemplate())
