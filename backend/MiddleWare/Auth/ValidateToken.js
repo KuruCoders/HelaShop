@@ -1,21 +1,23 @@
-import HttpError from "http-errors";
-import Jwt, { decode }  from "jsonwebtoken";
-import  errors  from "../../Utils/Constants/ResTypes.js";
+
+import Jwt  from "jsonwebtoken";
 import User from "../../Model/User.js";
+import response from "../../Utils/Constants/Response.js";
+import HttpStatus from "../../Utils/Constants/HttpType.js";
+import ResTypes from "../../Utils/Constants/ResTypes.js";
 
 const validateToken = (req,res,next) => {
     const authHeader = req.headers.authorization;
     if (!authHeader) {
-        return errors.missing_token; 
+        return response(res,403,HttpStatus.getStatus(403),ResTypes.errors.missing_token)
     }
     const token = authHeader.split(" ")[1];
     Jwt.verify(token, process.env.SECRET, async (err, decode) => {
         if (err) {
-            return errors.invalid_token
+            return response(res,403,HttpStatus.getStatus(403),ResTypes.errors.invalid_token)
         }
         const user = await User.findOne({ _id: decode.id })
         if (!user) {
-            return errors.no_user
+            return response(res,403,HttpStatus.getStatus(403),ResTypes.errors.no_user)
         }
         req.user = user
         next();

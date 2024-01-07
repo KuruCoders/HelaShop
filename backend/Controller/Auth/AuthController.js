@@ -6,6 +6,7 @@ import bcrypt from "bcryptjs";
 import nodemailer from "nodemailer";
 import registerEmailTemplate from "../../Brokers/Email/RegisterTemplate.js";
 import successEmailTemplate from "../../Brokers/Email/SuccessRegister.js";
+import generateToken from "../../Utils/Auth/Token.js";
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 class AuthController {
 
@@ -63,7 +64,6 @@ class AuthController {
             {$set:{isVerfied:true,verifyRegisterToken:''}}
         )
         if (result) {
-            // return response(res, 201, HttpStatus.getStatus(201), ResTypes.successMessages.user_created)
             return res.status(201).send(successEmailTemplate())
         } else {
             return response(res,403,HttpStatus.getStatus(403),ResTypes.errors.unverified_user)
@@ -71,7 +71,17 @@ class AuthController {
     }
     //create SignIn
     signIn = async (req, res) => {
-        return response(res, 401, HttpStatus.getStatus(401), ResTypes.successMessages.data_retrieved)
+        const { email, password } = req.body;
+        const user = await User.findOne({ email })
+        if (!user) {
+            return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.invalid_email);
+        }
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return response(res,403,HttpStatus.getStatus(403),ResTypes.errors.invalid_password)
+        }
+        const token = generateToken(user)
+        return response(res,200,HttpStatus.getStatus(200),{token,...ResTypes.successMessages.login_successful})
     }
 }
 
