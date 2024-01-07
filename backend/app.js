@@ -16,10 +16,11 @@ app.use(logger);
 
 // import routes
 import AuthRoute from './Routes/Auth/AuthRoute.js'
+import response from "./Utils/Constants/Response.js";
 
 // routes definition starts here
 app.get("/", (req, res) => {
-    return res.status(200).json({ message: "server online" })
+    return response(res,200,"Server Online")
 })
 app.use('/api/v1/auth',AuthRoute)
 

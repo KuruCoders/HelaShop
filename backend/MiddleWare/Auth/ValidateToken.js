@@ -1,6 +1,6 @@
 import HttpError from "http-errors";
 import Jwt, { decode }  from "jsonwebtoken";
-import { errors } from "../../Utils/Constants/Errors.js";
+import  errors  from "../../Utils/Constants/ResTypes.js";
 import User from "../../Model/User.js";
 
 const validateToken = (req,res,next) => {
