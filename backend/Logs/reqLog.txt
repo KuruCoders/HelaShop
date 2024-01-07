@@ -154,3 +154,14 @@
 2024.01.07	18:07:51	9ad26654-ac8d-4f96-8d0b-92053c58607c	POST	::1	undefined	/register	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:5506ms
 2024.01.07	18:09:14	dba4edcc-50ce-45b6-b851-0fb03f657f38	GET	::1	undefined	/verifyEmail/riw2e0tb	Status:201	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:374ms
 2024.01.07	18:09:46	80367490-b381-4e27-9455-8f0075ae1381	GET	::1	undefined	/verifyEmail/riw2e0tb	Status:403	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:173ms
+2024.01.07	18:28:31	8dd68889-74c9-41d4-8dc3-59b1ba7fbf48	POST	::1	undefined	/register	Status:500	User-Agent:PostmanRuntime/7.36.0	Duration:336ms
+2024.01.07	18:28:50	6e9cd47d-ff02-40cd-9cc0-5c6d88aeb7d1	POST	::1	undefined	/register	Status:500	User-Agent:PostmanRuntime/7.36.0	Duration:294ms
+2024.01.07	18:29:24	85bf4ea4-ebe3-4203-99d8-28e5a2d4e473	POST	::1	undefined	/register	Status:500	User-Agent:PostmanRuntime/7.36.0	Duration:2186ms
+2024.01.07	18:29:46	b10d6402-3033-4da6-8992-0df634fb9bc1	POST	::1	undefined	/register	Status:500	User-Agent:PostmanRuntime/7.36.0	Duration:2737ms
+2024.01.07	18:31:14	537cc9bc-a579-40b8-a137-bfe587cf5ecd	POST	::1	undefined	/register	Status:403	User-Agent:PostmanRuntime/7.36.0	Duration:172ms
+2024.01.07	18:32:42	22bbec9a-1a50-4953-8f3d-ea8bb293dffb	POST	::1	undefined	/register	Status:403	User-Agent:PostmanRuntime/7.36.0	Duration:1486ms
+2024.01.07	18:35:43	a2633e36-7085-4741-916a-81e34b1fac71	POST	::1	undefined	/register	Status:403	User-Agent:PostmanRuntime/7.36.0	Duration:175ms
+2024.01.07	18:36:53	707f5111-1fa6-4da4-ba91-130af18c7496	POST	::1	undefined	/register	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:5571ms
+2024.01.07	18:38:27	4c36298a-7eb3-47a8-8c30-3f51b97de3b9	POST	::1	undefined	/register	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:5281ms
+2024.01.07	18:38:36	078493cd-6648-4a63-b8f3-73dddc7fff37	GET	::1	undefined	/verifyEmail/p5vew62j	Status:201	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:351ms
+2024.01.07	18:41:20	e80cf4ad-90b4-4287-8363-d93b47d37b0e	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:302ms
