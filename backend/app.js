@@ -1,14 +1,14 @@
 import Express from "express";
 const app = Express();
+import dotenv from "dotenv"
+dotenv.config();
 
 import cors from "cors";
-import dotenv from "dotenv"
 import db from "./db.js"
 import logger from "./MiddleWare/LogEvents.js"
 import corsConfig from "./Config/CorsConfig.js"
-dotenv.config();
 
-const PORT = process.env.PORT || 3500
+const PORT = process.env.PORT || 3499
 
 app.use(cors(corsConfig));
 app.use(Express.json());
@@ -18,6 +18,9 @@ app.use(logger);
 
 
 // routes definition starts here
+app.get("/", (req, res) => {
+    return res.status(200).json({ message: "server online" })
+})
 
 //db connction
 db();
