@@ -151,3 +151,6 @@
 2024.01.07	18:02:42	7a40f954-f451-4dfc-b345-81c9e81e5367	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:293ms
 2024.01.07	18:03:18	5da9059c-6530-4aaa-ae68-34421e2b1078	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:1176ms
 2024.01.07	18:03:34	8f9db7dc-fb7a-4d9e-a78f-286f2fc14212	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:2506ms
+2024.01.07	18:07:51	9ad26654-ac8d-4f96-8d0b-92053c58607c	POST	::1	undefined	/register	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:5506ms
+2024.01.07	18:09:14	dba4edcc-50ce-45b6-b851-0fb03f657f38	GET	::1	undefined	/verifyEmail/riw2e0tb	Status:201	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:374ms
+2024.01.07	18:09:46	80367490-b381-4e27-9455-8f0075ae1381	GET	::1	undefined	/verifyEmail/riw2e0tb	Status:403	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:173ms
