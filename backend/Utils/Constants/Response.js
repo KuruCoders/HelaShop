@@ -1,9 +1,9 @@
-const response = (res, status, message, data ) => {
+const response = (res, code, status, data ) => {
     const payLoad = {
+        code,
         status,
-        message,
         data
     }
-    return res.status(status).json(payLoad);
+    return res.status(code).json(payLoad);
 }
 export default response
