@@ -46,3 +46,16 @@
 2024.01.07	11:12:25	0fa703db-acf7-4a9a-ad57-6b0e6ff03d8a	POST	::1	undefined	/	Status:401	User-Agent:PostmanRuntime/7.36.0	Duration:6ms
 2024.01.07	11:15:03	2f9edee6-752b-4dac-94dc-b82fd3e59ab3	POST	::1	undefined	/	Status:401	User-Agent:PostmanRuntime/7.36.0	Duration:6ms
 2024.01.07	11:37:24	6b74b7c2-22db-4515-ac12-4ad2d2577df3	POST	::1	undefined	/	Status:401	User-Agent:PostmanRuntime/7.36.0	Duration:8ms
+2024.01.07	12:11:38	061ef148-a626-4daa-828c-e3b8fa3136d4	POST	::1	undefined	/	Status:401	User-Agent:PostmanRuntime/7.36.0	Duration:9ms
+2024.01.07	12:11:58	d3e40a82-52f8-449e-89cc-15503caade6b	POST	::1	undefined	/	Status:401	User-Agent:PostmanRuntime/7.36.0	Duration:8ms
+2024.01.07	12:12:04	d1fdfc86-b355-4c28-acef-73c5272333a6	POST	::1	undefined	/	Status:401	User-Agent:PostmanRuntime/7.36.0	Duration:0ms
+2024.01.07	12:12:21	0991fe41-2269-49b1-bdeb-628c8e046102	POST	::1	undefined	/	Status:401	User-Agent:PostmanRuntime/7.36.0	Duration:6ms
+2024.01.07	13:15:33	dd925da6-6b31-4427-a4fb-ef04b56ac773	POST	::1	undefined	/register	Status:400	User-Agent:PostmanRuntime/7.36.0	Duration:11ms
+2024.01.07	13:18:09	edf13ce8-0e6c-4f31-92c1-35a521e396b0	POST	::1	undefined	/register	Status:400	User-Agent:PostmanRuntime/7.36.0	Duration:8ms
+2024.01.07	13:18:31	eac62577-9c25-4329-8c1c-193db7f037c4	POST	::1	undefined	/register	Status:400	User-Agent:PostmanRuntime/7.36.0	Duration:14ms
+2024.01.07	13:19:07	78e9894a-d8f6-494a-8331-dccf819c4a4a	POST	::1	undefined	/register	Status:400	User-Agent:PostmanRuntime/7.36.0	Duration:10ms
+2024.01.07	13:19:43	73b6062f-60d7-4ee8-8509-4cf0721e6def	POST	::1	undefined	/register	Status:400	User-Agent:PostmanRuntime/7.36.0	Duration:8ms
+2024.01.07	13:19:51	5ce15eed-f13e-4d03-a38a-5a21d2e1afe7	POST	::1	undefined	/register	Status:400	User-Agent:PostmanRuntime/7.36.0	Duration:2ms
+2024.01.07	13:22:48	101b071f-14b1-4250-b9dc-7437f6f4dbdf	POST	::1	undefined	/register	Status:201	User-Agent:PostmanRuntime/7.36.0	Duration:500ms
+2024.01.07	13:26:44	01b41d1c-5cc6-4a2d-ae11-33896f4c0aa2	POST	::1	undefined	/register	Status:403	User-Agent:PostmanRuntime/7.36.0	Duration:173ms
+2024.01.07	13:27:02	dd83551d-0158-4f9f-93aa-c543c05237d3	POST	::1	undefined	/register	Status:201	User-Agent:PostmanRuntime/7.36.0	Duration:528ms
