@@ -10,6 +10,7 @@ const getRandomDefaultpic = () => {
     const randomIndex = Math.floor(Math.random() * urlPic.length);
     return urlPic[randomIndex];
 }
+const roleType = ['admin','user']
 
 const userSchema = new mongoose.Schema(
     {
@@ -28,21 +29,25 @@ const userSchema = new mongoose.Schema(
             minlength: 8
         },
         isVerfied: {
-            type: boolean,
+            type: Boolean,
             default: false
         },
         isActive: {
-            type: boolean,
+            type: Boolean,
             default: true
         },
         photoUrl: {
             type: String,
             default: getRandomDefaultpic
+        },
+        role: {
+            type: String,
+            enum:roleType
         }
     },
     {
         versionKey: '__v',
-        timestamps: { createdAt, updatedAt }
+        timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
     }
 );
 const User = mongoose.model('User', userSchema);
