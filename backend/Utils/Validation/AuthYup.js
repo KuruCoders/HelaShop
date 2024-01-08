@@ -6,11 +6,14 @@ class AuthYup {
         picUrl: yup.string(),
         name: yup.string().required(),
         password: yup.string().required(),
-        email: yup.string().required(),
+        email: yup.string().email().required(),
     })
     loginSchema = yup.object({
         password: yup.string().required(),
         email: yup.string().required(),
+    })
+    passwordReset = yup.object({
+        email:yup.string().email().required()
     })
 }
 

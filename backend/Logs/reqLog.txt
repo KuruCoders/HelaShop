@@ -166,3 +166,12 @@
 2024.01.07	18:38:36	078493cd-6648-4a63-b8f3-73dddc7fff37	GET	::1	undefined	/verifyEmail/p5vew62j	Status:201	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:351ms
 2024.01.07	18:41:20	e80cf4ad-90b4-4287-8363-d93b47d37b0e	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:302ms
 2024.01.07	18:45:52	da878ff5-9b01-452b-9e6e-80c819d61ff3	POST	::1	undefined	/login	Status:400	User-Agent:PostmanRuntime/7.36.0	Duration:11ms
+2024.01.08	06:30:37	0f259b89-545d-45a9-a6de-1b5db1bad893	POST	::1	undefined	/mobileRegister	Status:403	User-Agent:PostmanRuntime/7.36.0	Duration:192ms
+2024.01.08	06:30:46	410ee7ea-1597-4967-8ded-92a5db12a8c3	POST	::1	undefined	/mobileRegister	Status:201	User-Agent:PostmanRuntime/7.36.0	Duration:502ms
+2024.01.08	06:35:56	d837ec06-3f9c-4fe4-b363-d3f569c78b57	POST	::1	undefined	/mobileRegister	Status:403	User-Agent:PostmanRuntime/7.36.0	Duration:182ms
+2024.01.08	07:19:34	ede908ba-dae7-4b48-979e-63ad39ec5179	POST	::1	undefined	/register	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:6033ms
+2024.01.08	07:19:52	dc6fd028-b6f3-4bdb-94f3-55a061b0bf3a	GET	::1	undefined	/verifyEmail/7iean1qm	Status:201	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:342ms
+2024.01.08	07:47:30	f3add3fa-92a9-4ecb-8edc-269b7a603109	POST	::1	undefined	/register	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:4703ms
+2024.01.08	07:47:49	cc0d5268-38f7-45d0-aa46-a4b318b179b9	GET	::1	undefined	/verifyEmail/jes8cyt6	Status:201	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:333ms
+2024.01.08	07:55:24	e02aa2df-5640-496c-90fa-c0f560ea819d	POST	::1	undefined	/reset-password	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:4323ms
+2024.01.08	07:57:42	5cf3cadd-981b-4200-a943-8bdcc4cc3eb5	POST	::1	undefined	/reset-password	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:5459ms

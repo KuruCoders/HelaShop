@@ -3,7 +3,7 @@ import registerEmailTemplate from './RegisterTemplate.js';
 import HttpStatus from "../../Utils/Constants/HttpType.js";
 import response from "../../Utils/Constants/Response.js";
 
-class RegisterEmailSender {
+class EmailSender {
     constructor() {
         this.transporter = nodemailer.createTransport({
             service: process.env.MAIL_SERVER,
@@ -13,22 +13,22 @@ class RegisterEmailSender {
             }
         })
     }
-    sendVerificationEmail(user, token, res) {
+    sendVerificationEmail(user, token,emailTemplateFunction,subject,saveOrUpdate ,res) {
         const message = {
             from: "qwwerrrty11@gmail.com",
             to: user.email,
-            subject: "Email verification",
-            html: registerEmailTemplate(token),
+            subject: subject,
+            html: emailTemplateFunction(token),
         };
         this.transporter.sendMail(message, (err, info) => {
             if (err)
                 this.handleEmailError(res, err)
             else
-                this.handleEmailSuccess(res,user)
+                this.handleEmailSuccess(res,user,saveOrUpdate)
         })
     }
-    async handleEmailSuccess(res,user) {
-        await user.save()
+    async handleEmailSuccess(res, user, saveOrUpdate) {
+        saveOrUpdate()
         return response(res,200,HttpStatus.getStatus(200),{message:"Email Sent to "+user.email})
     }
     handleEmailError(err, res) {
@@ -36,4 +36,4 @@ class RegisterEmailSender {
         return response(res, 404, HttpStatus.getStatus(404), { message: err })
     }
 }
-export default RegisterEmailSender = new RegisterEmailSender()
+export default EmailSender = new EmailSender()

@@ -9,13 +9,15 @@ class ResTypes {
     unverified_user: { message: "User hasn't been verified yet" },
     no_user: { message: "No User Found" },
     user_exists: { message: "User Already Registered" },
-    invalid_code: { message: "Invalid verification code" }
+    invalid_code: { message: "Invalid verification code" },
+    failed_operation: { message: "failed operation" },
   };
   successMessages = {
     user_created: { message: "User created" },
     verify_email: { message: "Please Verify email" },
     login_successful: { message: "Login successful" },
     data_retrieved: { message: "Data retrieved successfully" },
+    verify_password: { message: "Token Sent To Mail" },
   };
 }
 
