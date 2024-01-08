@@ -8,6 +8,7 @@ import registerEmailTemplate from "../../Brokers/Email/RegisterTemplate.js";
 import successEmailTemplate from "../../Brokers/Email/SuccessRegister.js";
 import generateToken from "../../Utils/Auth/Token.js";
 import EmailSender from '../../Brokers/Email/EmailSender.js'
+import passwordReset from "../../Brokers/Email/PasswordTemplate.js";
 
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
@@ -28,7 +29,7 @@ class AuthController {
 
             const user = new User({ name, email, password: hashedPassword, role, picUrl, verifyRegisterToken, registerExpire })
             //send the mail
-            EmailSender.sendVerificationEmail(user, token, registerEmailTemplate, "Email Verification", async() => {
+            EmailSender.sendVerificationEmail(user, token, registerEmailTemplate(token), "Email Verification", async() => {
                 await user.save()
             }, res)
         } catch (error) {
@@ -93,7 +94,7 @@ class AuthController {
             }
             const token = Math.random().toString(36).slice(-8)
             const expireDate = Date.now() + 360000
-            EmailSender.sendVerificationEmail(user, token, successEmailTemplate, "Password Reset", async() => {
+            EmailSender.sendVerificationEmail(user, token, passwordReset(token), "Password Reset", async() => {
                 const result = await User.updateOne(
                     { email },
                     { $set: { resetPasswordToken: token, resetPasswordExpire: expireDate } }
@@ -103,6 +104,7 @@ class AuthController {
                 }
             }, res)
         } catch (error) {
+            console.log(error)
             return response(res, 500, HttpStatus.getStatus(500), { message: error })
         }
     }
@@ -132,7 +134,6 @@ class AuthController {
             return response(res, 500, HttpStatus.getStatus(500), { message: error })
         }
     }
-
 }
 
 export default AuthController = new AuthController()

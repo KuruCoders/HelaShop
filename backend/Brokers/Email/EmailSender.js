@@ -18,7 +18,7 @@ class EmailSender {
             from: "qwwerrrty11@gmail.com",
             to: user.email,
             subject: subject,
-            html: emailTemplateFunction(token),
+            html: emailTemplateFunction,
         };
         this.transporter.sendMail(message, (err, info) => {
             if (err)
