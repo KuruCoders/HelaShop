@@ -175,3 +175,20 @@
 2024.01.08	07:47:49	cc0d5268-38f7-45d0-aa46-a4b318b179b9	GET	::1	undefined	/verifyEmail/jes8cyt6	Status:201	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:333ms
 2024.01.08	07:55:24	e02aa2df-5640-496c-90fa-c0f560ea819d	POST	::1	undefined	/reset-password	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:4323ms
 2024.01.08	07:57:42	5cf3cadd-981b-4200-a943-8bdcc4cc3eb5	POST	::1	undefined	/reset-password	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:5459ms
+2024.01.08	08:02:18	1e3c3151-8846-4754-adce-022ffbd0b3e0	POST	::1	undefined	/reset-password	Status:400	User-Agent:PostmanRuntime/7.36.0	Duration:5ms
+2024.01.08	08:02:29	73c0a262-239b-4412-866d-7a3d4c077b60	POST	::1	undefined	/reset-password	Status:400	User-Agent:PostmanRuntime/7.36.0	Duration:1ms
+2024.01.08	09:45:16	37c07596-a33b-435f-acfd-241bd8eb4471	POST	::1	undefined	/reset-password	Status:400	User-Agent:PostmanRuntime/7.36.0	Duration:9ms
+2024.01.08	09:46:04	ad7e32eb-2b7c-4371-90e4-d8001e30a9bc	POST	::1	undefined	/reset-password	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:4258ms
+2024.01.08	09:47:48	d321562e-3907-4b7e-a5e2-b6abcd34e3e7	POST	::1	undefined	/verify-reset-password/sblaju57	Status:400	User-Agent:PostmanRuntime/7.36.0	Duration:2ms
+2024.01.08	09:48:11	de063095-d52d-47f2-bf0e-2884d731b244	POST	::1	undefined	/verify-reset-password/sblaju57	Status:201	User-Agent:PostmanRuntime/7.36.0	Duration:717ms
+2024.01.08	09:48:53	6dc92dcc-3b36-4e74-bb7c-5bb7d3de225a	POST	::1	undefined	/verify-reset-password/sblaju57	Status:201	User-Agent:PostmanRuntime/7.36.0	Duration:616ms
+2024.01.08	09:49:04	ba32d1f9-9880-4a5c-8805-37e17dee3689	POST	::1	undefined	/verify-reset-password/sb57	Status:404	User-Agent:PostmanRuntime/7.36.0	Duration:170ms
+2024.01.08	09:49:22	d1122ee7-d589-479e-9c97-1d06a37bb5e2	POST	::1	undefined	/api/v1/auth/verify-reset-password/	Status:404	User-Agent:PostmanRuntime/7.36.0	Duration:1ms
+2024.01.08	09:49:32	d74e2d66-dd77-4112-970c-044a4e0a61b5	POST	::1	undefined	/verify-reset-password/x	Status:404	User-Agent:PostmanRuntime/7.36.0	Duration:159ms
+2024.01.08	09:50:46	25b3f9c4-2884-4d4e-9c1b-08b1f54156d9	POST	::1	undefined	/verify-reset-password/x	Status:404	User-Agent:PostmanRuntime/7.36.0	Duration:192ms
+2024.01.08	09:50:58	f2500ce2-46a3-4b15-ae8a-4a40c1c73e00	POST	::1	undefined	/verify-reset-password/sblaju57	Status:201	User-Agent:PostmanRuntime/7.36.0	Duration:647ms
+2024.01.08	09:52:07	0cb84ba4-0946-41ff-9a82-73e76431f9bc	POST	::1	undefined	/reset-password	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:4192ms
+2024.01.08	09:52:45	07dc15c4-6156-4ece-8f1a-1424b622457f	POST	::1	undefined	/verify-reset-password/tg9ak3wr	Status:201	User-Agent:PostmanRuntime/7.36.0	Duration:605ms
+2024.01.08	09:53:56	ce8c4ef9-9cc2-4ae9-9113-4b847ca676e5	POST	::1	undefined	/reset-password	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:4694ms
+2024.01.08	09:54:40	91527510-5369-4eef-b2e0-8f048080b1cb	POST	::1	undefined	/verify-reset-password/jlxs5gyi	Status:500	User-Agent:PostmanRuntime/7.36.0	Duration:619ms
+2024.01.08	09:54:50	5b767431-f33f-449f-b953-72ad2d8b4313	POST	::1	undefined	/verify-reset-password/jlxs5gyi	Status:201	User-Agent:PostmanRuntime/7.36.0	Duration:1546ms

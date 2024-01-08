@@ -106,6 +106,33 @@ class AuthController {
             return response(res, 500, HttpStatus.getStatus(500), { message: error })
         }
     }
+    // verify reset-password with token
+    verifyResetPassword = async (req, res) => {
+        const { token } = req.params
+        const { password } = req.body 
+        try {
+            if(!token) return response(res,404,HttpStatus.getStatus(404),ResTypes.errors.missing_token)
+
+            const user = await User.findOne({ resetPasswordToken: token })
+            if (!user) return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.invalid_token)
+    
+            const tokenExpire = await User.findOne({ resetPasswordExpire: { $gt: Date.now() } })
+            if(!tokenExpire) return response(res,404,HttpStatus.getStatus(404),ResTypes.errors.token_expired)
+    
+            const hashedPasswod = await bcrypt.hash(password, 10)
+            const result = await User.updateOne(
+                { resetPasswordToken:token },
+                {$set:{resetPasswordToken:"",resetPasswordExpire:"",password:hashedPasswod}}
+            )
+            if (result.modifiedCount===0) {
+                return response(res, 500, HttpStatus.getStatus(500), ResTypes.errors.failed_operation)
+            }
+            return response(res,201,HttpStatus.getStatus(201),ResTypes.successMessages.password_reseted)
+        } catch (error) {
+            return response(res, 500, HttpStatus.getStatus(500), { message: error })
+        }
+    }
+
 }
 
 export default AuthController = new AuthController()

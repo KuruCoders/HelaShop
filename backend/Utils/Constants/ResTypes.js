@@ -18,6 +18,7 @@ class ResTypes {
     login_successful: { message: "Login successful" },
     data_retrieved: { message: "Data retrieved successfully" },
     verify_password: { message: "Token Sent To Mail" },
+    password_reseted: { message: "Password Reset Success" },
   };
 }
 
