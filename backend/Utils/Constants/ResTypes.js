@@ -11,6 +11,7 @@ class ResTypes {
     user_exists: { message: "User Already Registered" },
     invalid_code: { message: "Invalid verification code" },
     failed_operation: { message: "failed operation" },
+    product_failed: { message: "error adding product" },
   };
   successMessages = {
     user_created: { message: "User created" },
@@ -19,6 +20,7 @@ class ResTypes {
     data_retrieved: { message: "Data retrieved successfully" },
     verify_password: { message: "Token Sent To Mail" },
     password_reseted: { message: "Password Reset Success" },
+    product_added: { message: "product added succesfully" },
   };
 }
 

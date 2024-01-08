@@ -13,7 +13,7 @@ const validateToken = (req,res,next) => {
     const token = authHeader.split(" ")[1];
     Jwt.verify(token, process.env.SECRET, async (err, decode) => {
         if (err) {
-            return response(res,403,HttpStatus.getStatus(403),ResTypes.errors.invalid_token)
+            return response(res,403,HttpStatus.getStatus(403),err)
         }
         const user = await User.findOne({ _id: decode.id })
         if (!user) {

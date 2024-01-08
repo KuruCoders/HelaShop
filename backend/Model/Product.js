@@ -16,6 +16,10 @@ const productSchema = new mongoose.Schema(
             type: Number,
             required: true
         },
+        color: {
+            type: String,
+            default:'red'
+        },
         discount: {
             type: Number,
             required: true
@@ -30,31 +34,62 @@ const productSchema = new mongoose.Schema(
             enum: stockType,
             required: true
         },
+        pieces: {
+            type: Number,
+           required:true 
+        },
         category: {
             type: String,
             required: true
         },
-        review: {
-            type: [
-                {
-                    email: {
-                        type: String,
-                        required: true
-                    },
-                    text: {
-                        type: String,
-                        required: true
-                    },
-                    stars: {
-                        type: Number,
-                        required: true,
-                        min: [1, 'should be from 1 to 5'],
-                        max: [5, 'should be from 1 to 5'],
-                    },
-                    timestamps: { createdAt: "created_at"}
+        review: [
+            {
+                email: {
+                    type: String,
+                    required: true
+                },
+                text: {
+                    type: String,
+                    required: true
+                },
+                stars: {
+                    type: Number,
+                    required: true,
+                    min: [1, 'should be from 1 to 5'],
+                    max: [5, 'should be from 1 to 5'],
+                },
+                created_at: {
+                    type: Date,
+                    default: Date.now
                 }
-            ]
-        }
+            }
+        ],
+        deleted: {
+            type: Boolean,
+            required: true,
+            default:false
+        },
+        // review: {
+        //     type: [
+        //         {
+        //             email: {
+        //                 type: String,
+        //                 required: true
+        //             },
+        //             text: {
+        //                 type: String,
+        //                 required: true
+        //             },
+        //             stars: {
+        //                 type: Number,
+        //                 required: true,
+        //                 min: [1, 'should be from 1 to 5'],
+        //                 max: [5, 'should be from 1 to 5'],
+        //             },
+        //             timestamps: { createdAt: "created_at"}
+        //         }
+        //     ]
+        // }
     },
     {
         versionKey: '__v',
