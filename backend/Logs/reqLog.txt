@@ -206,3 +206,5 @@
 2024.01.08	14:55:30	64bda64f-ff90-4b9f-abe4-9c695769d096	POST	::1	undefined	/reset-password	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:5043ms
 2024.01.08	14:57:01	f7b6235b-7ba6-419b-9496-2bfbd344baf0	POST	::1	undefined	/register	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:7128ms
 2024.01.08	15:01:38	4855494a-ff1a-4b4d-8c0a-df3dd32d6ffe	POST	::1	undefined	/register	Status:500	User-Agent:PostmanRuntime/7.36.0	Duration:10030ms
+2024.01.08	15:19:18	bdd83c99-acaa-4c0f-b740-42a04e615253	POST	::1	undefined	/register	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:3640ms
+2024.01.08	15:19:35	de0cf47d-4e6a-41b8-88af-67419146383a	GET	::1	undefined	/verifyEmail/nq3uaubj	Status:201	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:391ms
