@@ -208,3 +208,16 @@
 2024.01.08	15:01:38	4855494a-ff1a-4b4d-8c0a-df3dd32d6ffe	POST	::1	undefined	/register	Status:500	User-Agent:PostmanRuntime/7.36.0	Duration:10030ms
 2024.01.08	15:19:18	bdd83c99-acaa-4c0f-b740-42a04e615253	POST	::1	undefined	/register	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:3640ms
 2024.01.08	15:19:35	de0cf47d-4e6a-41b8-88af-67419146383a	GET	::1	undefined	/verifyEmail/nq3uaubj	Status:201	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:391ms
+2024.01.08	19:41:10	59ba71d9-ea0f-4d84-b69b-d9ef79de81ed	POST	::1	undefined	/add-product	Status:400	User-Agent:PostmanRuntime/7.36.0	Duration:10ms
+2024.01.08	19:43:11	7a82ad12-32f2-4bda-a7b0-3be74afb0522	POST	::1	undefined	/add-product	Status:500	User-Agent:PostmanRuntime/7.36.0	Duration:23ms
+2024.01.08	19:45:06	a065b78c-e371-424b-aafd-9526ad23b651	POST	::1	undefined	/add-product	Status:500	User-Agent:PostmanRuntime/7.36.0	Duration:26ms
+2024.01.08	19:45:22	7105c061-1908-41cf-8f21-d5040ed7cef6	POST	::1	undefined	/add-product	Status:500	User-Agent:PostmanRuntime/7.36.0	Duration:24ms
+2024.01.08	19:45:30	41a0f178-449c-4d29-8588-f2ac539bbdb9	POST	::1	undefined	/add-product	Status:500	User-Agent:PostmanRuntime/7.36.0	Duration:28ms
+2024.01.08	19:46:03	5bf08303-adb0-4275-829b-645787a4661e	POST	::1	undefined	/add-product	Status:201	User-Agent:PostmanRuntime/7.36.0	Duration:229ms
+2024.01.08	19:50:19	90d33194-8695-4733-983d-ad1a361578de	POST	::1	undefined	/add-product	Status:403	User-Agent:PostmanRuntime/7.36.0	Duration:5ms
+2024.01.08	19:52:22	9fa54b41-b362-4742-936f-7205f7e91b89	POST	::1	undefined	/add-product	Status:403	User-Agent:PostmanRuntime/7.36.0	Duration:3ms
+2024.01.08	19:52:45	210bc70b-bf9d-4d3b-b658-df13f77730c8	POST	::1	undefined	/add-product	Status:403	User-Agent:PostmanRuntime/7.36.0	Duration:8ms
+2024.01.08	19:53:43	97140a29-5646-4250-ba93-03defa4dee7e	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:350ms
+2024.01.08	19:54:26	ef194a63-9581-4005-8bc7-30ecc36cc864	POST	::1	undefined	/add-product	Status:201	User-Agent:PostmanRuntime/7.36.0	Duration:330ms
+2024.01.08	19:57:56	c37e8d63-58d6-4828-9a07-17c1d6e4ada9	POST	::1	undefined	/add-product	Status:201	User-Agent:PostmanRuntime/7.36.0	Duration:350ms
+2024.01.08	19:58:59	ae93a681-c732-4edd-aebd-f3f5c7027331	POST	::1	undefined	/add-product	Status:201	User-Agent:PostmanRuntime/7.36.0	Duration:491ms
