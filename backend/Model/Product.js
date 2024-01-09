@@ -75,27 +75,6 @@ const productSchema = new mongoose.Schema(
             required: true,
             default:false
         },
-        // review: {
-        //     type: [
-        //         {
-        //             email: {
-        //                 type: String,
-        //                 required: true
-        //             },
-        //             text: {
-        //                 type: String,
-        //                 required: true
-        //             },
-        //             stars: {
-        //                 type: Number,
-        //                 required: true,
-        //                 min: [1, 'should be from 1 to 5'],
-        //                 max: [5, 'should be from 1 to 5'],
-        //             },
-        //             timestamps: { createdAt: "created_at"}
-        //         }
-        //     ]
-        // }
     },
     {
         versionKey: '__v',
