@@ -291,3 +291,9 @@
 2024.01.09	09:03:32	e59c1ae1-99ee-4791-b70b-e4882dd6ac24	POST	::1	undefined	/delete-product	Status:403	User-Agent:PostmanRuntime/7.36.0	Duration:1850ms
 2024.01.09	09:03:54	3adaef8a-d9a3-4053-9fe4-c2ec1a79c7d0	POST	::1	undefined	/delete-product	Status:403	User-Agent:PostmanRuntime/7.36.0	Duration:2776ms
 2024.01.09	09:04:35	163da103-96d5-4fe9-8a8f-edf473b68c9f	POST	::1	undefined	/delete-product	Status:201	User-Agent:PostmanRuntime/7.36.0	Duration:476ms
+2024.01.09	09:21:50	9ef10ed2-9fef-438c-a32e-428af8a2bdd2	GET	::1	undefined	/api/v1/product/update-product	Status:404	User-Agent:PostmanRuntime/7.36.0	Duration:6ms
+2024.01.09	09:22:06	cbfe4054-d53b-4c2c-a35f-0765bc5c24c3	POST	::1	undefined	/update-product	Status:400	User-Agent:PostmanRuntime/7.36.0	Duration:174ms
+2024.01.09	09:22:51	63cc1263-fd64-44f9-9b3d-b0d0c491f195	POST	::1	undefined	/update-product	Status:400	User-Agent:PostmanRuntime/7.36.0	Duration:219ms
+2024.01.09	09:23:05	7222c01a-e3fa-4882-826e-e0399cd9cf35	POST	::1	undefined	/update-product	Status:400	User-Agent:PostmanRuntime/7.36.0	Duration:226ms
+2024.01.09	09:23:10	e28e7747-1f66-4b7f-a819-40b18e3986b7	POST	::1	undefined	/update-product	Status:404	User-Agent:PostmanRuntime/7.36.0	Duration:351ms
+2024.01.09	09:23:31	e859e8fe-5dc2-4262-a930-5c5b49aade51	POST	::1	undefined	/update-product	Status:201	User-Agent:PostmanRuntime/7.36.0	Duration:482ms

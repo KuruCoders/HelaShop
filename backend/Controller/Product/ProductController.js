@@ -56,5 +56,21 @@ class ProductController {
         }
     }
     //update product
+    updateProduct = async (req, res) => {
+        const { pid, name, imgUrl, price, color, discount, description, stock, pieces, category } = req.body
+        try {
+            const productExist = await Product.findOne({ pid })
+            if (!productExist) return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.no_product)
+
+            const result = await Product.updateOne(
+                { pid },
+                {$set:{name,imgUrl,price,color,discount,description,stock,pieces,category}}
+            )
+            if (result.modifiedCount === 0) return response(res, 403, HttpStatus.getStatus(403), ResTypes.errors.failed_operation)
+            return response(res,201,HttpStatus.getStatus(201),ResTypes.successMessages.product_updated)
+        } catch (error) {
+            return response(res, 500, HttpStatus.getStatus(500), error)
+        }
+    }
 }
 export default ProductController = new ProductController()
