@@ -7,13 +7,29 @@ import User from "../../../Model/User.js";
 class AddressController{
 
     //get address
-    
+    getAddress = async (req, res) => {
+        const { email } = req.body;
+        try {
+            const userExist = await User.findOne({ email })
+            if (!userExist) return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.no_user)
+            
+            const address = await Address.findOne({ email })
+            if (!address) return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.no_address)
+            return response(res,200,HttpStatus.getStatus(200),{...ResTypes.successMessages.address_found,address})
+        } catch (error) {
+            console.log(error)
+            return response(res, 500, HttpStatus.getStatus(500), error)
+        }
+    }
     //add Address
     addAddress = async (req,res)=> {
         const { email, district , province, country, city, street, postalCode, zipCode } = req.body;
         try {
             const userExist = await User.findOne({ email })
-            if(!userExist) return response(res,404,HttpStatus.getStatus(404),ResTypes.errors.no_user)
+            if (!userExist) return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.no_user)
+            
+            const userHaveAddress = await Address.findOne({ email })
+            if(userHaveAddress) return response(res, 403, HttpStatus.getStatus(403), ResTypes.errors.address_exists)
 
             const address = new Address({ email, district, province, country, city, street, postalCode, zipCode })
             const result = await address.save()

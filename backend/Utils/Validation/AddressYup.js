@@ -4,6 +4,9 @@ import sriLankanDistricts from "../../Utils/Constants/Address/District.js";
 
 
 class AddressYup {
+    getAddress = yup.object({
+        email: yup.string().email().required(),
+    })
     addAddress = yup.object({
         email: yup.string().email().required(),
         district: yup.string().lowercase().required().oneOf(sriLankanDistricts),
