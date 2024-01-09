@@ -4,6 +4,22 @@ import HttpStatus from "../../Utils/Constants/HttpType.js";
 import ResTypes from "../../Utils/Constants/ResTypes.js";
 
 class ProductController {
+    //get product
+    getProduct = async (req, res) => {
+        const { pid } = req.body;
+        try {
+            const product = await Product.findOne({ pid })
+            if (!product) return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.no_product)
+            if (product.deleted === false)
+                return response(res, 200, HttpStatus.getStatus(200), { ...ResTypes.successMessages.success,product })
+            else if (product.deleted === true)
+                return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.no_product)
+                
+        } catch (error) {
+            console.log(error)
+            return response(res, 500, HttpStatus.getStatus(500), error)
+        }
+    }
     //create prooduct
     addProduct = async (req, res) => {
         const { name, imgUrl, price, discount, description, stock, category, color, review, pieces,deleted } = req.body;

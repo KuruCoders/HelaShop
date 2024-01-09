@@ -16,6 +16,7 @@ class ResTypes {
     no_product: { message: "product not found" },
   };
   successMessages = {
+    success: { message: "fetching success" },
     user_created: { message: "User created" },
     verify_email: { message: "Please Verify email" },
     login_successful: { message: "Login successful" },
