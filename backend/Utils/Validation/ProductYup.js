@@ -13,7 +13,7 @@ class ProductYup{
         pieces: yup.number().required(),
     })
     addReviews = yup.object({
-        _id: yup.string().required(),
+        pid: yup.string().required(),
         review: yup.array(
             yup.object({
                 email: yup.string().email().required(),
@@ -21,6 +21,9 @@ class ProductYup{
                 stars:yup.number().required().min(1,'rating must be at least 1').max(5,'rating must be at most 5')
             })
         ).required()
+    })
+    deleteProduct = yup.object({
+        pid: yup.string().required(),
     })
 }
 
