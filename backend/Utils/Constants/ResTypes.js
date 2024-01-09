@@ -25,6 +25,7 @@ class ResTypes {
     product_added: { message: "product added succesfully" },
     product_deleted: { message: "product deleted succesfully" },
     product_already_deleted: { message: "product already deleted" },
+    product_updated: { message: "product updated succesfully" },
     review_added: { message: "review added succesfully" },
   };
 }

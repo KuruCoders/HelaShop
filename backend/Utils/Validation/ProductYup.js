@@ -25,6 +25,18 @@ class ProductYup{
     deleteProduct = yup.object({
         pid: yup.string().required(),
     })
+    updateProduct = yup.object({
+        pid: yup.string().required(),
+        name: yup.string().required(),
+        imgUrl: yup.string().required(),
+        description: yup.string().required(),
+        price: yup.number().required(),
+        discount: yup.number().required(),
+        stock: yup.string().required(),
+        category: yup.string().required(),
+        color: yup.string().required(),
+        pieces: yup.number().required(),
+    })
 }
 
 export default ProductYup = new ProductYup()
