@@ -19,7 +19,7 @@ app.use(Express.json());
 import AuthRoute from './Routes/Auth/AuthRoute.js'
 import response from "./Utils/Constants/Response.js";
 import ProductRoute from './Routes/Product/ProductRoute.js'
-import AddressRoute from './Routes/Address/AddressRoute.js'
+import AddressRoute from './Routes/Profile/Address/AddressRoute.js'
 // routes definition starts here
 app.get("/", (req, res) => {
     return response(res,200,"Server Online")
@@ -32,5 +32,5 @@ app.use('/api/v1/user/address',AddressRoute)
 db();
 
 app.listen(PORT, () => {
-    console.log(`Server is listening on http://localhost:${PORT}`);
+    console.log(`Server is listening on ${PORT}`);
 })
