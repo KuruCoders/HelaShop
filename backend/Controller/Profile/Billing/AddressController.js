@@ -43,8 +43,27 @@ class AddressController{
             return response(res, 500, HttpStatus.getStatus(500), error)
         }
     }
-
     //edit address
+    updateAddress = async (req, res) => {
+        const { email, district, province, country, city, street, postalCode, zipCode } = req.body;
+        try {
+            const userExist = await User.findOne({ email })
+            if (!userExist) return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.no_user)
+
+            const userHaveAddress = await Address.findOne({ email })
+            if (!userHaveAddress) return response(res, 403, HttpStatus.getStatus(403), ResTypes.errors.no_address)
+
+            const result = await Address.updateOne(
+                { email },
+                {$set:{district, province, country, city, street, postalCode, zipCode}}
+            )
+            if (result.modifiedCount === 0) return response(res, 403, HttpStatus.getStatus(403), ResTypes.errors.failed_operation)
+            return response(res,201,HttpStatus.getStatus(201),ResTypes.successMessages.address_edited)
+        } catch (error) {
+            console.log(error)
+            return response(res, 500, HttpStatus.getStatus(500), error)
+        }
+    }
 
 }
 export default AddressController =new AddressController()

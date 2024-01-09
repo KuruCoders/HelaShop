@@ -18,7 +18,7 @@ class ResTypes {
     no_product: { message: "product not found" },
 
     address_failed: { message: "error adding address" },
-    no_address: { message: "no address" },
+    no_address: { message: "no address found" },
     address_exists: { message: "address exists" },
   };
   successMessages = {
@@ -39,6 +39,7 @@ class ResTypes {
 
     address_added: { message: "address added succesfully" },
     address_found: { message: "address fetched succesfully" },
+    address_edited: { message: "address edited succesfully" },
   };
 }
 
