@@ -55,8 +55,8 @@ const productSchema = new mongoose.Schema(
                 stars: {
                     type: Number,
                     required: true,
-                    min: [1, 'should be from 1 to 5'],
-                    max: [5, 'should be from 1 to 5'],
+                    min: [1, 'star must be at least 1'],
+                    max: [5, 'star must be at most 5'],
                 },
                 created_at: {
                     type: Date,
