@@ -12,6 +12,16 @@ class ProductYup{
         color: yup.string().required(),
         pieces: yup.number().required(),
     })
+    addReviews = yup.object({
+        _id: yup.string().required(),
+        review: yup.array(
+            yup.object({
+                email: yup.string().email().required(),
+                text: yup.string().required(),
+                stars:yup.number().required().min(1,'rating must be at least 1').max(5,'rating must be at most 5')
+            })
+        ).required()
+    })
 }
 
 export default ProductYup = new ProductYup()

@@ -12,6 +12,8 @@ class ResTypes {
     invalid_code: { message: "Invalid verification code" },
     failed_operation: { message: "failed operation" },
     product_failed: { message: "error adding product" },
+    missing_productId: { message: "Error fetching product_id" },
+    no_product: { message: "product not found" },
   };
   successMessages = {
     user_created: { message: "User created" },
@@ -21,6 +23,7 @@ class ResTypes {
     verify_password: { message: "Token Sent To Mail" },
     password_reseted: { message: "Password Reset Success" },
     product_added: { message: "product added succesfully" },
+    review_added: { message: "review added succesfully" },
   };
 }
 

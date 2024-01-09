@@ -7,5 +7,6 @@ import validateToken from "../../MiddleWare/Auth/ValidateToken.js";
 const router = Express.Router();
 
 router.post("/add-product", validateToken ,validateScehma(ProductYup.addProduct), ProductController.addProduct)
+router.post("/add-product-review", validateToken ,validateScehma(ProductYup.addReviews), ProductController.addReviews)
 
 export default router
