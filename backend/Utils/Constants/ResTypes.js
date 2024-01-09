@@ -20,6 +20,11 @@ class ResTypes {
     address_failed: { message: "error adding address" },
     no_address: { message: "no address found" },
     address_exists: { message: "address exists" },
+
+    no_staff: { message: "no staff found" },
+    staff_failed: { message: "error adding staff" },
+    staff_exists: { message: "staff member exists" },
+
   };
   successMessages = {
     success: { message: "fetching success" },
@@ -40,6 +45,11 @@ class ResTypes {
     address_added: { message: "address added succesfully" },
     address_found: { message: "address fetched succesfully" },
     address_edited: { message: "address edited succesfully" },
+
+    staff_added: { message: "staff added succesfully" },
+    staff_found: { message: "staff fetched succesfully" },
+    staff_edited: { message: "staff edited succesfully" },
+    staff_deleted: { message: "staff deleted succesfully" },
   };
 }
 
