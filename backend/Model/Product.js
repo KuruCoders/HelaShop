@@ -5,7 +5,7 @@ const stockType = ['in stock', 'out of stock']
 
 const productSchema = new mongoose.Schema(
     {
-        _id: {
+        pid: {
             type: String,
             default: uuidv4,
             unique:true
