@@ -306,3 +306,8 @@
 2024.01.09	09:36:51	f5cf68b2-94ee-4084-92bb-211f13eb8ffb	POST	::1	undefined	/get-product	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:349ms
 2024.01.09	09:37:10	634bc7ad-3c0b-42f6-9d2f-f0c60b42716e	POST	::1	undefined	/get-product	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:381ms
 2024.01.09	09:38:34	de02b8fb-4330-437e-83b4-d4c20f5af52d	GET	::1	undefined	/	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:1ms
+2024.01.09	11:13:16	1dbdcf27-9723-4308-a39f-856a1628c8ba	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:2127ms
+2024.01.09	11:14:04	ba06db9c-2756-44a4-9c28-92180c5bf1c9	POST	::1	undefined	/add-address	Status:500	User-Agent:PostmanRuntime/7.36.0	Duration:179ms
+2024.01.09	11:14:31	71a7c134-1c84-426e-86bc-1e50f4f4d8e2	POST	::1	undefined	/add-address	Status:201	User-Agent:PostmanRuntime/7.36.0	Duration:355ms
+2024.01.09	11:15:40	722c1cee-24ee-48f1-a6f8-219372bdb1fe	POST	::1	undefined	/add-address	Status:404	User-Agent:PostmanRuntime/7.36.0	Duration:331ms
+2024.01.09	11:16:00	d7b1ed8e-0664-4c85-889f-165c7e5aab88	POST	::1	undefined	/add-address	Status:201	User-Agent:PostmanRuntime/7.36.0	Duration:487ms

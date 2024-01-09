@@ -18,12 +18,14 @@ app.use(logger);
 import AuthRoute from './Routes/Auth/AuthRoute.js'
 import response from "./Utils/Constants/Response.js";
 import ProductRoute from './Routes/Product/ProductRoute.js'
+import AddressRoute from './Routes/Address/AddressRoute.js'
 // routes definition starts here
 app.get("/", (req, res) => {
     return response(res,200,"Server Online")
 })
 app.use('/api/v1/auth', AuthRoute)
 app.use('/api/v1/product',ProductRoute)
+app.use('/api/v1/user/address',AddressRoute)
 
 //db connction
 db();
