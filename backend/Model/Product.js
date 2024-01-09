@@ -1,9 +1,15 @@
 import mongoose from "mongoose";
+import { v4 as uuidv4 } from 'uuid';
 
 const stockType = ['in stock', 'out of stock']
 
 const productSchema = new mongoose.Schema(
     {
+        _id: {
+            type: String,
+            default: uuidv4,
+            unique:true
+        },
         name: {
             type: String,
             required: true

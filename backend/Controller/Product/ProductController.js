@@ -16,6 +16,7 @@ class ProductController {
                 return response(res, 403, HttpStatus.getStatus(403), ResTypes.errors.product_failed)
             }
         } catch (error) {
+            console.log(error)
             return response(res, 500, HttpStatus.getStatus(500), error)
         }
     }
@@ -23,8 +24,7 @@ class ProductController {
     addReviews = async(req, res) => {
         const {review,_id} = req.body;
         try {
-            if (!_id) return response(res, 403, HttpStatus.getStatus(403), ResTypes.errors.missing_productId)
-            const productExist = await Product.findOne({ _id })
+            const productExist = await Product.findOne({_id})
             if (!productExist) return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.no_product)
             
             const result = await Product.updateOne(
@@ -32,7 +32,6 @@ class ProductController {
                 {$push:{review:review}}
             )
             if (result.modifiedCount === 0) return response(res, 403, HttpStatus.getStatus(403), ResTypes.errors.failed_operation)
-            
             return response(res,201,HttpStatus.getStatus(201),ResTypes.successMessages.review_added)
         } catch (error) {
             return response(res, 500, HttpStatus.getStatus(500), error)
