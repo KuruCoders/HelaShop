@@ -6,7 +6,7 @@ import User from "../../Model/User.js";
 
 class AddressController{
 
-
+    //get address
 
     //add Address
     addAddress = async (req,res)=> {
@@ -27,6 +27,8 @@ class AddressController{
             return response(res, 500, HttpStatus.getStatus(500), error)
         }
     }
+
+    //edit address
 
 }
 export default AddressController =new AddressController()
