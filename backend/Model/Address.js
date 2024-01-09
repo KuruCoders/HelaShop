@@ -12,12 +12,14 @@ const addressSchema = new mongoose.Schema(
         district: {
             type: String,
             enum: sriLankanDistricts,
-            required: true
+            required: true,
+            lowercase: true,
         },
         province: {
             type: String,
             enum: sriLankanProvinces,
-            required: true
+            required: true,
+            lowercase: true,
         },
         country: {
             type: String,
