@@ -297,3 +297,12 @@
 2024.01.09	09:23:05	7222c01a-e3fa-4882-826e-e0399cd9cf35	POST	::1	undefined	/update-product	Status:400	User-Agent:PostmanRuntime/7.36.0	Duration:226ms
 2024.01.09	09:23:10	e28e7747-1f66-4b7f-a819-40b18e3986b7	POST	::1	undefined	/update-product	Status:404	User-Agent:PostmanRuntime/7.36.0	Duration:351ms
 2024.01.09	09:23:31	e859e8fe-5dc2-4262-a930-5c5b49aade51	POST	::1	undefined	/update-product	Status:201	User-Agent:PostmanRuntime/7.36.0	Duration:482ms
+2024.01.09	09:33:13	4a71f361-e441-43d4-8836-b7801d45fbdf	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:283ms
+2024.01.09	09:33:30	85f77f69-9376-4f2a-b5c2-2c9b82271590	GET	::1	undefined	/api/v1/product/get-product	Status:404	User-Agent:PostmanRuntime/7.36.0	Duration:3ms
+2024.01.09	09:33:50	4240b2f8-5d65-4779-84d2-009353c8800e	POST	::1	undefined	/get-product	Status:500	User-Agent:PostmanRuntime/7.36.0	Duration:333ms
+2024.01.09	09:34:11	d6d05d9b-ce72-4b92-a4ca-d3442de11c0c	POST	::1	undefined	/get-product	Status:500	User-Agent:PostmanRuntime/7.36.0	Duration:398ms
+2024.01.09	09:34:32	53034524-8aba-4658-8924-6740536ff489	POST	::1	undefined	/get-product	Status:404	User-Agent:PostmanRuntime/7.36.0	Duration:415ms
+2024.01.09	09:35:16	81abc5c0-47bf-4406-a35f-ac1335c7bfb3	POST	::1	undefined	/get-product	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:383ms
+2024.01.09	09:36:51	f5cf68b2-94ee-4084-92bb-211f13eb8ffb	POST	::1	undefined	/get-product	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:349ms
+2024.01.09	09:37:10	634bc7ad-3c0b-42f6-9d2f-f0c60b42716e	POST	::1	undefined	/get-product	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:381ms
+2024.01.09	09:38:34	de02b8fb-4330-437e-83b4-d4c20f5af52d	GET	::1	undefined	/	Status:200	User-Agent:PostmanRuntime/7.36.0	Duration:1ms

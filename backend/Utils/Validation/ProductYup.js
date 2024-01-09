@@ -1,6 +1,9 @@
 import yup from 'yup'
 
 class ProductYup{
+    getProduct = yup.object({
+        pid: yup.string().required(),
+    })
     addProduct = yup.object({
         name: yup.string().required(),
         imgUrl: yup.string().required(),
