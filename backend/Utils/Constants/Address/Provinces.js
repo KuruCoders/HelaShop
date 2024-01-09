@@ -1,12 +1,12 @@
 const sriLankanProvinces = [
-    'Western Province',
-    'Central Province',
-    'Eastern Province',
-    'North Central Province',
-    'Northern Province',
-    'North Western Province',
-    'Sabaragamuwa Province',
-    'Southern Province',
-    'Uva Province'
+    'western',
+    'central',
+    'eastern',
+    'north_central',
+    'northern',
+    'north_western',
+    'sabaragamuwa',
+    'southern',
+    'uva'
 ];
   export default sriLankanProvinces

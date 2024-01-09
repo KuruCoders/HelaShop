@@ -10,7 +10,7 @@ class AddressController{
 
     //add Address
     addAddress = async (req,res)=> {
-        const { email, district, province, country, city, street, postalCode, zipCode } = req.body;
+        const { email, district , province, country, city, street, postalCode, zipCode } = req.body;
         try {
             const userExist = await User.findOne({ email })
             if(!userExist) return response(res,404,HttpStatus.getStatus(404),ResTypes.errors.no_user)
