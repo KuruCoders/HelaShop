@@ -77,15 +77,15 @@ export default function Sidebar() {
                             </NavLink>
                         </li>
                         <li className="sidebar-item">
-                            <NavLink onClick={() => {
+                            <button type='button' onClick={() => {
                                 Authenticate.logoutUser();
                                 navigate('/')
-                            }} className="sidebar-link"  aria-expanded="false">
+                            }} className="sidebar-link bg-transparent border-0"  aria-expanded="false">
                                 <span>
                                     <i className="ti ti-login" />
                                 </span>
                                 <span className="hide-menu">Logout</span>
-                            </NavLink>
+                            </button>
                         </li>
                     </ul>
                 </nav>
