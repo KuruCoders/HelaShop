@@ -1,9 +1,13 @@
 import React from 'react'
 import Header from '../../Components/Header/Header'
 import Sidebar from '../../Components/SideBar/Sidebar'
-import {Outlet} from 'react-router-dom'
+import {Outlet,Navigate} from 'react-router-dom'
+import Authenticate from '../../Store/Authenticate'
 
 export default function Main() {
+  if (!Authenticate.isAuthenticated()) {
+    return <Navigate to={"/"} />
+  }
   return (
       <>
           <Header />
