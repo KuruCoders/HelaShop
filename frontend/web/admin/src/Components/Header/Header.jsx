@@ -1,7 +1,9 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import propic from '../../logos/user-1.jpg'
+import Authenticate from '../../Store/Authenticate';
 export default function Header() {
+    const navigate = useNavigate()
     return (
         <header className="app-header w-100 shadow-sm">
             <nav className="navbar navbar-expand-lg navbar-light mw-100 ">
@@ -31,7 +33,10 @@ export default function Header() {
                                         <p className="mb-0 fs-3">My Profile</p>
                                     </NavLink>
                                     <div className="w-100">
-                                        <button className="btn btn-outline-primary w-75 mx-auto mt-2 d-block">Logout</button>
+                                        <button type='button' onClick={() => {
+                                            Authenticate.logoutUser();
+                                            navigate('/')
+                                        }} className="btn btn-outline-primary w-75 mx-auto mt-2 d-block">Logout</button>
                                     </div>
                                 </div>
                             </div>

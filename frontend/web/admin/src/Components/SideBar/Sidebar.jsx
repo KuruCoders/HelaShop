@@ -1,8 +1,10 @@
 import React from 'react'
 import logo from '../../logos/logoAll.svg'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import Authenticate from '../../Store/Authenticate'
 
 export default function Sidebar() {
+    const navigate = useNavigate()
     return (
         <aside className="left-sidebar shadow-sm">
             {/* Sidebar scroll*/}
@@ -75,12 +77,15 @@ export default function Sidebar() {
                             </NavLink>
                         </li>
                         <li className="sidebar-item">
-                            <a className="sidebar-link"  aria-expanded="false">
+                            <NavLink onClick={() => {
+                                Authenticate.logoutUser();
+                                navigate('/')
+                            }} className="sidebar-link"  aria-expanded="false">
                                 <span>
                                     <i className="ti ti-login" />
                                 </span>
                                 <span className="hide-menu">Logout</span>
-                            </a>
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>
