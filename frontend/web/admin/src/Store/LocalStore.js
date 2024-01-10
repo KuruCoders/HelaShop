@@ -1,12 +1,12 @@
 class LocalStore{
     storeToken(data) {
-        localStorage.setItem("token", data);
+        localStorage.setItem("helaToken", data);
     }
     getToken() {
-        return localStorage.getItem("token");
+        return localStorage.getItem("helaToken");
     }
     removeToken() {
-        localStorage.removeItem("token")
+        localStorage.removeItem("helaToken")
     }
 }
 export default LocalStore = new LocalStore()

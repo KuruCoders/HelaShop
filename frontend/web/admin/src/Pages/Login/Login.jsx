@@ -1,8 +1,59 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../../logos/logoAll.svg'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate,Navigate } from 'react-router-dom'
+import LoginValidation from '../../Validation/Authentication/LoginValidation'
+import Toaster from '../../Utils/Constants/Toaster'
+import AuthService from '../../Services/Auth/AuthService'
+import LocalStore from '../../Store/LocalStore'
+import { ToastContainer } from 'react-toastify'
+import Authenticate from '../../Store/Authenticate'
 
 export default function Login() {
+    const navigate = useNavigate()
+    const errorsInit = {
+        email: { required: false, message: null },
+        password: { required: false, message: null }
+    }
+    const initStateValues = {
+        email: "",
+        password: ""
+    };
+    const [loading, setLoading] = useState(false)
+    const [values, setValues] = useState(initStateValues)
+    const [errors, setErrors] = useState(errorsInit)
+
+    const handleInputs = (e) => {
+        const changeObj = { ...values, [e.target.name]: e.target.value }
+        setValues(changeObj)
+        setErrors(LoginValidation.validateLogin(values))
+    }
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const captureError = LoginValidation.validateLogin(values)
+        setErrors(captureError)
+        if (JSON.stringify(captureError) === JSON.stringify(errorsInit)) {
+            setLoading(true)
+            Toaster.loadingToast("Validating Credentials ......")
+            try {
+                const response = await AuthService.authLogin(values)
+                LocalStore.storeToken(response.data.data.token)
+                if (response.data.code === 200) {
+                    navigate('/main/dashboard') 
+                }
+            } catch (error) {
+                if (error.response.data.code === 404) {
+                    Toaster.updateLoadingToast('error', error.response.data.data.message)
+                } else if (error.response.data.code === 403) {
+                    Toaster.updateLoadingToast('error', error.response.data.data.message)
+                }
+            } finally {
+                setLoading(false)
+            }
+        }
+    }
+    if (Authenticate.isAuthenticated()) {
+        return <Navigate to={"/main/dashboard"} />
+    }
     return (
         <div className="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
             <div className="d-flex align-items-center justify-content-center w-100">
@@ -14,20 +65,41 @@ export default function Login() {
                                     <img src={logo} width={180} alt="loogo" />
                                 </NavLink>
                                 <p className="text-center">Admin Login</p>
-                                <form>
+                                <form className='needs-validation' noValidate onSubmit={handleSubmit}>
                                     <div className="mb-3">
                                         <label htmlFor="exampleInputEmail1" className="form-label">Username</label>
-                                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                        <input
+                                            onChange={handleInputs}
+                                            value={values.email}
+                                            type="email"
+                                            name='email'
+                                            className={`form-control ${errors.email.required ? 'is-invalid' : ''}`}
+                                            id="exampleInputEmail1"
+                                            aria-describedby="emailHelp"
+                                            required />
+                                        <div className="invalid-feedback">
+                                            {errors.email.message}
+                                        </div>
                                     </div>
                                     <div className="mb-0">
                                         <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                                        <input type="password" className="form-control" id="exampleInputPassword1" />
+                                        <input
+                                            onChange={handleInputs}
+                                            value={values.password}
+                                            name='password'
+                                            type="password"
+                                            className={`form-control ${errors.password.required ? 'is-invalid' : ''}`}
+                                            id="exampleInputPassword1"
+                                            required />
+                                        <div className="invalid-feedback">
+                                            {errors.password.message}
+                                        </div>
                                     </div>
                                     <div className="d-flex align-items-center justify-content-end mb-4">
-                                        
-                                    <NavLink className="text-primary fw-bold" >Forgot Password ?</NavLink>
+
+                                        <NavLink className="text-primary fw-bold" >Forgot Password ?</NavLink>
                                     </div>
-                                    <button type='button' className="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</button>
+                                    <button type='submit' disabled={loading} className="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</button>
                                     <div className="d-flex align-items-center justify-content-center">
                                         <p className="fs-4 mb-0 fw-bold">Admin SignUp</p>
                                         <NavLink to={'/register'} className="text-primary fw-bold ms-2">Create an account</NavLink>
@@ -38,6 +110,7 @@ export default function Login() {
                     </div>
                 </div>
             </div>
+            <ToastContainer/>
         </div>
 
     )
