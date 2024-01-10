@@ -25,7 +25,7 @@ export default function Login() {
                                     </div>
                                     <div className="d-flex align-items-center justify-content-end mb-4">
                                         
-                                        <a className="text-primary fw-bold" href="./index.html">Forgot Password ?</a>
+                                    <NavLink className="text-primary fw-bold" >Forgot Password ?</NavLink>
                                     </div>
                                     <button type='button' className="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</button>
                                     <div className="d-flex align-items-center justify-content-center">

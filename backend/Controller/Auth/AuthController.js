@@ -33,7 +33,7 @@ class AuthController {
                 await user.save()
             }, res)
         } catch (error) {
-            return response(res, 500, HttpStatus.getStatus(500), { message: error })
+            return response(res, 500, HttpStatus.getStatus(500),error)
         }
     }
     //email verify endpoint
