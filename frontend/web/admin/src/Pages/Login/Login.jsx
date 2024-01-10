@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import logo from '../../logos/logoAll.svg'
-import { NavLink, useNavigate,Navigate } from 'react-router-dom'
+import { NavLink, useNavigate, Navigate } from 'react-router-dom'
 import LoginValidation from '../../Validation/Authentication/LoginValidation'
 import Toaster from '../../Utils/Constants/Toaster'
 import AuthService from '../../Services/Auth/AuthService'
 import LocalStore from '../../Store/LocalStore'
 import { ToastContainer } from 'react-toastify'
 import Authenticate from '../../Store/Authenticate'
+import CusSwal from '../../Utils/CustomSwal/CusSwal'
 
 export default function Login() {
     const navigate = useNavigate()
@@ -38,7 +39,7 @@ export default function Login() {
                 const response = await AuthService.authLogin(values)
                 LocalStore.storeToken(response.data.data.token)
                 if (response.data.code === 200) {
-                    navigate('/main/dashboard') 
+                    navigate('/main/dashboard')
                 }
             } catch (error) {
                 if (error.response.data.code === 404) {
@@ -51,6 +52,13 @@ export default function Login() {
             }
         }
     }
+
+    const makeSwal = () => {
+        CusSwal.customMessageConfirmation("Ooops","Still Under Development 😥📌",() => {
+           //do anything
+        })
+    }
+
     if (Authenticate.isAuthenticated()) {
         return <Navigate to={"/main/dashboard"} />
     }
@@ -97,7 +105,7 @@ export default function Login() {
                                     </div>
                                     <div className="d-flex align-items-center justify-content-end mb-4">
 
-                                        <NavLink className="text-primary fw-bold" >Forgot Password ?</NavLink>
+                                        <NavLink onClick={makeSwal} className="text-primary fw-bold" >Forgot Password ?</NavLink>
                                     </div>
                                     <button type='submit' disabled={loading} className="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</button>
                                     <div className="d-flex align-items-center justify-content-center">
@@ -110,7 +118,7 @@ export default function Login() {
                     </div>
                 </div>
             </div>
-            <ToastContainer/>
+            <ToastContainer />
         </div>
 
     )
