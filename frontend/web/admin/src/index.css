@@ -1,0 +1,75 @@
+body.swal2-shown > [aria-hidden="true"] {
+  transition: 0.5s filter;
+  filter: blur(4px);
+}
+.swal2-deny {
+  color: white ;
+  border-radius: 8px !important;
+  background-color: #DC3545;
+  /* box-shadow: 0 4px 14px 0 #dc3545 !important; */
+}
+.swal2-cancel {
+  /* background-color: #f8d7da !important; */
+  background-color: #4F73D9 ;
+  color: white !important;
+  border-radius: 8px !important;
+}
+.swal2-confirm {
+  background-color: #10b065 !;
+  /* box-shadow: 0 4px 4px 0 #16B55A !important; */
+  border-radius: 8px !important;
+}
+.swal2-popup {
+  border-radius: 10px !important;
+  padding: 15px;
+}
+.swal2-title {
+  padding: 0;
+  font-size: large;
+  font-weight: 800;
+  margin-top: 5px;
+  color: black;
+  margin-left: 3% !important;
+  margin-right: 3% !important;
+  text-align: start;
+}
+.swal2-html-container {
+  text-align: justify !important;
+  margin-left: 3% !important;
+  margin-right: 3% !important;
+  font-weight: 400 !important;
+  font-size: medium !important;
+  margin-bottom: 16px !important;
+  color: black !important;
+}
+.swal2-actions {
+  width: 100% !important;
+  justify-content: end !important;
+  margin-top: 0%;
+}
+.swal2-show {
+  animation: myCustomOpenAnimation 0.3s !important;
+}
+.swal2-hide {
+  animation: myCustomCloseAnimation 0.2s !important;
+}
+@keyframes myCustomOpenAnimation {
+    0% {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+@keyframes myCustomCloseAnimation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+}
