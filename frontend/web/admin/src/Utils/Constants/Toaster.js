@@ -3,7 +3,6 @@ import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
 class Toaster {
-
     loadingToast = (message) => {
         this.loaderToastId = toast.loading(message,
             {

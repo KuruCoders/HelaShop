@@ -3,7 +3,6 @@ const password_regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()-_])[a-zA
 const name_regex = /^[A-Za-z\\s'-]+$/;
 
 class RegisterValidation {
-
     validateRegister(input) {
         const errors = {
             email: { required: false, message: null },
