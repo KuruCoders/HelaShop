@@ -2,6 +2,9 @@ import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import propic from '../../logos/user-1.jpg'
 import Authenticate from '../../Store/Authenticate';
+import Toaster from '../../Utils/Constants/Toaster';
+import { ToastContainer } from 'react-toastify'
+
 export default function Header() {
     const navigate = useNavigate()
     return (
@@ -34,8 +37,10 @@ export default function Header() {
                                     </NavLink>
                                     <div className="w-100">
                                         <button type='button' onClick={() => {
-                                            Authenticate.logoutUser();
-                                            navigate('/')
+                                            Toaster.justToast('info', "   Logging You Out ......", () => {
+                                                Authenticate.logoutUser();
+                                                navigate('/')
+                                            })
                                         }} className="btn btn-outline-primary w-75 mx-auto mt-2 d-block">Logout</button>
                                     </div>
                                 </div>
@@ -44,6 +49,7 @@ export default function Header() {
                     </ul>
                 </div>
             </nav>
+            <ToastContainer />
         </header>
 
     )
