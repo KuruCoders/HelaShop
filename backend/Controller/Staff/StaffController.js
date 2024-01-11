@@ -18,12 +18,12 @@ class StaffController{
     }
     //createStaff
     addStaff = async (req, res) => {
-        const { email, name, role, age, gender, salary } = req.body
+        const { email, name, role, age, gender, salary,telephone } = req.body
         try {
             const staffExist = await Staff.findOne({ email })
             if (staffExist) return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.staff_exists)
 
-            const staff = new Staff({ email, name, role, age, gender, salary })
+            const staff = new Staff({ email, name, role, age, gender, salary,telephone })
             const result = await staff.save()
             if (result) {
                 return response(res, 201, HttpStatus.getStatus(201), {...ResTypes.successMessages.staff_added,staff })
@@ -37,14 +37,14 @@ class StaffController{
     }
     //updateStuff
     updateStaff = async (req, res) => {
-        const { email, name, role, age, gender, salary } = req.body
+        const { email, name, role, age, gender, salary,telephone } = req.body
         try {
             const staffExist = await Staff.findOne({ email })
             if (!staffExist) return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.no_staff)
             
             const result = await Staff.updateOne(
                 { email },
-                { $set: { name, role, age, gender, salary }}
+                { $set: { name, role, age, gender, salary,telephone }}
             )
             if (result.modifiedCount === 0) return response(res, 403, HttpStatus.getStatus(403), ResTypes.errors.staff_failed)
             return response(res,200,HttpStatus.getStatus(200),ResTypes.successMessages.staff_edited)
