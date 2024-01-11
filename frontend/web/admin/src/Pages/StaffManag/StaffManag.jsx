@@ -1,8 +1,9 @@
 import React from 'react'
+import AddStaffModal from './AddStaffModal'
 
 export default function StaffManag() {
-  return (
-    <div className="body-wrapper">
+    return (
+        <div className="body-wrapper">
             <div className="container-fluid">
                 {/*  Row 1 */}
                 <div className="row">
@@ -11,8 +12,9 @@ export default function StaffManag() {
                             <div className="card-body p-4">
                                 <div className='d-flex justify-content-end align-items-center mb-4'>
                                     <button className='btn btn-outline-dark mx-2'>Export</button>
-                                    <button className='btn btn-success'>Add New</button>
+                                    <button className='btn btn-success' data-bs-toggle="modal" data-bs-target="#addStaffModal">Add New</button>
                                 </div>
+                                <AddStaffModal />
                                 <div className="d-flex justify-content-between align-items-center mb-2">
                                     <h5 className="card-title fw-semibold">List Of Staffs</h5>
                                     <form className="position-relative">
@@ -46,7 +48,7 @@ export default function StaffManag() {
                                                 <td className="border-bottom-0" ><h6 className="fw-semibold mb-0">2</h6></td>
                                                 <td className="border-bottom-0" >
                                                     <h6 className="fw-semibold mb-1">Andrew McDownland</h6>
-                                                    
+
                                                 </td>
                                                 <td className="border-bottom-0" >
                                                     <p className="mb-0 fw-normal">Real Homes WP Theme</p>
@@ -59,7 +61,7 @@ export default function StaffManag() {
                                                 <td className="border-bottom-0" >
                                                     <h6 className="fw-semibold mb-0 fs-4">$24.5k</h6>
                                                 </td>
-                                                <td  className="border-bottom-0 d-flex flex-column  d-md-flex flex-md-row justify-content-evenly align-items-center">
+                                                <td className="border-bottom-0 d-flex flex-column  d-md-flex flex-md-row justify-content-evenly align-items-center">
                                                     <button className='btn btn-warning'>Edit</button>
                                                     <button className='btn btn-danger'>Delete</button>
                                                 </td>
@@ -73,5 +75,5 @@ export default function StaffManag() {
                 </div>
             </div>
         </div>
-  )
+    )
 }
