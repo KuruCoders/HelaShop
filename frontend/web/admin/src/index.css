@@ -3,14 +3,14 @@ body.swal2-shown > [aria-hidden="true"] {
   filter: blur(4px);
 }
 .swal2-deny {
-  color: white ;
+  color: white;
   border-radius: 8px !important;
-  background-color: #DC3545;
+  background-color: #dc3545;
   /* box-shadow: 0 4px 14px 0 #dc3545 !important; */
 }
 .swal2-cancel {
   /* background-color: #f8d7da !important; */
-  background-color: #4F73D9 ;
+  background-color: #4f73d9;
   color: white !important;
   border-radius: 8px !important;
 }
@@ -54,22 +54,63 @@ body.swal2-shown > [aria-hidden="true"] {
   animation: myCustomCloseAnimation 0.2s !important;
 }
 @keyframes myCustomOpenAnimation {
-    0% {
-      transform: scale(0.9);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
   }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 @keyframes myCustomCloseAnimation {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(0.9);
-        opacity: 0;
-      }
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
+/* ============= for the bootstrap model ================ */
+.modal-backdrop{
+  background-color: rgb(90, 90, 90);
+}
+.modal.fade.show {
+  backdrop-filter: blur(4px);
+  /* background-color: rgba(255, 255, 255, 0.5); */
+}
+
+.modal-header {
+  padding-bottom: 8px;
+}
+.modal-title {
+  font-weight: 900 !important;
+}
+.modal-body {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: black;
+}
+.modal-body p {
+  margin-bottom: 0px;
+}
+.modal-footer .btn-cancelBtn {
+  background-color: #f8d7da !important;
+  color: #dc3545;
+  border-radius: 8px !important;
+}
+.modal-footer .btn-okBtn {
+  background-color: #10b065 !important ;
+  color: white;
+  border-radius: 8px !important;
+}
+.modal .modal-body form input,
+.modal .modal-body form select{
+  background-color: #ededed;
+}
+.modal .modal-body form label{
+  margin-bottom: 2px;
 }
