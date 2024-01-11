@@ -18,22 +18,29 @@ const staffSchema = new mongoose.Schema(
             enum: staffRole,
             required: true,
             default: 'sales',
-            lowercase:true
+            lowercase:true,
         },
         age: {
             type: Number,
             min: [18, 'should be a adult'],
+            required:true,
         },
         gender: {
             type: String,
             lowercase:true,
             required: true,
-            enum:gender
+            enum: gender
         },
         salary: {
             type: Number,
             default: 20000,
-            min:[0,'salary is greater than 0']
+            min: [0, 'salary is greater than 0'],
+            required:true,
+        },
+        telephone: {
+            type: Number,
+            max:[10,'should be 10 digit'],
+            required: true
         }
     },
     {
