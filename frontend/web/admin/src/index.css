@@ -97,12 +97,12 @@ body.swal2-shown > [aria-hidden="true"] {
 .modal-body p {
   margin-bottom: 0px;
 }
-.modal-footer .btn-cancelBtn {
+.btn-cancelBtn {
   background-color: #f8d7da !important;
   color: #dc3545;
   border-radius: 8px !important;
 }
-.modal-footer .btn-okBtn {
+.btn-okBtn {
   background-color: #10b065 !important ;
   color: white;
   border-radius: 8px !important;
