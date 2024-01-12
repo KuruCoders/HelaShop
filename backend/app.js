@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3500
 app.use(cors(corsConfig));
 app.use(Express.json());
 //below consist some issues when runing in deployement env
-// app.use(logger);
+app.use(logger);
 
 // import routes
 import AuthRoute from './Routes/Auth/AuthRoute.js'

@@ -33,9 +33,9 @@ class Toaster {
     //for just toast
     justToast = (type, message, afterToast) => {
         toast(message, {
-            position: "top-right",
+            position: "bottom-right",
             type: type,
-            autoClose: 2000,
+            autoClose: 1300,
             hideProgressBar: false,
             closeOnClick: false,
             pauseOnHover: false,

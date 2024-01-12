@@ -57,7 +57,7 @@ export default function Register() {
         }
     }
     if (Authenticate.isAuthenticated()) {
-        return <Navigate to={"/main/dashboard"} />
+        return <Navigate to={"/main/dashboard"} replace={ true} />
     }
     return (
         <>

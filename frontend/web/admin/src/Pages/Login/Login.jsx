@@ -65,7 +65,7 @@ export default function Login() {
     }
     return (
         <>
-           
+
             <div className="position-relative overflow-hidden bg-white min-vh-100 d-flex align-items-center justify-content-center">
                 <div className="d-flex align-items-center justify-content-center w-100">
                     <div className="row justify-content-center w-100">
@@ -123,7 +123,7 @@ export default function Login() {
                 </div>
                 <ToastContainer />
             </div>
-            <img src={logoBlack} width={70} style={{right:10,bottom:10}} className='position-absolute' alt="logo" />
+            <img src={logoBlack} width={70} style={{ right: 10, bottom: 10 }} className='position-absolute' alt="logo" />
         </>
 
 
