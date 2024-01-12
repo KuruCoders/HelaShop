@@ -1,5 +1,4 @@
 import React from 'react'
-import pic from '../../logos/user-1.jpg'
 import StaffItem from './StaffItem'
 
 export default function StaffTable() {

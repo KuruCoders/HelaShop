@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useFormik } from 'formik'
 import StaffYup from '../../Validation/Staff/StaffYup'
+import StaffService from '../../Services/Staff/StaffService'
+import { useNavigate } from 'react-router-dom'
+import LocalStore from '../../Store/LocalStore'
+import Toaster from '../../Utils/Constants/Toaster'
+import { ToastContainer } from 'react-toastify'
+
 export default function AddStaffModal() {
+    const closeModel = useRef();
+
     const initValues = {
         name: '',
         email: '',
@@ -11,11 +19,45 @@ export default function AddStaffModal() {
         role: '',
         gender: ''
     }
-    const { values, handleBlur, handleChange, handleSubmit, errors,touched } = useFormik({
+    const navigate = useNavigate();
+    const [loading, setLoading] = useState(false)
+    const { values, handleChange, handleSubmit, errors, touched } = useFormik({
         initialValues: initValues,
         validationSchema: StaffYup.addStaff,
-        onSubmit: (values) => {
-            console.log('success')
+        onSubmit: async (values) => {
+            setLoading(true)
+            //the form submission logic here
+            try {
+                const result = await StaffService.addStaff(values)
+                if (result.data.code === 201) {
+                    Toaster.justToast('success', result.data.data.message, () => {
+                        closeModel.current.click()
+                    })
+                }
+            } catch (error) {
+                
+                if (error.response.data.code === 404 || error.response.data.code === 403) {
+                    Toaster.justToast('error', error.response.data.data.message, () => {
+                        closeModel.current.click()
+                    })
+                }
+                if (error.response.data.code === 401) {
+                    Toaster.justToast('error', error.response.data.data.message, () => {
+                        LocalStore.removeToken()
+                        closeModel.current.click()
+                        navigate('/login' , {replace:true})
+                        // Force a full-page refresh
+                        window.location.reload(true);
+                    })
+                }
+                if (error.response.data.code === 500) {
+                    Toaster.justToast('error', error.response.data.data.message, () => {
+                        closeModel.current.click()
+                    })
+                }
+            } finally {
+                setLoading(false)
+            }
         }
     })
     return (
@@ -53,7 +95,7 @@ export default function AddStaffModal() {
                                             <input
                                                 type="text"
                                                 name='telephone'
-                                                className={`form-control ${(errors.telephone && touched.telephone)  ? 'is-invalid' : ''}`}
+                                                className={`form-control ${(errors.telephone && touched.telephone) ? 'is-invalid' : ''}`}
                                                 pattern="[0-9]*"
                                                 maxLength="9"
                                                 id="InputTel"
@@ -157,16 +199,26 @@ export default function AddStaffModal() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="d-flex justify-content-end mb-2">
-                                    <button type="button" className="btn btn-cancelBtn mx-2" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" className="btn btn-okBtn">Save changes</button>
-                                </div>
+                                {loading ? (
+                                    <div className='d-flex justify-content-center align-items-center my-3'>
+                                        <div className="spinner-border" role="status">
+                                            <span className="visually-hidden m-auto">Loading...</span>
+                                        </div>
+                                    </div>
+
+                                ) : (
+                                    <div className="d-flex justify-content-end mb-2">
+                                        <button type="button" ref={closeModel} className="btn btn-cancelBtn mx-2" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" className="btn btn-okBtn">Save changes</button>
+                                    </div>
+                                )}
+
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-
+            <ToastContainer />
         </>
     )
 }

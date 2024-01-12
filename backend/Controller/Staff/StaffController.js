@@ -21,7 +21,7 @@ class StaffController{
         const { email, name, role, age, gender, salary,telephone } = req.body
         try {
             const staffExist = await Staff.findOne({ email })
-            if (staffExist) return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.staff_exists)
+            if (staffExist) return response(res, 403, HttpStatus.getStatus(403), ResTypes.errors.staff_exists)
 
             const staff = new Staff({ email, name, role, age, gender, salary,telephone })
             const result = await staff.save()

@@ -39,7 +39,6 @@ const staffSchema = new mongoose.Schema(
         },
         telephone: {
             type: Number,
-            max:[10,'should be 10 digit'],
             required: true
         }
     },
