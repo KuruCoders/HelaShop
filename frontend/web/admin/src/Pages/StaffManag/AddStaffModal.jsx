@@ -31,8 +31,8 @@ export default function AddStaffModal({onModalSubmit}) {
             try {
                 const result = await StaffService.addStaff(values)
                 if (result.data.code === 201) {
+                    onModalSubmit()
                     Toaster.justToast('success', result.data.data.message, () => {
-                        onModalSubmit()
                     })
                 }
             } catch (error) {

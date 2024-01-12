@@ -1,6 +1,7 @@
 import React from 'react'
 import pic from '../../logos/user-1.jpg'
 import DateFormatter from '../../Utils/Constants/DateFormatter'
+import { NavLink } from 'react-router-dom'
 
 export default function StaffItem({ staffs }) {
     return (
@@ -34,8 +35,8 @@ export default function StaffItem({ staffs }) {
                                 <i className="ti ti-eye text-white" />
                             </div>
                             <ul className="dropdown-menu bg-white" style={{ minWidth: "auto" }}>
-                                <li><a className="dropdown-item" >Edit</a></li>
-                                <li><a className="dropdown-item" >Delete</a></li>
+                                <li><NavLink to={`/${staff.email}`} className="dropdown-item" >Edit</NavLink></li>
+                                <li><NavLink className="dropdown-item" >Delete</NavLink></li>
                             </ul>
                         </td>
                     </tr>

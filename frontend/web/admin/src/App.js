@@ -29,6 +29,7 @@ function App() {
             <Route path='user' element={<UserManag />} />
             <Route path='payment' element={<PaymentManag />} />
             <Route path='inventory' element={<InventoryManag />} />
+            {/* add a nested route for the staff so when view redirect to the view staffs*/}
             <Route path='staff' element={<StaffManag />} />
             <Route path='profile' element={<Profile />}>
               <Route index element={ <Act/> } />
