@@ -10,6 +10,21 @@ export default function EditStaff() {
                         <div className="col-lg-12 d-flex align-items-stretch">
                             <div className="card w-100 position-relative overflow-hidden">
                                 <div className="card-body p-4">
+                                    <div className="d-flex justify-content-between align-items-center">
+                                        <h5 className="card-title fw-bolder fs-6">Joined Date </h5>
+                                        <h5 className="card-title fw-bolder fs-6 text-danger">12th Feb 2023</h5>
+                                    </div>
+                                    <div className="text-center my-4">
+                                        <h1 className="mb-0 fw-bolder text-success">78</h1>
+                                        <h3 className="mb-0 fw-bolder">Days</h3>
+                                    </div>
+                                    <p className="mb-0 fw-bold text-center fs-4">Active Staff Member Since Above Date</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-12 d-flex align-items-stretch">
+                            <div className="card w-100 position-relative overflow-hidden">
+                                <div className="card-body p-4">
                                     <h5 className="card-title fw-semibold">Change Profile</h5>
                                     <p className="card-subtitle mb-2">Change your profile picture from here</p>
                                     <div className="text-center">
@@ -23,12 +38,14 @@ export default function EditStaff() {
                                 </div>
                             </div>
                         </div>
+
+
                     </div>
                     <div className="col-lg-7">
                         <div className="card w-100 position-relative overflow-hidden mb-3 mb-md-0">
                             <div className="card-body p-4">
                                 <h5 className="card-title fw-semibold">Personal Details</h5>
-                                <p className="card-subtitle mb-2">To change your personal detail , edit and save from here</p>
+                                <p className="card-subtitle mb-3">To change your personal detail , edit and save from here</p>
                                 <form className='needs-validation' noValidate>
                                     <div className="row mb-2">
                                         <div className="col-9 col-md-9">
@@ -151,6 +168,26 @@ export default function EditStaff() {
                                         <button type="submit" className="btn btn-warning">Edit Details</button>
                                     </div>
                                 </form>
+                            </div>
+                        </div>
+                        <div className="col-lg-12 d-flex align-items-stretch mt-0 mt-md-4">
+                            <div className="card w-100 position-relative overflow-hidden">
+                                <div className="card-body p-4">
+                                    <div className="d-flex justify-content-between align-items-center">
+                                        <h5 className="card-title fw-bolder fs-6 text-danger">DANGER AREA</h5>
+                                        <i className="ti ti-trash fs-6 text-danger" />
+                                        {/* <h5 className="card-title fw-bolder fs-6 text-danger"></h5> */}
+                                    </div>
+                                    <div className="row mt-2">
+                                        <div className="col-md-8 text-justify">
+                                            <h6 className="mb-0 text-danger">This action is irreversible, and the account, along with all associated data, will be permanently deleted. This process cannot be undone. Proceed with caution.</h6>
+                                        </div>
+                                        <div className="col-md-4 text-end mt-3 mb-0 my-auto">
+                                            <button className='btn btn-danger'>Delete Account</button>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
