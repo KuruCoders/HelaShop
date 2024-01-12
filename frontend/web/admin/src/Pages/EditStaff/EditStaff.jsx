@@ -164,7 +164,7 @@ export default function EditStaff() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="d-flex justify-content-end mb-2">
+                                    <div className="d-flex justify-content-end mb-0">
                                         <button type="submit" className="btn btn-warning">Edit Details</button>
                                     </div>
                                 </form>
