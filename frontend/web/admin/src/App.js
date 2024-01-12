@@ -14,6 +14,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Act from './Pages/MyProfile/Account/Act';
 import Bills from './Pages/MyProfile/Billing/Bills';
 import Notification from './Pages/MyProfile/Notification/Notification';
+import EditStaff from './Pages/EditStaff/EditStaff';
 
 function App() {
   return (
@@ -29,8 +30,9 @@ function App() {
             <Route path='user' element={<UserManag />} />
             <Route path='payment' element={<PaymentManag />} />
             <Route path='inventory' element={<InventoryManag />} />
-            {/* add a nested route for the staff so when view redirect to the view staffs*/}
             <Route path='staff' element={<StaffManag />} />
+            {/* below was nested bcz needed in the main page*/}
+            <Route path='staff/edit/:email' element={<EditStaff />} />
             <Route path='profile' element={<Profile />}>
               <Route index element={ <Act/> } />
               <Route path='account' element={ <Act/> } />

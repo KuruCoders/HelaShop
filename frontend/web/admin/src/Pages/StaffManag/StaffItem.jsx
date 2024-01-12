@@ -8,7 +8,7 @@ export default function StaffItem({ staffs }) {
         <>
             {
                 staffs.map((staff) => (
-                    <tr>
+                    <tr key={staff.email}>
                         <td className="border-bottom-0" >
                             <img src={pic} alt="prologo" width={30} height={30} className="rounded-circle" style={{ cursor: "pointer" }} />
                         </td>
