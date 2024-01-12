@@ -1,11 +1,11 @@
 import axios from "axios"
 import BaseService from "../Base/BaseService";
-import LocalStore from "../../Store/LocalStore";
 
 class StaffService{
     constructor(){
         BaseService.getBaseURL()
         this.CREATE_STAFF = "staff/add-staff";
+        this.GET_STAFF = "staff/get-allStaff";
     }
     addStaff(input) {
         let data = {
@@ -19,6 +19,8 @@ class StaffService{
         }
         return axios.post(this.CREATE_STAFF, data, BaseService.getHeader())
     }
-
+    getAllStaff() {
+        return axios.get(this.GET_STAFF,BaseService.getHeader())
+    }
 }
 export default StaffService = new StaffService()

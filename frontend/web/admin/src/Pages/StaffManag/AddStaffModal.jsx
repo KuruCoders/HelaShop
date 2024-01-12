@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, {  useRef, useState } from 'react'
 import { useFormik } from 'formik'
 import StaffYup from '../../Validation/Staff/StaffYup'
 import StaffService from '../../Services/Staff/StaffService'
@@ -7,7 +7,7 @@ import LocalStore from '../../Store/LocalStore'
 import Toaster from '../../Utils/Constants/Toaster'
 import { ToastContainer } from 'react-toastify'
 
-export default function AddStaffModal() {
+export default function AddStaffModal({onModalSubmit}) {
     const closeModel = useRef();
 
     const initValues = {
@@ -20,43 +20,40 @@ export default function AddStaffModal() {
         gender: ''
     }
     const navigate = useNavigate();
-    const [loading, setLoading] = useState(false)
-    const { values, handleChange, handleSubmit, errors, touched } = useFormik({
+    const [loader, setLoader] = useState(false)
+    const { values, handleChange, handleSubmit, errors, touched,setValues } = useFormik({
         initialValues: initValues,
         validationSchema: StaffYup.addStaff,
         onSubmit: async (values) => {
-            setLoading(true)
+            
+            // setLoader(true)
             //the form submission logic here
             try {
                 const result = await StaffService.addStaff(values)
                 if (result.data.code === 201) {
                     Toaster.justToast('success', result.data.data.message, () => {
-                        closeModel.current.click()
+                        onModalSubmit()
                     })
                 }
             } catch (error) {
                 
                 if (error.response.data.code === 404 || error.response.data.code === 403) {
-                    Toaster.justToast('error', error.response.data.data.message, () => {
-                        closeModel.current.click()
-                    })
+                    Toaster.justToast('error', error.response.data.data.message, () => {})
                 }
                 if (error.response.data.code === 401) {
                     Toaster.justToast('error', error.response.data.data.message, () => {
                         LocalStore.removeToken()
-                        closeModel.current.click()
                         navigate('/login' , {replace:true})
                         // Force a full-page refresh
                         window.location.reload(true);
                     })
                 }
                 if (error.response.data.code === 500) {
-                    Toaster.justToast('error', error.response.data.data.message, () => {
-                        closeModel.current.click()
-                    })
+                    Toaster.justToast('error', error.response.data.data.message, () => {})
                 }
             } finally {
-                setLoading(false)
+                closeModel.current.click()
+                // setLoader(false)
             }
         }
     })
@@ -199,10 +196,10 @@ export default function AddStaffModal() {
                                         </div>
                                     </div>
                                 </div>
-                                {loading ? (
+                                {loader ? (
                                     <div className='d-flex justify-content-center align-items-center my-3'>
                                         <div className="spinner-border" role="status">
-                                            <span className="visually-hidden m-auto">Loading...</span>
+                                            <span className="visually-hidden m-auto">loader...</span>
                                         </div>
                                     </div>
 

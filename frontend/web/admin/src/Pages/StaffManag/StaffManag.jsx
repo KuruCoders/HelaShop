@@ -1,8 +1,47 @@
-import React, { useRef } from 'react'
+import React, { useState,useEffect } from 'react'
 import AddStaffModal from './AddStaffModal'
 import StaffTable from './StaffTable'
-
+import StaffService from '../../Services/Staff/StaffService';
+import Toaster from '../../Utils/Constants/Toaster';
+import { ToastContainer } from 'react-toastify';
+import LocalStore from '../../Store/LocalStore';
+import { useNavigate } from 'react-router-dom';
 export default function StaffManag() {
+    const navigate = useNavigate()
+    const [loading, setLoading] = useState(false);
+    const [staffs, setStaffs] = useState([]);
+    
+    useEffect(() => {
+        fetchData()
+    }, [])
+
+    const fetchData = async () => {
+        setLoading(true)
+        try {
+            const response = await StaffService.getAllStaff()
+            setStaffs(response.data.data.staffs)
+            // if (response.data.code === 200) {
+            //     Toaster.justToast('success', response.data.data.message, () => {})
+            // }
+        } catch (error) {
+            if (error.response.data.code === 404) {
+                Toaster.justToast('error', error.response.data.data.message, () => {})
+            }
+            if (error.response.data.code === 401) {
+                Toaster.justToast('error', error.response.data.data.message, () => {
+                    LocalStore.removeToken()
+                    navigate('/login' , {replace:true})
+                    // Force a full-page refresh
+                    window.location.reload(true);
+                })
+            }
+            if (error.response.data.code === 500) {
+                Toaster.justToast('error', error.response.data.data.message, () => {})
+            }
+        } finally {
+            setLoading(false)
+        }
+    }
     return (
         <div className="body-wrapper">
             <div className="container-fluid">
@@ -14,7 +53,7 @@ export default function StaffManag() {
                                     <button className='btn btn-outline-dark mx-2'>Export</button>
                                     <button className='btn btn-success' data-bs-toggle="modal" data-bs-target="#addStaffModal">Add New</button>
                                 </div>
-                                <AddStaffModal />
+                                <AddStaffModal onModalSubmit={fetchData}/>
                                 <div className="d-flex justify-content-between align-items-center mb-2">
                                     <h5 className="card-title fw-semibold">List Of Staffs</h5>
                                     <form className="position-relative">
@@ -23,13 +62,14 @@ export default function StaffManag() {
                                     </form>
                                 </div>
                                 <div className="table-responsive">
-                                    <StaffTable />
+                                    <StaffTable staffs={staffs} loading={ loading} />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        <ToastContainer/>
         </div>
     )
 }

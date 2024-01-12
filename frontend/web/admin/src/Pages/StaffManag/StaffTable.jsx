@@ -1,7 +1,8 @@
-import React from 'react'
+
 import StaffItem from './StaffItem'
 
-export default function StaffTable() {
+export default function StaffTable({ staffs, loading }) {
+    
     return (
         <table className="table mb-0 align-middle">
             <thead className="text-dark fs-4" >
@@ -24,15 +25,23 @@ export default function StaffTable() {
                     <th className="border-bottom-0" >
                         <h6 className="fw-semibold mb-0">Gender</h6>
                     </th>
+                    <th className="border-bottom-0" >
+                        <h6 className="fw-semibold mb-0">Added</h6>
+                    </th>
                 </tr>
             </thead>
             <tbody >
-                <StaffItem/>
-                <StaffItem/>
-                <StaffItem/>
-                <StaffItem/>
-                <StaffItem/>
-                <StaffItem/>
+                {
+                    loading ? (
+                        <div className='d-flex justify-content-center align-items-center my-3'>
+                            <div className="spinner-border" role="status">
+                                <span className="visually-hidden m-auto"></span>
+                            </div>
+                        </div>
+                    ) : (
+                        <StaffItem staffs={staffs} />
+                    )
+                }
             </tbody>
         </table>
     )

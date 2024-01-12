@@ -4,6 +4,17 @@ import ResTypes from "../../Utils/Constants/ResTypes.js";
 import Staff from "../../Model/Staff.js";
 
 class StaffController{
+    //getAllStaffs
+    getAllStaffs = async (req, res) => {
+        try {
+            const staffs = await Staff.find({})
+            if (!staffs) return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.no_staff)
+            return response(res,200,HttpStatus.getStatus(200),{...ResTypes.successMessages.data_retrieved,staffs})
+        } catch (error) {
+            console.log(error)
+            return response(res, 500, HttpStatus.getStatus(500), error)
+        }
+    }
     //getStaff
     getStaff = async (req, res) => {
         const { email } = req.body
