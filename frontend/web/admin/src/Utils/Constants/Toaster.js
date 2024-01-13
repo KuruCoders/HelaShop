@@ -17,6 +17,7 @@ class Toaster {
     updateLoadingToast = (type, message, afterToast) => {
         toast.update(this.loaderToastId, {
             render: message,
+            position: "bottom-right",
             type: type,
             isLoading: false,
             autoClose: 3000,
