@@ -17,7 +17,7 @@ class StaffYup{
         email:yup.string().email().required(),
         name:yup.string().required(),
         role:yup.string().oneOf(staffRole).required(),
-        age: yup.number().min(18, "should be a adult"),
+        age: yup.number().min(18, "should be a adult").required(),
         gender: yup.string().required(),
         salary:yup.number().min(0,'salary should be positive')
     })
