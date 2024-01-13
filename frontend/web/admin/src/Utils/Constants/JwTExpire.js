@@ -4,4 +4,5 @@ class JwTExpire{
     expired() {
         LocalStore.removeToken()
     }
+   
 }

@@ -35,7 +35,7 @@ export default function StaffItem({ staffs }) {
                                 <i className="ti ti-eye text-white" />
                             </div>
                             <ul className="dropdown-menu bg-white" style={{ minWidth: "auto" }}>
-                                <li><NavLink to={`/${staff.email}`} className="dropdown-item" >Edit</NavLink></li>
+                                <li><NavLink to={`edit/${staff.email}`} className="dropdown-item" >Edit</NavLink></li>
                                 <li><NavLink className="dropdown-item" >Delete</NavLink></li>
                             </ul>
                         </td>
