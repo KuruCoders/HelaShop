@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { useFormik } from 'formik'
 import StaffYup from '../../../Validation/Staff/StaffYup.js'
 import StaffService from '../../../Services/Staff/StaffService.js'
@@ -15,7 +15,7 @@ export default function StaffForm({ data, onFormSubmit }) {
         role: '',
         gender: '',
     }
-    const { values, handleChange, handleSubmit, errors, touched,setValues } = useFormik({
+    const { values, handleChange, handleSubmit, errors, touched, setValues } = useFormik({
         initialValues: initValues,
         validationSchema: StaffYup.addStaff,
         onSubmit: async (values) => {
@@ -29,7 +29,8 @@ export default function StaffForm({ data, onFormSubmit }) {
                     })
                 }
             } catch (error) {
-                ResponseHandler.handleResponse(error)
+                Toaster.updateLoadingToast('error', error.response.data.message, () => {})
+                // ResponseHandler.handleResponse(error)
             } finally {
                 Toaster.dismissLoadingToast()
             }
@@ -46,8 +47,8 @@ export default function StaffForm({ data, onFormSubmit }) {
                 role: data.role,
                 gender: data.gender
             })
-        }else setValues(initValues)
-    }, [data,setValues])
+        } else setValues(initValues)
+    }, [data, setValues])
     return (
         <div className="card w-100 position-relative overflow-hidden mb-3 mb-md-0">
             <div className="card-body p-4">
@@ -62,6 +63,7 @@ export default function StaffForm({ data, onFormSubmit }) {
                                 onChange={handleChange}
                                 type="email"
                                 name='email'
+                                disabled="true"
                                 className={`form-control ${(errors.email && touched.email) ? 'is-invalid' : ''}`}
                                 id="InputEmail"
                                 aria-describedby="emailHelp"
