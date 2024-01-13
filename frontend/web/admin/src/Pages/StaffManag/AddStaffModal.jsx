@@ -21,11 +21,10 @@ export default function AddStaffModal({onModalSubmit}) {
     }
     const navigate = useNavigate();
     const [loader, setLoader] = useState(false)
-    const { values, handleChange, handleSubmit, errors, touched,setValues } = useFormik({
+    const { values, handleChange, handleSubmit, errors, touched } = useFormik({
         initialValues: initValues,
         validationSchema: StaffYup.addStaff,
         onSubmit: async (values) => {
-            
             // setLoader(true)
             //the form submission logic here
             try {

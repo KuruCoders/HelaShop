@@ -7,6 +7,7 @@ import ResTypes from "../../Utils/Constants/ResTypes.js";
 
 const validateToken = (req,res,next) => {
     const authHeader = req.headers.authorization;
+    console.log(authHeader)
     if (!authHeader) {
         return response(res,401,HttpStatus.getStatus(401),ResTypes.errors.missing_token)
     }

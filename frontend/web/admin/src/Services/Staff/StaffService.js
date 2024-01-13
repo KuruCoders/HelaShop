@@ -6,6 +6,8 @@ class StaffService{
         BaseService.getBaseURL()
         this.CREATE_STAFF = "staff/add-staff";
         this.GET_STAFF = "staff/get-allStaff";
+        this.GET_STAFF_BY_ID = "staff/get-staff";
+        this.DELETE_STAFF = "staff/delete-staff";
     }
     addStaff(input) {
         let data = {
@@ -21,6 +23,12 @@ class StaffService{
     }
     getAllStaff() {
         return axios.get(this.GET_STAFF,BaseService.getHeader())
+    }
+    getStaffById(email) {
+        return axios.post(this.GET_STAFF_BY_ID,{email},BaseService.getHeader())
+    }
+    deleteStaff(email) {
+        return axios.delete(this.DELETE_STAFF,{...BaseService.getHeader(),data:{email}})
     }
 }
 export default StaffService = new StaffService()
