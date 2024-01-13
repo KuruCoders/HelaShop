@@ -3,7 +3,7 @@ import pic from '../../logos/user-1.jpg'
 import DateFormatter from '../../Utils/Constants/DateFormatter'
 import { NavLink } from 'react-router-dom'
 
-export default function StaffItem({ staffs }) {
+export default function StaffItem({ staffs,handleStaffDelete }) {
     return (
         <>
             {
@@ -36,7 +36,9 @@ export default function StaffItem({ staffs }) {
                             </div>
                             <ul className="dropdown-menu bg-white" style={{ minWidth: "auto" }}>
                                 <li><NavLink to={`edit/${staff.email}`} className="dropdown-item" >Edit</NavLink></li>
-                                <li><NavLink className="dropdown-item" >Delete</NavLink></li>
+                                <li><button type='button' onClick={() => {
+                                    handleStaffDelete(staff.email)
+                                }} className="dropdown-item" >Delete</button></li>
                             </ul>
                         </td>
                     </tr>
