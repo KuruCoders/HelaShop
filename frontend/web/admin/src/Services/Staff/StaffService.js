@@ -8,6 +8,7 @@ class StaffService{
         this.GET_STAFF = "staff/get-allStaff";
         this.GET_STAFF_BY_ID = "staff/get-staff";
         this.DELETE_STAFF = "staff/delete-staff";
+        this.UPDATE_STAFF = "staff/update-staff";
     }
     addStaff(input) {
         let data = {
@@ -29,6 +30,18 @@ class StaffService{
     }
     deleteStaff(email) {
         return axios.delete(this.DELETE_STAFF,{...BaseService.getHeader(),data:{email}})
+    }
+    updateStaff(input) {
+        let data = {
+            email: input.email,
+            name: input.name,
+            salary: input.salary,
+            telephone: input.telephone,
+            gender: input.gender,
+            role: input.role,
+            age: input.age
+        }
+        return axios.put(this.UPDATE_STAFF,data,BaseService.getHeader())
     }
 }
 export default StaffService = new StaffService()
