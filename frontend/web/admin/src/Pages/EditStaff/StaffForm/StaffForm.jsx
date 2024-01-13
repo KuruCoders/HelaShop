@@ -31,7 +31,7 @@ export default function StaffForm({ data, onFormSubmit }) {
             } catch (error) {
                 ResponseHandler.handleResponse(error)
             } finally {
-                
+                Toaster.dismissLoadingToast()
             }
         }
     })
