@@ -1,7 +1,7 @@
 
 import StaffItem from './StaffItem'
 
-export default function StaffTable({ staffs, loading,handleStaffDelete }) {
+export default function StaffTable({ staffs, loading, handleStaffDelete }) {
 
     return (
         <>
@@ -26,6 +26,9 @@ export default function StaffTable({ staffs, loading,handleStaffDelete }) {
                                     <h6 className="fw-semibold mb-0">Name</h6>
                                 </th>
                                 <th className="border-bottom-0" >
+                                    <h6 className="fw-semibold mb-0">Telephone</h6>
+                                </th>
+                                <th className="border-bottom-0" >
                                     <h6 className="fw-semibold mb-0">Role</h6>
                                 </th>
                                 <th className="border-bottom-0" >
@@ -34,9 +37,9 @@ export default function StaffTable({ staffs, loading,handleStaffDelete }) {
                                 <th className="border-bottom-0" >
                                     <h6 className="fw-semibold mb-0">Gender</h6>
                                 </th>
-                                <th className="border-bottom-0" >
+                                {/* <th className="border-bottom-0" >
                                     <h6 className="fw-semibold mb-0">Added</h6>
-                                </th>
+                                </th> */}
                             </tr>
                         </thead>
                         <tbody>

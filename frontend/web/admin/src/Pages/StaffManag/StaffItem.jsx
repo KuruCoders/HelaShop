@@ -19,6 +19,9 @@ export default function StaffItem({ staffs,handleStaffDelete }) {
                             <p className="fw-normal mb-1">{staff.name }</p>
                         </td>
                         <td className="border-bottom-0" >
+                            <p className="mb-0 fw-normal">+94 {staff.telephone }</p>
+                        </td>
+                        <td className="border-bottom-0" >
                             <p className="mb-0 fw-normal">{staff.role }</p>
                         </td>
                         <td className="border-bottom-0" >
@@ -27,9 +30,9 @@ export default function StaffItem({ staffs,handleStaffDelete }) {
                         <td className="border-bottom-0" >
                             <p className="fw-normal mb-0">{staff.gender }</p>
                         </td>
-                        <td className="border-bottom-0" >
+                        {/* <td className="border-bottom-0" >
                             <p className="fw-normal mb-0">{DateFormatter.formatDate(staff.created_at) }</p>
-                        </td>
+                        </td> */}
                         <td className="border-bottom-0">
                             <div data-bs-toggle="dropdown" className='bg-warning rounded-2 p-1 d-flex justify-content-center align-items-center' style={{ fontSize: "1.5rem", cursor: "pointer" }}>
                                 <i className="ti ti-eye text-white" />
