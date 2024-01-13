@@ -6,6 +6,8 @@ import Toaster from '../../Utils/Constants/Toaster';
 import { ToastContainer } from 'react-toastify';
 import LocalStore from '../../Store/LocalStore';
 import { useNavigate } from 'react-router-dom';
+import CusSwal from '../../Utils/CustomSwal/CusSwal';
+import ResponseHandler from '../../Utils/Constants/ResponseHandler';
 export default function StaffManag() {
     const navigate = useNavigate()
     const [loading, setLoading] = useState(false);
@@ -42,6 +44,20 @@ export default function StaffManag() {
             setLoading(false)
         }
     }
+    const handleStaffDelete = (email) => {
+        CusSwal.deleteConfiramation(async () => {
+            try {
+                const result = await StaffService.deleteStaff(email)
+                if (result) {
+                    Toaster.justToast('success', "Staff Deleted", () => {})
+                }
+            } catch (error) {
+                ResponseHandler.handleResponse(error)
+            } finally {
+                fetchData()
+            }
+        })
+    }
     return (
         <div className="body-wrapper">
             <div className="container-fluid">
@@ -62,7 +78,7 @@ export default function StaffManag() {
                                     </form>
                                 </div>
                                 <div className="table-responsive">
-                                    <StaffTable staffs={staffs} loading={ loading} />
+                                    <StaffTable handleStaffDelete={handleStaffDelete} staffs={staffs} loading={ loading} />
                                 </div>
                             </div>
                         </div>

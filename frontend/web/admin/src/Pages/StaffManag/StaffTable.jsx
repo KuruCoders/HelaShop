@@ -1,7 +1,7 @@
 
 import StaffItem from './StaffItem'
 
-export default function StaffTable({ staffs, loading }) {
+export default function StaffTable({ staffs, loading,handleStaffDelete }) {
 
     return (
         <>
@@ -40,7 +40,7 @@ export default function StaffTable({ staffs, loading }) {
                             </tr>
                         </thead>
                         <tbody>
-                            <StaffItem staffs={staffs} />
+                            <StaffItem handleStaffDelete={handleStaffDelete} staffs={staffs} />
                         </tbody>
                     </table>
                 )

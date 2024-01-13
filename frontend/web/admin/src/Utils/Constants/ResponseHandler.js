@@ -5,6 +5,9 @@ class ResponseHandler {
     handleResponse(error) {
         const { code, data } = error.response.data
         switch (code) {
+            case 400:
+                this.handle400Error(data.message)
+                break;
             case 401:
                 this.handle401Error(data.message)
                 break;
@@ -34,6 +37,10 @@ class ResponseHandler {
         })
     }
     handle404Error(message) {
+        Toaster.justToast('error', message, () => {});
+        // Add more handling if needed
+    }
+    handle400Error(message) {
         Toaster.justToast('error', message, () => {});
         // Add more handling if needed
       }
