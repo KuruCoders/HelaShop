@@ -2,6 +2,8 @@ import React,{useEffect} from 'react'
 import { useFormik } from 'formik'
 import StaffYup from '../../../Validation/Staff/StaffYup.js'
 import StaffService from '../../../Services/Staff/StaffService.js'
+import ResponseHandler from '../../../Utils/Constants/ResponseHandler.js'
+import Toaster from '../../../Utils/Constants/Toaster.js'
 
 export default function StaffForm({ data, onFormSubmit }) {
     const initValues = {
@@ -17,7 +19,20 @@ export default function StaffForm({ data, onFormSubmit }) {
         initialValues: initValues,
         validationSchema: StaffYup.addStaff,
         onSubmit: async (values) => {
-
+            //edit form logic
+            Toaster.loadingToast('Upadting Details...........')
+            try {
+                const result = await StaffService.updateStaff(values)
+                if (result) {
+                    Toaster.updateLoadingToast('success', result.data.data.message, () => {
+                        onFormSubmit()
+                    })
+                }
+            } catch (error) {
+                ResponseHandler.handleResponse(error)
+            } finally {
+                
+            }
         }
     })
     useEffect(() => {
