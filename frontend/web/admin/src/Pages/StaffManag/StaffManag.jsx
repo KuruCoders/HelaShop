@@ -14,6 +14,7 @@ export default function StaffManag() {
     const navigate = useNavigate()
     const [loading, setLoading] = useState(false);
     const [staffs, setStaffs] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
         fetchData()
@@ -72,6 +73,16 @@ export default function StaffManag() {
             Toaster.dismissLoadingToast()
         }
     }
+    const filteredStaff = searchQuery ? staffs.filter((staff) => {
+        return (
+            staff.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            staff.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            staff.gender.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            staff.role.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            staff.telephone.toString().includes(searchQuery) ||
+            staff.salary.toString().includes(searchQuery)
+        )
+    }) : staffs
     return (
         <div className="body-wrapper">
             <div className="container-fluid">
@@ -87,12 +98,19 @@ export default function StaffManag() {
                                 <div className="d-flex justify-content-between align-items-center mb-2">
                                     <h5 className="card-title fw-semibold">List Of Staffs</h5>
                                     <form className="position-relative">
-                                        <input type="text" className="form-control search-chat py-2 ps-5" id="text-srh" placeholder="Search" />
+                                        <input
+                                            type="text"
+                                            className="form-control search-chat py-2 ps-5"
+                                            id="text-srh"
+                                            placeholder="Search" 
+                                            value={searchQuery}
+                                            onChange={(e)=>setSearchQuery(e.target.value)}
+                                            />
                                         <i className="ti ti-search position-absolute top-50 start-0 translate-middle-y fs-6 text-dark ms-3" />
                                     </form>
                                 </div>
                                 <div className="table-responsive">
-                                    <StaffTable handleStaffDelete={handleStaffDelete} staffs={staffs} loading={loading} />
+                                    <StaffTable handleStaffDelete={handleStaffDelete} staffs={filteredStaff} loading={loading} />
                                 </div>
                             </div>
                         </div>
