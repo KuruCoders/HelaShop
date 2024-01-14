@@ -4,7 +4,7 @@ import StaffService from '../../../Services/Staff/StaffService'
 import ResponseHandler from '../../../Utils/Constants/ResponseHandler'
 import Toaster from '../../../Utils/Constants/Toaster'
 
-export default function StaffProPic() {
+export default function StaffProPic({staff}) {
     const [image, setImage] = useState(propic)
     const handleImage = (e) => {
         console.log(e.target.files)
@@ -24,7 +24,6 @@ export default function StaffProPic() {
             }
         } catch (error) {
             Toaster.justToast('error', "Uploading Failed", () => {})
-            // ResponseHandler.handleResponse(error)
         } finally {
             Toaster.dismissLoadingToast()
         }
