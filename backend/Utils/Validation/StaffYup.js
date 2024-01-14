@@ -21,6 +21,10 @@ class StaffYup{
         gender: yup.string().required(),
         salary:yup.number().min(0,'salary should be positive')
     })
+    updatePictureStaff = yup.object({
+        email:yup.string().email().required(),
+        url:yup.string().required()
+    })
     deleteStaff = yup.object({
         email:yup.string().email().required(),
     })

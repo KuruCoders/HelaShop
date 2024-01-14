@@ -24,6 +24,7 @@ class ResTypes {
     no_staff: { message: "no staff found" },
     staff_failed: { message: "error adding staff" },
     staff_exists: { message: "staff member exists" },
+    staff_pic_fail: { message: "error updating picture" },
 
   };
   successMessages = {
@@ -50,6 +51,7 @@ class ResTypes {
     staff_found: { message: "staff fetched succesfully" },
     staff_edited: { message: "staff edited succesfully" },
     staff_deleted: { message: "staff deleted succesfully" },
+    staff_pic_uploaded: { message: "Picture uploaded succesfully" },
   };
 }
 

@@ -64,6 +64,24 @@ class StaffController{
             return response(res, 500, HttpStatus.getStatus(500), error)
         }
     }
+    //update staff propic
+    updatePictureStaff = async (req, res) => {
+        const { email,url } = req.body
+        try {
+            const staffexist = await Staff.findOne({ email })
+            if (!staffexist) return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.no_staff)
+            
+            const result = await Staff.updateOne(
+                { email },
+                {$set:{url}}
+            )
+            if (result.modifiedCount === 0) return response(res, 403, HttpStatus.getStatus(403), ResTypes.errors.staff_pic_fail)
+            return response(res,200,HttpStatus.getStatus(200),ResTypes.successMessages.staff_pic_uploaded)
+        } catch (error) {
+            console.log(error)
+            return response(res, 500, HttpStatus.getStatus(500), error)
+        }
+    }
     //deleteStuff
     deleteStuff = async (req, res) => {
         const { email } = req.body
@@ -79,5 +97,6 @@ class StaffController{
             return response(res, 500, HttpStatus.getStatus(500), error)
         }
     }
+    
 }
 export default StaffController = new StaffController()
