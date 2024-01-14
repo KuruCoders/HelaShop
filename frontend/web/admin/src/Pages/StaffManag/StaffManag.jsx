@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import AddStaffModal from './AddStaffModal'
 import StaffTable from './StaffTable'
 import StaffService from '../../Services/Staff/StaffService';
@@ -8,11 +8,13 @@ import LocalStore from '../../Store/LocalStore';
 import { useNavigate } from 'react-router-dom';
 import CusSwal from '../../Utils/CustomSwal/CusSwal';
 import ResponseHandler from '../../Utils/Constants/ResponseHandler';
+import staffHeader from '../../Utils/Pdfs/StaffHeader';
+import PdfGenerator from '../../Utils/Pdfs/PdfGenerator';
 export default function StaffManag() {
     const navigate = useNavigate()
     const [loading, setLoading] = useState(false);
     const [staffs, setStaffs] = useState([]);
-    
+
     useEffect(() => {
         fetchData()
     }, [])
@@ -27,18 +29,18 @@ export default function StaffManag() {
             // }
         } catch (error) {
             if (error.response.data.code === 404) {
-                Toaster.justToast('error', error.response.data.data.message, () => {})
+                Toaster.justToast('error', error.response.data.data.message, () => { })
             }
             if (error.response.data.code === 401) {
                 Toaster.justToast('error', error.response.data.data.message, () => {
                     LocalStore.removeToken()
-                    navigate('/login' , {replace:true})
+                    navigate('/login', { replace: true })
                     // Force a full-page refresh
                     window.location.reload(true);
                 })
             }
             if (error.response.data.code === 500) {
-                Toaster.justToast('error', error.response.data.data.message, () => {})
+                Toaster.justToast('error', error.response.data.data.message, () => { })
             }
         } finally {
             setLoading(false)
@@ -49,7 +51,7 @@ export default function StaffManag() {
             try {
                 const result = await StaffService.deleteStaff(email)
                 if (result) {
-                    Toaster.justToast('success', "Staff Deleted", () => {})
+                    Toaster.justToast('success', "Staff Deleted", () => { })
                 }
             } catch (error) {
                 ResponseHandler.handleResponse(error)
@@ -57,6 +59,18 @@ export default function StaffManag() {
                 fetchData()
             }
         })
+    }
+    const generatePdf = () => {
+        Toaster.loadingToast('Generating Pdf')
+        try {
+            console.log("pkoooo")
+            Toaster.updateLoadingToast('success', 'Creating The Pdf For You', () => {})
+            PdfGenerator.generatePdf(staffs, "Staff List", staffHeader)
+        } catch (error) {
+            Toaster.updateLoadingToast('error', 'genration failed', () => { })
+        } finally {
+            Toaster.dismissLoadingToast()
+        }
     }
     return (
         <div className="body-wrapper">
@@ -66,10 +80,10 @@ export default function StaffManag() {
                         <div className="card w-100 shadow-sm">
                             <div className="card-body p-4">
                                 <div className='d-flex justify-content-end align-items-center mb-4'>
-                                    <button className='btn btn-outline-dark mx-2'>Export</button>
+                                    <button onClick={generatePdf} className='btn btn-outline-dark mx-2'>Export</button>
                                     <button className='btn btn-success' data-bs-toggle="modal" data-bs-target="#addStaffModal">Add New</button>
                                 </div>
-                                <AddStaffModal onModalSubmit={fetchData}/>
+                                <AddStaffModal onModalSubmit={fetchData} />
                                 <div className="d-flex justify-content-between align-items-center mb-2">
                                     <h5 className="card-title fw-semibold">List Of Staffs</h5>
                                     <form className="position-relative">
@@ -78,14 +92,14 @@ export default function StaffManag() {
                                     </form>
                                 </div>
                                 <div className="table-responsive">
-                                    <StaffTable handleStaffDelete={handleStaffDelete} staffs={staffs} loading={ loading} />
+                                    <StaffTable handleStaffDelete={handleStaffDelete} staffs={staffs} loading={loading} />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        <ToastContainer/>
+            <ToastContainer />
         </div>
     )
 }

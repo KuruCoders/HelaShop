@@ -24,12 +24,12 @@ export default function StaffForm({ data, onFormSubmit }) {
             try {
                 const result = await StaffService.updateStaff(values)
                 if (result) {
-                    Toaster.updateLoadingToast('success', result.data.data.message, () => {
+                    Toaster.justToast('success', result.data.data.message, () => {
                         onFormSubmit()
                     })
                 }
             } catch (error) {
-                Toaster.updateLoadingToast('error', error.response.data.message, () => {})
+                Toaster.justToast('error', error.response.data.message, () => {})
                 // ResponseHandler.handleResponse(error)
             } finally {
                 Toaster.dismissLoadingToast()
@@ -39,15 +39,15 @@ export default function StaffForm({ data, onFormSubmit }) {
     useEffect(() => {
         if (data) {
             setValues({
-                name: data.name,
-                email: data.email,
-                telephone: data.telephone,
-                salary: data.salary,
-                age: data.age,
-                role: data.role,
-                gender: data.gender
+                name: data.name || '',
+                email: data.email || '',
+                telephone: data.telephone || '',
+                salary: data.salary || '',
+                age: data.age || '',
+                role: data.role || '',
+                gender: data.gender || ''
             })
-        } else setValues(initValues)
+        }
     }, [data, setValues])
     return (
         <div className="card w-100 position-relative overflow-hidden mb-3 mb-md-0">
