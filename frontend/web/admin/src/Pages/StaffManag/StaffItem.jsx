@@ -10,7 +10,7 @@ export default function StaffItem({ staffs,handleStaffDelete }) {
                 staffs.map((staff) => (
                     <tr key={staff.email}>
                         <td className="border-bottom-0" >
-                            <img src={pic} alt="prologo" width={30} height={30} className="rounded-circle" style={{ cursor: "pointer" }} />
+                            <img src={staff.url} alt="prologo" width={30} height={30} className="rounded-circle" style={{ cursor: "pointer" }} />
                         </td>
                         <td className="border-bottom-0" >
                             <p className="fw-normal mb-1">{staff.email }</p>
