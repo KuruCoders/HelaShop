@@ -18,13 +18,13 @@ export default function StaffProPic() {
             const result = await StaffService.uploadProfilePicture(formData)
             console.log(result)
             if (result.data.data) {
-                Toaster.updateLoadingToast('success', "picture uploaded", () => {
+                Toaster.justToast('success', "picture uploaded", () => {
                     setImage(result.data.data.url)
                 })
             }
         } catch (error) {
-            Toaster.updateLoadingToast('error', "Uploading Failed", () => {})
-            ResponseHandler.handleResponse(error)
+            Toaster.justToast('error', "Uploading Failed", () => {})
+            // ResponseHandler.handleResponse(error)
         } finally {
             Toaster.dismissLoadingToast()
         }
