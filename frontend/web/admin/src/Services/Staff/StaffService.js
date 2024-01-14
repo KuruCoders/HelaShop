@@ -9,6 +9,7 @@ class StaffService{
         this.GET_STAFF_BY_ID = "staff/get-staff";
         this.DELETE_STAFF = "staff/delete-staff";
         this.UPDATE_STAFF = "staff/update-staff";
+        this.UPDATE_PIC_STAFF = "staff/pic-update-staff";
         this.PIC_URL = "https://api.imgbb.com/1/upload?key=a7efc3c653c266bbfd8099ced01aa8ca";
     }
     addStaff(input) {
@@ -46,6 +47,13 @@ class StaffService{
     }
     uploadProfilePicture(input) {
         return axios.post(this.PIC_URL, input, { headers:{'Content-Type': 'multipart/form-data'}})
+    }
+    uploadProPicToMongo(input) {
+        let data = {
+            email: input.email,
+            url:input.url
+        }
+        return axios.put(this.UPDATE_PIC_STAFF,data,BaseService.getHeader())
     }
 }
 export default StaffService = new StaffService()

@@ -32,7 +32,7 @@ export default function EditStaff() {
                 <div className="row">
                     <div className="col-lg-5">
                         <StaffJoined data={staff} />
-                        <StaffProPic data={staff}/>
+                        <StaffProPic staff={staff}/>
                     </div>
                     <div className="col-lg-7">
                         <StaffForm onFormSubmit={fetchData} data={staff}/>
