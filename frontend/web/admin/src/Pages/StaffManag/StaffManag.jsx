@@ -77,7 +77,7 @@ export default function StaffManag() {
         return (
             staff.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
             staff.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            staff.gender.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            staff.gender.toLowerCase() === searchQuery.toLowerCase() ||
             staff.role.toLowerCase().includes(searchQuery.toLowerCase()) ||
             staff.telephone.toString().includes(searchQuery) ||
             staff.salary.toString().includes(searchQuery)
