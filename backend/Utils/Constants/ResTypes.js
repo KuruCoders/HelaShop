@@ -30,6 +30,7 @@ class ResTypes {
   successMessages = {
     success: { message: "fetching success" },
     user_created: { message: "User created" },
+    user_edited: { message: "User Edited" },
     verify_email: { message: "Please Verify email" },
     login_successful: { message: "Login successful" },
     data_retrieved: { message: "Data retrieved successfully" },

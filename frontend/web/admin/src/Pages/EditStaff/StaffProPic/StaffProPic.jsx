@@ -7,7 +7,7 @@ import Toaster from '../../../Utils/Constants/Toaster'
 export default function StaffProPic({ staff }) {
     const [image, setImage] = useState(null)
     const [loading, setLoading] = useState(false)
-    const [storageUrl, setStorageUrl] = useState('')
+    // const [storageUrl, setStorageUrl] = useState('')
     const handleImage = (e) => {
         console.log(e.target.files)
         setImage(e.target.files[0])
@@ -22,13 +22,12 @@ export default function StaffProPic({ staff }) {
             const result = await StaffService.uploadProfilePicture(formData)
             console.log(result)
             if (result.data.data) {
-                setStorageUrl(result.data.data.url)
+                // setStorageUrl(result.data.data.url)
                 setImage(result.data.data.url)
                 //call upload image
                 await uploadImageToMongo(result.data.data.url)
             }
         } catch (error) {
-            
             ResponseHandler.handleResponse(error)
             console.log(error)
         } finally {

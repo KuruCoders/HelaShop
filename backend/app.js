@@ -21,6 +21,8 @@ import response from "./Utils/Constants/Response.js";
 import ProductRoute from './Routes/Product/ProductRoute.js'
 import AddressRoute from './Routes/Profile/Address/AddressRoute.js'
 import StaffRoute from './Routes/Staff/StaffRoute.js'
+import UserRoute from './Routes/Profile/User/UserRoute.js'
+
 // routes definition starts here
 app.get("/", (req, res) => {
     return response(res,200,"Server Online")
@@ -29,6 +31,7 @@ app.use('/api/v1/auth', AuthRoute)
 app.use('/api/v1/product',ProductRoute)
 app.use('/api/v1/user/address',AddressRoute)
 app.use('/api/v1/staff',StaffRoute)
+app.use('/api/v1/user',UserRoute)
 
 //db connction
 db();

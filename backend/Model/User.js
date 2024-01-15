@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import sriLankanProvinces from "../Utils/Constants/Address/Provinces.js";
+import sriLankanDistricts from "../Utils/Constants/Address/District.js";
 
 const urlPic = [
     "https://avatars.githubusercontent.com/u/54225118?v=4",
@@ -10,7 +12,7 @@ const getRandomDefaultpic = () => {
     const randomIndex = Math.floor(Math.random() * urlPic.length);
     return urlPic[randomIndex];
 }
-const roleType = ['admin','user']
+const roleType = ['admin', 'user']
 
 const userSchema = new mongoose.Schema(
     {
@@ -33,7 +35,7 @@ const userSchema = new mongoose.Schema(
             default: false
         },
         verifyRegisterToken: String,
-        registerExpire:Date,
+        registerExpire: Date,
         isActive: {
             type: Boolean,
             default: true
@@ -44,10 +46,37 @@ const userSchema = new mongoose.Schema(
         },
         role: {
             type: String,
-            enum:roleType
+            enum: roleType,
+            default:'user'
         },
         resetPasswordToken: String,
         resetPasswordExpire: Date,
+        address: {
+            district: {
+                type: String,
+                enum: sriLankanDistricts,
+                lowercase: true,
+            },
+            province: {
+                type: String,
+                enum: sriLankanProvinces,
+                lowercase: true,
+            },
+            country: {
+                type: String,
+                default:'sri lanka'
+            },
+            city: {
+                type: String,
+            },
+            street: {
+                type: String,
+            },
+            postalCode: {
+                type: Number,
+            },
+            zipCode: String,
+        }
     },
     {
         versionKey: '__v',
