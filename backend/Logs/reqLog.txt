@@ -1435,3 +1435,72 @@
 2024.01.14	17:14:27	845cef31-4eaa-4692-80e2-c147440f5e0a	POST	::1	http://localhost:3000	/add-staff	Status:201	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:1015ms
 2024.01.14	17:14:28	547f47b8-a2df-4f61-98e3-19bde90f2327	GET	::1	http://localhost:3000	/get-allStaff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:1186ms
 2024.01.14	17:14:33	76089f73-14a4-40e2-bf36-06e579464500	POST	::1	http://localhost:3000	/get-staff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:326ms
+2024.01.14	17:16:44	5895bfda-2659-4497-9e8c-8ff799516f3a	PUT	::1	http://localhost:3000	/pic-update-staff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:439ms
+2024.01.14	17:16:56	58246af7-91ef-4154-8589-849faf90aef9	PUT	::1	http://localhost:3000	/update-staff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:441ms
+2024.01.14	17:16:59	90153e3d-29c1-4564-b3db-5ca751c2eff4	POST	::1	http://localhost:3000	/get-staff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:306ms
+2024.01.14	17:16:59	e8a9e2e5-31d6-48d3-a6fe-82d02e321dc6	POST	::1	http://localhost:3000	/get-staff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:320ms
+2024.01.14	17:17:44	1460d63f-32b0-47f7-a50f-2053d575664c	POST	::1	http://localhost:3000	/get-staff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:303ms
+2024.01.14	17:17:56	7a9e6f38-f6ca-496e-822d-cb5a949403dd	PUT	::1	http://localhost:3000	/pic-update-staff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:449ms
+2024.01.14	17:18:38	a2aa7844-200f-46d1-a1f1-a9b970d9e36f	PUT	::1	http://localhost:3000	/pic-update-staff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:476ms
+2024.01.14	17:20:24	d2be39af-e976-4ec6-9b0c-d59af9671dcd	PUT	::1	http://localhost:3000	/pic-update-staff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:434ms
+2024.01.14	17:20:35	7a5aed25-7d62-4c0a-a9a2-1ad965e7e5f4	PUT	::1	http://localhost:3000	/pic-update-staff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:460ms
+2024.01.14	17:20:48	bf651dfe-abee-4e50-9e9c-2c7ad803fe6f	POST	::1	http://localhost:3000	/get-staff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:303ms
+2024.01.14	17:20:57	33a7204e-f615-45c2-bb39-a4708d06273c	PUT	::1	http://localhost:3000	/pic-update-staff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:469ms
+2024.01.14	17:26:40	c01145e4-8746-4b10-a49b-8cd7311febf7	DELETE	::1	http://localhost:3000	/delete-staff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:483ms
+2024.01.14	17:26:44	b6f77d55-b21b-44c8-82e1-4cd1181a87c2	GET	::1	http://localhost:3000	/get-allStaff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:328ms
+2024.01.14	17:26:52	5f4c9cef-4e3e-4efa-8ef3-68a0a283ac72	POST	::1	http://localhost:3000	/get-staff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:312ms
+2024.01.14	17:26:54	04ec6b87-e82f-46fa-bbe0-2863e524e3aa	GET	::1	http://localhost:3000	/get-allStaff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:293ms
+2024.01.15	08:15:38	aa2433a4-51c3-400c-b481-30e6415d5dd6	POST	::1	http://localhost:3000	/get-staff	Status:401	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:7ms
+2024.01.15	09:21:26	ddf02783-31d2-42ab-a3ef-a499a062ba88	POST	::1	http://localhost:3000	/login	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:276ms
+2024.01.15	09:21:36	37512482-64b4-44d7-9b60-508833ee81be	GET	::1	http://localhost:3000	/get-allStaff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:544ms
+2024.01.15	10:23:50	62169d8d-630e-4ebb-a367-76a979c096ff	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.1	Duration:292ms
+2024.01.15	10:24:13	c1afa2bd-5e4b-4d24-a1f9-178a37f54f8f	GET	::1	undefined	/get-users	Status:200	User-Agent:PostmanRuntime/7.36.1	Duration:351ms
+2024.01.15	14:06:09	4205c662-24bc-439f-9377-1b53729631b3	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.1	Duration:328ms
+2024.01.15	14:06:53	cda2cca7-a855-42ab-9016-7d7ce8ab6516	POST	::1	undefined	/get-user	Status:400	User-Agent:PostmanRuntime/7.36.1	Duration:206ms
+2024.01.15	14:07:07	e029a868-90d5-4d23-bdb2-8d774ddc50c6	POST	::1	undefined	/get-user	Status:400	User-Agent:PostmanRuntime/7.36.1	Duration:191ms
+2024.01.15	14:07:51	23b1ee67-f41f-42b4-bc75-0e68ea3bed1a	POST	::1	undefined	/get-user	Status:400	User-Agent:PostmanRuntime/7.36.1	Duration:220ms
+2024.01.15	14:08:06	3662e127-178c-4b2a-ab5b-0330c77f6faa	POST	::1	undefined	/get-user	Status:200	User-Agent:PostmanRuntime/7.36.1	Duration:393ms
+2024.01.15	14:08:16	c4534884-3129-46e6-ba64-aba31f197017	POST	::1	undefined	/get-user	Status:200	User-Agent:PostmanRuntime/7.36.1	Duration:356ms
+2024.01.15	14:08:54	5b303248-98da-4e02-9265-56face72c3a7	POST	::1	undefined	/get-user	Status:404	User-Agent:PostmanRuntime/7.36.1	Duration:2739ms
+2024.01.15	14:09:15	15bbd651-2ea6-421e-b712-68a756428276	POST	::1	undefined	/get-user	Status:200	User-Agent:PostmanRuntime/7.36.1	Duration:339ms
+2024.01.15	14:09:39	811705e5-bd20-4ed8-aeb1-70b4c38df3df	POST	::1	undefined	/get-user	Status:200	User-Agent:PostmanRuntime/7.36.1	Duration:3588ms
+2024.01.15	14:41:36	9ba2f3df-fc3f-446f-b378-def6e407aadd	POST	::1	undefined	/create-user	Status:500	User-Agent:PostmanRuntime/7.36.1	Duration:456ms
+2024.01.15	14:42:51	a368b793-df00-4ab2-81ca-bf5ccec2d92e	POST	::1	undefined	/create-user	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:1822ms
+2024.01.15	14:46:00	259b4d23-fe26-4080-bde2-093685646ffa	POST	::1	undefined	/create-user	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:584ms
+2024.01.15	14:46:57	dcff0c13-3abe-48b0-9f7c-e2ac1d421727	POST	::1	undefined	/create-user	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:646ms
+2024.01.15	18:57:04	05406c4c-8afc-4bed-8b5f-4070f4fe7057	POST	::1	undefined	/login	Status:200	User-Agent:PostmanRuntime/7.36.1	Duration:358ms
+2024.01.15	18:57:25	d2c0351e-89de-43cc-80bd-bbc9d97316c7	POST	::1	undefined	/deactivate-user	Status:400	User-Agent:PostmanRuntime/7.36.1	Duration:227ms
+2024.01.15	18:58:04	52f28af8-3e84-49e3-86f4-021e73393954	POST	::1	undefined	/deactivate-user	Status:200	User-Agent:PostmanRuntime/7.36.1	Duration:485ms
+2024.01.15	19:15:22	330e4802-841a-4265-8692-48290af0aae3	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:551ms
+2024.01.15	19:16:22	ab63f474-9a75-4fe8-9920-b5a35087cb54	PUT	::1	undefined	/manipulate-user-address	Status:404	User-Agent:PostmanRuntime/7.36.1	Duration:371ms
+2024.01.15	19:16:27	08c16ab0-1d52-4160-b4bf-5a58ec4720c9	PUT	::1	undefined	/manipulate-user-address	Status:400	User-Agent:PostmanRuntime/7.36.1	Duration:210ms
+2024.01.15	19:16:37	9bf0b79e-b3d8-466d-8315-77abc74fa072	PUT	::1	undefined	/manipulate-user-address	Status:400	User-Agent:PostmanRuntime/7.36.1	Duration:198ms
+2024.01.15	19:22:51	88ab09c3-e348-478c-9b26-467df8ffa058	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:526ms
+2024.01.15	19:25:35	fd120533-c5c0-4044-82d1-6a42dca1cf0e	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:628ms
+2024.01.15	19:26:00	92265a99-fed5-4484-826b-e487b0b36144	PUT	::1	undefined	/manipulate-user-address	Status:500	User-Agent:PostmanRuntime/7.36.1	Duration:2640ms
+2024.01.15	19:26:23	4f593b70-fd33-4a55-bcdb-8dadfaaa430b	PUT	::1	undefined	/manipulate-user-address	Status:500	User-Agent:PostmanRuntime/7.36.1	Duration:533ms
+2024.01.15	19:26:54	41b2f7bc-1c88-4716-85d5-87a3d327f287	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:483ms
+2024.01.15	19:27:24	ff5c7168-33e7-488c-8f56-7904b755809c	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:545ms
+2024.01.15	19:29:18	09e51fc9-f290-4bc2-8b4e-ff53a164f4b5	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:495ms
+2024.01.15	19:37:15	04df3a0d-4feb-49b5-b018-fb21eeddd835	PUT	::1	undefined	/manipulate-user-address	Status:403	User-Agent:PostmanRuntime/7.36.1	Duration:579ms
+2024.01.15	19:38:04	0f2ac015-1437-482d-8444-7754b01058a2	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:687ms
+2024.01.15	19:38:55	4e585c18-c2f6-49f6-a4af-a900936da69f	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:545ms
+2024.01.15	19:39:48	abb4b8c7-4d65-448b-9d16-ef31892d9802	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:552ms
+2024.01.15	19:40:53	9002eddc-25a8-44ca-a104-fcd9dac200a2	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:543ms
+2024.01.15	19:48:25	90e735c0-5ec7-4fbe-b8c4-486332ae124a	PUT	::1	undefined	/manipulate-user-address	Status:500	User-Agent:PostmanRuntime/7.36.1	Duration:1309ms
+2024.01.15	19:49:02	560cc564-e6ab-40bf-9d49-044812f0e439	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:666ms
+2024.01.15	19:49:39	5d3dc9c7-3bc6-43bb-b716-a9a80503bb30	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:4550ms
+2024.01.15	19:52:12	4f2379cc-f0d4-4621-a454-c49409970d08	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:499ms
+2024.01.15	19:53:06	227f4d50-652e-4d87-9445-7a032435cf6e	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:525ms
+2024.01.15	19:54:13	39c34965-ed34-4532-a46f-a0d5f5e61d25	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:555ms
+2024.01.15	19:55:51	589e89fd-05ed-4d57-a4bd-a3edd7bf2f15	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:506ms
+2024.01.15	19:58:42	adb8bf1d-671a-44c4-874a-a61493d97459	PUT	::1	undefined	/manipulate-user-address	Status:500	User-Agent:PostmanRuntime/7.36.1	Duration:439ms
+2024.01.15	19:59:13	28dc567e-e95a-4413-9664-547f8562ee73	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:468ms
+2024.01.15	20:02:07	0752e71d-02f1-4d38-a95f-43d4cd703bb0	PUT	::1	undefined	/manipulate-user-address	Status:500	User-Agent:PostmanRuntime/7.36.1	Duration:1850ms
+2024.01.15	20:02:25	5f22658b-0c86-4c4e-b294-0d820534ba16	PUT	::1	undefined	/manipulate-user-address	Status:500	User-Agent:PostmanRuntime/7.36.1	Duration:342ms
+2024.01.15	20:09:07	09d594f1-3c63-47ea-a9dc-ca926978e9cc	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:2824ms
+2024.01.15	20:09:47	eb2e1e5f-ab3c-47fe-a024-0ed748c7fd53	POST	::1	undefined	/get-user	Status:401	User-Agent:PostmanRuntime/7.36.1	Duration:6ms
+2024.01.15	20:10:10	8849f919-517c-4a98-8738-b2e75425793d	POST	::1	undefined	/get-user	Status:200	User-Agent:PostmanRuntime/7.36.1	Duration:323ms
+2024.01.15	20:10:49	ea3b99b0-1710-4de3-b131-2edd96fc965f	POST	::1	undefined	/get-user	Status:200	User-Agent:PostmanRuntime/7.36.1	Duration:319ms
+2024.01.15	20:11:02	47590817-8f4c-4f0c-9905-44c312e5e606	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:467ms
+2024.01.15	20:11:07	e290282d-7954-4a4a-9f57-b54ee24481c4	POST	::1	undefined	/get-user	Status:200	User-Agent:PostmanRuntime/7.36.1	Duration:301ms
