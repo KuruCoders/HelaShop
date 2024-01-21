@@ -9,7 +9,7 @@ class ResponseHandler {
                 this.handle401TokenError(data.message)
                 break;
             // case 404:
-            //     this.handleCommonError(data.message)
+            //     this.handle404Error(data.message)
             //     break;
             //more to go
             default:
@@ -26,10 +26,10 @@ class ResponseHandler {
     }
     handleCommonError(message) {
         Toaster.justToast('error', message, () => {
-            //write anthing
+            
         })
     }
-    // handle500Error(message) {
+    // handle404Error(message) {
     //     Toaster.justToast('error', message, () => {
     //         //write anthing
     //     })

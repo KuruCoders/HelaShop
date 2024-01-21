@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import LocalStore from '../../Store/LocalStore'
 import Toaster from '../../Utils/Constants/Toaster'
 import { ToastContainer } from 'react-toastify'
+import ResponseHandler from '../../Utils/Constants/ResponseHandler'
 
 export default function AddStaffModal({ onModalSubmit }) {
     const closeModel = useRef();
@@ -20,12 +21,11 @@ export default function AddStaffModal({ onModalSubmit }) {
         gender: ''
     }
     const navigate = useNavigate();
-    const [loader, setLoader] = useState(false)
     const { values, handleChange, handleSubmit, errors, touched } = useFormik({
         initialValues: initValues,
         validationSchema: StaffYup.addStaff,
         onSubmit: async (values) => {
-            // setLoader(true)
+            Toaster.loadingToast("Creating staff .......")
             //the form submission logic here
             try {
                 const result = await StaffService.addStaff(values)
@@ -35,24 +35,10 @@ export default function AddStaffModal({ onModalSubmit }) {
                     })
                 }
             } catch (error) {
-
-                if (error.response.data.code === 404 || error.response.data.code === 403) {
-                    Toaster.justToast('error', error.response.data.data.message, () => { })
-                }
-                if (error.response.data.code === 401) {
-                    Toaster.justToast('error', error.response.data.data.message, () => {
-                        LocalStore.removeToken()
-                        navigate('/login', { replace: true })
-                        // Force a full-page refresh
-                        window.location.reload(true);
-                    })
-                }
-                if (error.response.data.code === 500) {
-                    Toaster.justToast('error', error.response.data.data.message, () => { })
-                }
+                ResponseHandler.handleResponse(error)
             } finally {
                 closeModel.current.click()
-                // setLoader(false)
+                Toaster.dismissLoadingToast()
             }
         }
     })
@@ -195,19 +181,10 @@ export default function AddStaffModal({ onModalSubmit }) {
                                         </div>
                                     </div>
                                 </div>
-                                {loader ? (
-                                    <div className='d-flex justify-content-center align-items-center my-3'>
-                                        <div className="spinner-border" role="status">
-                                            <span className="visually-hidden m-auto">loader...</span>
-                                        </div>
-                                    </div>
-
-                                ) : (
-                                    <div className="d-flex justify-content-end mb-2">
-                                        <button type="button" ref={closeModel} className="btn btn-cancelBtn mx-2" data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" className="btn btn-okBtn">Save changes</button>
-                                    </div>
-                                )}
+                                <div className="d-flex justify-content-end mb-2">
+                                    <button type="button" ref={closeModel} className="btn btn-cancelBtn mx-2" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" className="btn btn-okBtn">Save changes</button>
+                                </div>
 
                             </form>
                         </div>

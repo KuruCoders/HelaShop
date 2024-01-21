@@ -1,6 +1,5 @@
 import { useFormik } from 'formik'
 import React, { useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import UserYup from '../../Validation/User/UserYup'
 import ResponseHandler from '../../Utils/Constants/ResponseHandler'
 import UserService from '../../Services/User/UserService'
@@ -12,7 +11,6 @@ export default function AddUserModal() {
         if (showEye) setShowEye(false)
         if (!showEye) setShowEye(true)
     }
-    const navigate = useNavigate()
     const closeModal = useRef()
     const initValues = {
         name: '',
@@ -23,7 +21,6 @@ export default function AddUserModal() {
         role: '',
         gender: ''
     }
-    const [loader, setLoader] = useState(false)
     const { values, handleChange, handleSubmit, errors, touched } = useFormik({
         initialValues: initValues,
         validationSchema: UserYup.createUser,
