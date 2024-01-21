@@ -26,7 +26,6 @@ export default function AddStaffModal({ onModalSubmit }) {
         validationSchema: StaffYup.addStaff,
         onSubmit: async (values) => {
             Toaster.loadingToast("Creating staff .......")
-            //the form submission logic here
             try {
                 const result = await StaffService.addStaff(values)
                 if (result.data.code === 201) {

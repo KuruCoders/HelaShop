@@ -30,7 +30,7 @@ export default function AddUserModal() {
                 const result = await UserService.addUser(values)
                 if (result.data.code === 201) {
                     //refesh the tablecomponent 
-
+                    
                     Toaster.justToast('success', result.data.data.message, () => {
                     })
                 }

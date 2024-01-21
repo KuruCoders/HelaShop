@@ -92,7 +92,8 @@ export default function StaffManag() {
                             <div className="card-body p-4">
                                 <div className='d-flex justify-content-end align-items-center mb-4'>
                                     <button onClick={generatePdf} className='btn btn-outline-dark mx-2'>Export</button>
-                                    <button className='btn btn-success' data-bs-toggle="modal" data-bs-target="#addStaffModal">Add New</button>
+                                    <button className='btn btn-success'
+                                    >Add New</button>
                                 </div>
                                 <AddStaffModal onModalSubmit={fetchData} />
                                 <div className="d-flex justify-content-between align-items-center mb-2">
