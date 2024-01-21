@@ -88,5 +88,6 @@ class ProductController {
             return response(res, 500, HttpStatus.getStatus(500), error)
         }
     }
+    //upload product pic
 }
 export default ProductController = new ProductController()
