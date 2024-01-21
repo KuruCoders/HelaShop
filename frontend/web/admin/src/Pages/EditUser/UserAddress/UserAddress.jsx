@@ -7,6 +7,7 @@ import Toaster from '../../../Utils/Constants/Toaster'
 import UserService from '../../../Services/User/UserService'
 
 export default function UserAddress({ data }) {
+    console.log(data)
     const initValues = {
         city: '',
         district: '',
@@ -21,7 +22,6 @@ export default function UserAddress({ data }) {
             Toaster.loadingToast("updating user address .........")
             try {
                 const mongoResult = await UserService.manipulateAddress(data.email,values)
-                console.log(mongoResult)
                 if (mongoResult.data.code === 201) {
                     Toaster.justToast('success', mongoResult.data.data.message, () => {
                         // when uncommented below re renders the whole page , if needed only uncomment
@@ -36,16 +36,18 @@ export default function UserAddress({ data }) {
         }
     })
     useEffect(() => {
-        if (data) {
+        if (data.address) {
             setValues({
                 city: data.address.city || '',
                 district: data.address.district || '',
                 province: data.address.province || '',
                 postalCode: data.address.postalCode || '',
                 street: data.address.street || ''
-            })
+            });
         }
-    }, [data, setValues])
+    }, [data.address,setValues]);
+    
+    
 
     return (
         <div className="col-lg-12 d-flex align-items-stretch">
