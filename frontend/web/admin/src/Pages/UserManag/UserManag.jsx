@@ -1,8 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AddUserModal from './AddUserModal'
 import UserTable from './UserTable'
+import UserService from '../../Services/User/UserService'
+import ResponseHandler from '../../Utils/Constants/ResponseHandler'
 
 export default function UserManag() {
+    const [loading, setLoading] = useState(false)
+    const [users, setUsers] = useState([])
+    
+    const fetchUser = async() =>{
+        setLoading(true)
+        try {
+            const result = await UserService.getUsers()
+            if (result.data.code === 200) {
+                setUsers(result.data.data.users)
+            }
+        } catch (error) {
+            ResponseHandler.handleResponse(error)
+        } finally {
+            setLoading(false)
+        }
+    }
+    useEffect(() => {
+      fetchUser()
+    }, [])
+    
     return (
         <div className="body-wrapper">
             <div className="container-fluid">
@@ -24,7 +46,7 @@ export default function UserManag() {
                                     </form>
                                 </div>
                                 <div className="table-responsive">
-                                    <UserTable/>
+                                    <UserTable users={users} loading={loading}/>
                                 </div>
                             </div>
                         </div>

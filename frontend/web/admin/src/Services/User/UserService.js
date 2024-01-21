@@ -4,6 +4,7 @@ import BaseService from "../Base/BaseService";
 class UserService{
     constructor() {
         BaseService.getBaseURL()
+        this.GET_USER = "user/get-users";
         this.CREATE_USER = "user/create-user"
     }
     addUser(input) {
@@ -17,6 +18,9 @@ class UserService{
             age:input.age
         }
         return axios.post(this.CREATE_USER,data,BaseService.getHeader())
+    }
+    getUsers() {
+        return axios.get(this.GET_USER,BaseService.getHeader())
     }
 }
 export default UserService = new UserService()
