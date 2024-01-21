@@ -1,0 +1,25 @@
+const sriLankanDistricts = [
+    'colombo',
+    'gampaha',
+    'kalutara',
+    'kandy',
+    'matale',
+    'nuwara_eliya',
+    'galle',
+    'matara',
+    'hambantota',
+    'Jaffna',
+    'kilinochchi',
+    'mannar',
+    'mullaitivu',
+    'vavuniya',
+    'puttalam',
+    'kurunegala',
+    'anuradhapura',
+    'polonnaruwa',
+    'badulla',
+    'moneragala',
+    'ratnapura',
+    'kegalle'
+];
+export default sriLankanDistricts

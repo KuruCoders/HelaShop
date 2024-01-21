@@ -35,11 +35,9 @@ class UserYup {
         address: yup.object().shape({
             district: yup.string().oneOf(sriLankanDistricts).required().lowercase(),
             province: yup.string().oneOf(sriLankanProvinces).required().lowercase(),
-            country: yup.string().default('sri lanka'),
             city: yup.string().required(),
             street: yup.string().required(),
             postalCode: yup.number().required(),
-            zipCode: yup.string(),
         })
     })
 }

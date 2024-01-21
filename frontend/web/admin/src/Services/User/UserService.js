@@ -10,6 +10,7 @@ class UserService{
         this.UPLOAD_IMAGE = "user/pic-update";
         this.UPDATE_USER = "user/update-user";
         this.DELETE_USER = "user/deactivate-user";
+        this.MANIPULATE_ADDERSS = "user/manipulate-user-address";
         this.PIC_URL = "https://api.imgbb.com/1/upload?key=a7efc3c653c266bbfd8099ced01aa8ca";
     }
     addUser(input) {
@@ -53,6 +54,16 @@ class UserService{
             age: input.age,
         }
         return axios.put(this.UPDATE_USER,data,BaseService.getHeader())
+    }
+    manipulateAddress(email,input) {
+        let data = {
+            district :input.district,
+            province:input.province,
+            postalCode:input.postalCode,
+            street:input.street,
+            city:input.city
+        }
+        return axios.put(this.MANIPULATE_ADDERSS,{email,address:data},BaseService.getHeader())
     }
 }
 export default UserService = new UserService()

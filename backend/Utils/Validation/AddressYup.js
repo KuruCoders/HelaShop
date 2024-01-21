@@ -11,9 +11,9 @@ class AddressYup {
         email: yup.string().email().required(),
         district: yup.string().lowercase().required().oneOf(sriLankanDistricts),
         province: yup.string().lowercase().required().oneOf(sriLankanProvinces),
-        country: yup.string().required(),
+        // country: yup.string().required(),
         postalCode: yup.number().required(),
-        zipCode: yup.string(),
+        // zipCode: yup.string(),
         street: yup.string().required(),
         city: yup.string().required(),
     })

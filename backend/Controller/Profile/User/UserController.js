@@ -106,7 +106,7 @@ class UserController {
     //edit address and add Address  
     manipulateAddress = async (req, res) => {
         const { email, address } = req.body;
-        const { district, province, country, city, street, postalCode, zipCode } = address;
+        const { district, province, city, street, postalCode } = address;
         try {
             const userExist = await User.findOne({ email })
             if (!userExist) return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.no_user)
@@ -114,7 +114,7 @@ class UserController {
             const result = await User.updateOne(
                 { email },
                 {
-                    $set: { address: { district, province, country, city, street, postalCode, zipCode } }
+                    $set: { address: { district, province, city, street, postalCode } }
                 }
             )
             if (!result) return response(res, 403, HttpStatus.getStatus(403), ResTypes.errors.failed_operation)
