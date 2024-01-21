@@ -22,7 +22,6 @@ class UserYup {
         role: yup.string().oneOf(userType).required(),
         email: yup.string().email().required(),
         gender: yup.string().oneOf(gender).required(),
-        photoUrl: yup.string().required(),
         telephone:yup.string().matches(/^[0-9]+$/, 'Must be a number').length(9, 'Must be 9 digits').required(),
         name: yup.string().required(),
         age: yup.number().min(0, "should be a adult").required(),
