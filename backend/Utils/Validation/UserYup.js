@@ -12,7 +12,6 @@ class UserYup {
         role: yup.string().oneOf(userType).required(),
         email: yup.string().email().required(),
         password: yup.string().required(),
-        photoUrl: yup.string().required(),
         name: yup.string().required(),
     })
     deactivateUser = yup.object({

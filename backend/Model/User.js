@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import sriLankanProvinces from "../Utils/Constants/Address/Provinces.js";
 import sriLankanDistricts from "../Utils/Constants/Address/District.js";
+import gender from "../Utils/Constants/Gender.js";
 
 const urlPic = [
     "https://avatars.githubusercontent.com/u/54225118?v=4",
@@ -25,10 +26,25 @@ const userSchema = new mongoose.Schema(
             required: true,
             unique: true
         },
+        telephone: {
+            type: Number,
+            required:true
+        },
+        gender: {
+            type: String,
+            lowercase: true,
+            required: true,
+            enum:gender
+        },
         password: {
             type: String,
             required: true,
             minlength: 8
+        },
+        age: {
+            type: Number,
+            min:[0,'age is positive'],
+            required:true
         },
         isVerfied: {
             type: Boolean,

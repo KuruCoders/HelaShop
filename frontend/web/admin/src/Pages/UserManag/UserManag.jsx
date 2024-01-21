@@ -1,4 +1,5 @@
 import React from 'react'
+import AddUserModal from './AddUserModal'
 
 export default function UserManag() {
     return (
@@ -11,8 +12,9 @@ export default function UserManag() {
                             <div className="card-body p-4">
                                 <div className='d-flex justify-content-end align-items-center mb-4'>
                                     <button className='btn btn-outline-dark mx-2'>Export</button>
-                                    <button className='btn btn-success'>Add New</button>
+                                    <button className='btn btn-success' data-bs-toggle="modal" data-bs-target="#addUserModal">Add New</button>
                                 </div>
+                                <AddUserModal/>
                                 <div className="d-flex justify-content-between align-items-center mb-2">
                                     <h5 className="card-title fw-semibold">List Of Users</h5>
                                     <form className="position-relative">
