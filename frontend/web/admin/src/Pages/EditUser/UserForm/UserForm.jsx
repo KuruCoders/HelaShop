@@ -10,11 +10,7 @@ import CusSwal from '../../../Utils/CustomSwal/CusSwal.js'
 
 export default function UserForm({ data, onFormSubmit }) {
     const navigate = useNavigate()
-    const [showEye, setShowEye] = useState(false)
-    const handleShowPassword = () => {
-        if (showEye) setShowEye(false)
-        if (!showEye) setShowEye(true)
-    }
+    
     const initValues = {
         name: '',
         email: '',
@@ -41,7 +37,8 @@ export default function UserForm({ data, onFormSubmit }) {
                     })
                 }
             } catch (error) {
-                Toaster.justToast('error', error.response.data.data.message, () => { })
+                // Toaster.justToast('error', error.response.data.data.message, () => { })
+                ResponseHandler.handleResponse(error)
             } finally {
                 Toaster.dismissLoadingToast()
             }

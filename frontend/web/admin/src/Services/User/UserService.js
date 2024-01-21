@@ -11,6 +11,7 @@ class UserService{
         this.UPDATE_USER = "user/update-user";
         this.DELETE_USER = "user/deactivate-user";
         this.MANIPULATE_ADDERSS = "user/manipulate-user-address";
+        this.UPDATE_PASSWORD = "user/update-password";
         this.PIC_URL = "https://api.imgbb.com/1/upload?key=a7efc3c653c266bbfd8099ced01aa8ca";
     }
     addUser(input) {
@@ -64,6 +65,13 @@ class UserService{
             city:input.city
         }
         return axios.put(this.MANIPULATE_ADDERSS,{email,address:data},BaseService.getHeader())
+    }
+    updatePassword(email, password) {
+        let data = {
+            email,
+            password
+        }
+        return axios.put(this.UPDATE_PASSWORD,data,BaseService.getHeader())
     }
 }
 export default UserService = new UserService()

@@ -5,6 +5,7 @@ import { useFormik } from 'formik'
 import UserAddressYup from '../../../Validation/User/UserAddressYup'
 import Toaster from '../../../Utils/Constants/Toaster'
 import UserService from '../../../Services/User/UserService'
+import ResponseHandler from '../../../Utils/Constants/ResponseHandler'
 
 export default function UserAddress({ data }) {
     console.log(data)
@@ -29,7 +30,8 @@ export default function UserAddress({ data }) {
                     })
                 }
             } catch (error) {
-                Toaster.justToast('error', error.response.data.data.message, () => { })
+                // Toaster.justToast('error', error.response.data.data.message, () => { })
+                ResponseHandler.handleResponse(error)
             } finally {
                 Toaster.dismissLoadingToast()
             }

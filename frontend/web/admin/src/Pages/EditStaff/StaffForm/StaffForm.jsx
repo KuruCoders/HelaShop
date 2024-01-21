@@ -30,8 +30,8 @@ export default function StaffForm({ data, onFormSubmit }) {
                     })
                 }
             } catch (error) {
-                Toaster.justToast('error', error.response.data.message, () => {})
-                // ResponseHandler.handleResponse(error)
+                // Toaster.justToast('error', error.response.data.message, () => {})
+                ResponseHandler.handleResponse(error)
             } finally {
                 Toaster.dismissLoadingToast()
             }

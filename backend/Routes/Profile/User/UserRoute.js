@@ -12,6 +12,7 @@ router.post("/create-user",validateToken,validateScehma(UserYup.createUser),User
 router.post("/deactivate-user",validateToken,validateScehma(UserYup.deactivateUser),UserController.deactivateUser)
 router.put("/update-user", validateToken, validateScehma(UserYup.updateUser), UserController.updateUser)
 router.put("/pic-update",validateToken,validateScehma(UserYup.updatePictureUser),UserController.updateUserPic)
+router.put("/update-password",validateToken,validateScehma(UserYup.updatePassword),UserController.updatePassword)
 router.put("/manipulate-user-address",validateToken,validateScehma(UserYup.manipulateAddress),UserController.manipulateAddress)
 
 export default router
