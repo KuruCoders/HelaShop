@@ -17,6 +17,7 @@ class UserController {
         }
     }
     //getUserByEmail
+    
     getUserByEmail = async (req, res) => {
         try {
             const { email } = req.body
@@ -31,12 +32,12 @@ class UserController {
     //create user
     createUser = async (req, res) => {
         try {
-            const { name, email, password, role, photoUrl } = req.body
+            const { name, email, password, role,telephone,gender,age } = req.body
             const userExist = await User.findOne({ email })
             if (userExist) return response(res, 403, HttpStatus.getStatus(403), ResTypes.errors.user_exists)
 
             const hashedPassword = await bcrypt.hash(password, 10)
-            const user = new User({ name, email, password: hashedPassword, role, photoUrl, isVerfied: true, isActive: true })
+            const user = new User({ name, email, password: hashedPassword, role, isVerfied: true, isActive: true,telephone,gender,age  })
             const result = await user.save()
             if (result) {
                 return response(res, 201, HttpStatus.getStatus(201), { ...ResTypes.successMessages.user_created, user })
@@ -89,7 +90,6 @@ class UserController {
     manipulateAddress = async (req, res) => {
         const { email, address } = req.body;
         const { district, province, country, city, street, postalCode, zipCode } = address;
-
         try {
             const userExist = await User.findOne({ email })
             if (!userExist) return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.no_user)
@@ -98,10 +98,8 @@ class UserController {
                 { email },
                 {
                     $set: { address: { district, province, country, city, street, postalCode, zipCode } }
-                },
-                {}
+                }
             )
-            console.log(userExist.address)
             if (!result) return response(res, 403, HttpStatus.getStatus(403), ResTypes.errors.failed_operation)
             return response(res, 201, HttpStatus.getStatus(201), ResTypes.successMessages.address_edited)
         } catch (error) {
@@ -109,7 +107,6 @@ class UserController {
             return response(res, 500, HttpStatus.getStatus(500), error)
         }
     }
-
 }
 
 export default UserController = new UserController()

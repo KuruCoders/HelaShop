@@ -1504,3 +1504,14 @@
 2024.01.15	20:10:49	ea3b99b0-1710-4de3-b131-2edd96fc965f	POST	::1	undefined	/get-user	Status:200	User-Agent:PostmanRuntime/7.36.1	Duration:319ms
 2024.01.15	20:11:02	47590817-8f4c-4f0c-9905-44c312e5e606	PUT	::1	undefined	/manipulate-user-address	Status:201	User-Agent:PostmanRuntime/7.36.1	Duration:467ms
 2024.01.15	20:11:07	e290282d-7954-4a4a-9f57-b54ee24481c4	POST	::1	undefined	/get-user	Status:200	User-Agent:PostmanRuntime/7.36.1	Duration:301ms
+2024.01.15	22:15:40	0966be5e-52ac-4260-b219-74e8391094e4	POST	::1	undefined	/api/v1/user/get-userf	Status:404	User-Agent:PostmanRuntime/7.36.1	Duration:6ms
+2024.01.15	22:15:45	83898101-507e-40bc-b4a9-743096bda716	POST	::1	undefined	/get-user	Status:200	User-Agent:PostmanRuntime/7.36.1	Duration:537ms
+2024.01.15	22:16:15	aa5bd80a-41dd-44b6-a433-c6dc3e9488b1	POST	::1	undefined	/get-user	Status:400	User-Agent:PostmanRuntime/7.36.1	Duration:1003ms
+2024.01.15	22:24:00	f6089eaf-3df3-434b-bc8b-7cca3453f94b	POST	::1	http://localhost:3000	/login	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:301ms
+2024.01.15	22:24:23	c59e2250-6ef0-4953-88d2-ad7fd90373ae	POST	::1	http://localhost:3000	/login	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:789ms
+2024.01.21	07:04:16	78b1360b-800c-4f55-a187-12b96433c852	GET	::1	http://localhost:3000	/get-allStaff	Status:401	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:13ms
+2024.01.21	07:04:24	cdad3692-3c21-482d-a646-1ff0913f04d1	POST	::1	http://localhost:3000	/login	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:269ms
+2024.01.21	07:04:34	a31ba177-67b0-4c6c-8d9f-7d4dfa2b45c6	GET	::1	http://localhost:3000	/get-allStaff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:330ms
+2024.01.21	07:04:40	2b6c3189-aa3b-4c2f-b3fd-b1151bb94353	GET	::1	http://localhost:3000	/get-allStaff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:308ms
+2024.01.21	07:05:15	f38cab62-96d1-444c-823c-ed8180a57b0f	GET	::1	http://localhost:3000	/get-allStaff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:284ms
+2024.01.21	07:10:34	974185dd-6b90-44e1-914d-6c6ed45a400b	GET	::1	http://localhost:3000	/get-allStaff	Status:200	User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36	Duration:321ms
