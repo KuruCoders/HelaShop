@@ -69,18 +69,35 @@ class UserController {
     //updateUser
     updateUser = async (req, res) => {
         try {
-            const { name, email, password, role, photoUrl } = req.body
+            const { name, email, role, photoUrl,telephone,age,gender } = req.body
             const userExist = await User.findOne({ email })
             if (!userExist) return response(res, 403, HttpStatus.getStatus(403), ResTypes.errors.no_user)
 
-            const hashedPassword = await bcrypt.hash(password, 10)
             const result = await User.updateOne(
                 { email },
-                { $set: { name, password: hashedPassword, role, photoUrl } }
+                { $set: { name, role, photoUrl,telephone,age,gender } }
             )
             if (result.modifiedCount === 0) return response(res, 403, HttpStatus.getStatus(403), ResTypes.errors.failed_operation)
             return response(res, 200, HttpStatus.getStatus(200), ResTypes.successMessages.user_edited)
 
+        } catch (error) {
+            console.log(error)
+            return response(res, 500, HttpStatus.getStatus(500), error)
+        }
+    }
+    //updateUserPic
+    updateUserPic = async (req, res) => {
+        try {
+            const { email, photoUrl } = req.body;
+            const userExist = await User.findOne({ email })
+            if (!userExist) return response(res, 403, HttpStatus.getStatus(403), ResTypes.errors.no_user)
+            
+            const result = await User.updateOne(
+                { email },
+                {$set:{photoUrl}}
+            )
+            if (result.modifiedCount === 0) return response(res, 403, HttpStatus.getStatus(403), ResTypes.errors.failed_operation)
+            return response(res,200,HttpStatus.getStatus(200),ResTypes.successMessages.user_edited)
         } catch (error) {
             console.log(error)
             return response(res, 500, HttpStatus.getStatus(500), error)

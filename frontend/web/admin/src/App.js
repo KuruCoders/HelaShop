@@ -15,6 +15,7 @@ import Act from './Pages/MyProfile/Account/Act';
 import Bills from './Pages/MyProfile/Billing/Bills';
 import Notification from './Pages/MyProfile/Notification/Notification';
 import EditStaff from './Pages/EditStaff/EditStaff';
+import EditUser from './Pages/EditUser/EditUser';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
             <Route index element={<Dashboard />} />
             <Route path='dashboard' element={<Dashboard />} />
             <Route path='user' element={<UserManag />} />
-            <Route path='user/edit/:email'  />
+            <Route path='user/edit/:email' element={<EditUser/>} />
             <Route path='payment' element={<PaymentManag />} />
             <Route path='inventory' element={<InventoryManag />} />
             <Route path='staff' element={<StaffManag />} />
