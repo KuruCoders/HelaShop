@@ -64,8 +64,8 @@ export default function UserProPic({ user }) {
         <div className="col-lg-12 d-flex align-items-stretch">
             <div className="card w-100 position-relative overflow-hidden">
                 <div className="card-body p-4">
-                    <h5 className="card-title fw-semibold">Mr { user.name}</h5>
-                    <p className="card-subtitle mb-2">Edit Your Profile Picture In Personal Details</p>
+                    <h5 className="card-title fw-semibold">Change Profile</h5>
+                    <p className="card-subtitle mb-2">Change your profile picture from here</p>
                     <div className="text-center">
                         {
                             loading ? (

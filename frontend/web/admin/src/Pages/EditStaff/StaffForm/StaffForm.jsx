@@ -25,7 +25,8 @@ export default function StaffForm({ data, onFormSubmit }) {
                 const result = await StaffService.updateStaff(values)
                 if (result) {
                     Toaster.justToast('success', result.data.data.message, () => {
-                        onFormSubmit()
+                        // when uncommented below re renders the whole page , if needed only uncomment
+                        // onFormSubmit()
                     })
                 }
             } catch (error) {

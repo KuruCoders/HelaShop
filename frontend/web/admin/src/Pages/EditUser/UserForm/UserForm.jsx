@@ -4,9 +4,9 @@ import UserYup from '../../../Validation/User/UserYup.js'
 import UserService from '../../../Services/User/UserService.js'
 import ResponseHandler from '../../../Utils/Constants/ResponseHandler.js'
 import Toaster from '../../../Utils/Constants/Toaster.js'
+import DateFormatter from '../../../Utils/Constants/DateFormatter.js'
 
 export default function UserForm({ data, onFormSubmit }) {
-    const [image, setImage] = useState(null)
     const [showEye, setShowEye] = useState(false)
     const handleShowPassword = () => {
         if (showEye) setShowEye(false)
@@ -22,45 +22,28 @@ export default function UserForm({ data, onFormSubmit }) {
         gender: '',
         photoUrl: '',
     }
-    const handleImage = (e) => {
-        console.log(e.target.files)
-        setImage(e.target.files[0])
-    }
+
     const { values, handleChange, handleSubmit, errors, touched, setValues } = useFormik({
         initialValues: initValues,
         validationSchema: UserYup.addUser,
         onSubmit: async (values) => {
-            //edit form logic
-            const formData = new FormData()
-            formData.append('image', image)
-            Toaster.loadingToast('uploading data ......')
+            Toaster.loadingToast("updating user Details .........")
             try {
-                const result = await UserService.uploadProfilePicture(formData)
-                if (result.data.data) {
-                    await uploadToMongo(result.data.data.url, values)
+                const mongoResult = await UserService.updateUser(values)
+                console.log(mongoResult)
+                if (mongoResult.data.code === 200) {
+                    Toaster.justToast('success', mongoResult.data.data.message, () => {
+                        // when uncommented below re renders the whole page , if needed only uncomment
+                        // onFormSubmit()
+                    })
                 }
             } catch (error) {
-                ResponseHandler.handleResponse(error)
-                console.log(error)
+                Toaster.justToast('error', error.response.data.data.message, () => { })
             } finally {
                 Toaster.dismissLoadingToast()
             }
         }
     })
-
-    const uploadToMongo = async (photoUrl, values) => {
-        try {
-            const mongoResult = await UserService.updateUser(photoUrl, values)
-            console.log(mongoResult)
-            if (mongoResult.data.code === 200) {
-                Toaster.justToast('success', "data updated", () => {
-                })
-                onFormSubmit()
-            }
-        } catch (error) {
-            Toaster.justToast('error', error.response.data.data.message, () => { })
-        }
-    }
     useEffect(() => {
         if (data) {
             setValues({
@@ -70,7 +53,7 @@ export default function UserForm({ data, onFormSubmit }) {
                 password: data.password || '',
                 age: data.age || '',
                 role: data.role || '',
-                photoUrl: data.photoUrl || '',
+                updated_at: data.updated_at || '',
                 gender: data.gender || '',
             })
         }
@@ -118,31 +101,7 @@ export default function UserForm({ data, onFormSubmit }) {
 
                     </div>
                     <div className="row mb-3">
-                        <div className="col-12 col-md-6">
-                            <label htmlFor="InputSalary" className="form-label">Image Photo</label>
-                            <div className="input-group">
-                                {/* <input
-                                    value={values.password}
-                                    type={showEye ? 'text' : 'password'}
-                                    onChange={handleChange}
-                                    name='password'
-                                    maxLength="12"
-                                    className={`form-control ${(errors.password && touched.password) ? 'is-invalid' : ''}`}
-                                    id="InputPassword"
-
-                                /> */}
-                                <input
-                                    onChange={handleImage}
-                                    accept="image/*"
-                                    className="form-control"
-                                    name='photoUrl'
-                                    type="file"
-                                    id="formFile" />
-                            </div>
-                            <div className="invalid-feedback">
-                                {errors.salary}
-                            </div>
-                        </div>
+                        
                         <div className="col-12 col-md-6">
                             <label htmlFor="InputName" className="form-label">Name</label>
                             <input
@@ -156,6 +115,22 @@ export default function UserForm({ data, onFormSubmit }) {
                             />
                             <div className="invalid-feedback">
                                 {errors.name}
+                            </div>
+                        </div>
+                        <div className="col-12 col-md-6">
+                            <label htmlFor="InputSalary" className="form-label">Last Updated</label>
+                            <div className="input-group">
+                                <input
+                                    disabled
+                                    value={values.updated_at?DateFormatter.formatDate(values.updated_at):'N/A'}
+                                    type={'text'}
+                                    name='updated_at'
+                                    className={`form-control`}
+                                    id="InputUpdatedAt"
+                                />
+                            </div>
+                            <div className="invalid-feedback">
+                                {/*  */}
                             </div>
                         </div>
 

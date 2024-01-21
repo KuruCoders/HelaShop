@@ -43,16 +43,14 @@ class UserService{
         }
         return axios.put(this.UPLOAD_IMAGE,data,BaseService.getHeader())
     }
-    updateUser(photoUrl, input) {
+    updateUser(input) {
         let data = {
             name :input.name,
             email:input.email,
-            password:input.password,
             role:input.role,
             telephone:input.telephone,
             gender:input.gender,
             age: input.age,
-            photoUrl:photoUrl
         }
         return axios.put(this.UPDATE_USER,data,BaseService.getHeader())
     }
