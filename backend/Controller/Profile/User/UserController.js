@@ -124,6 +124,25 @@ class UserController {
             return response(res, 500, HttpStatus.getStatus(500), error)
         }
     }
+    //updatePassword 
+    updatePassword = async (req, res) => {
+        const { email, password } = req.body;
+        try {
+            const userExist = await User.findOne({ email })
+            if (!userExist) return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.no_user)
+            
+            const hashedPasword = await bcrypt.hash(password, 10)
+            const result = await User.updateOne(
+                { email },
+                {$set:{password:hashedPasword}}
+            )
+            if (result.modifiedCount === 0) return response(res, 403, HttpStatus.getStatus(403), ResTypes.errors.failed_operation)
+            return response(res,200,HttpStatus.getStatus(200),ResTypes.successMessages.user_edited)
+        } catch (error) {
+            console.log(error)
+            return response(res, 500, HttpStatus.getStatus(500), error)
+        }
+    }
 }
 
 export default UserController = new UserController()

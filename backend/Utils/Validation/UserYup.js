@@ -40,5 +40,9 @@ class UserYup {
             postalCode: yup.number().required(),
         })
     })
+    updatePassword = yup.object({
+        email: yup.string().email().required(),
+        password:yup.string().required()
+    })
 }
 export default UserYup = new UserYup()
