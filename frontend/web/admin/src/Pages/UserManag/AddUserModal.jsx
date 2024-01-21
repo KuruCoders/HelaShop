@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function AddUserModal() {
+    const [showEye, setShowEye] = useState(false)
+    const handleShowPassword = () => {
+        if (showEye) setShowEye(false)
+        if(!showEye) setShowEye(true)
+    }
     return (
         <>
             <div className="modal fade" id="addUserModal" tabIndex={-1} aria-labelledby="addUserModal" aria-hidden="true">
@@ -45,28 +50,29 @@ export default function AddUserModal() {
                                 </div>
                                 <div className="row mb-3">
                                     <div className="col-12 col-md-6">
-                                        <label htmlFor="UserSalary" className="form-label">Basic Salary</label>
+                                        <label htmlFor="UserPassword" className="form-label">Password</label>
                                         <div className="input-group">
-                                            <span className="input-group-text">Rs</span>
                                             <input
-                                                type="text"
-                                                name='salary'
+                                                type={showEye?'text':'password'}
+                                                name='password'
                                                 maxLength="12"
                                                 className="form-control"
-                                                id="UserSalary"
+                                                id="UserPassword"
                                             />
-                                            {/* <span className="input-group-text">.00</span> */}
+                                            <span className="input-group-text" style={{cursor:"pointer"}} onClick={handleShowPassword}>
+                                                <i className='ti ti-eye'/>
+                                            </span>
                                         </div>
                                         <div className="invalid-feedback">
                                         </div>
                                     </div>
                                     <div className="col-12 col-md-6">
-                                        <label htmlFor="InputName" className="form-label">Name</label>
+                                        <label htmlFor="InputUserName" className="form-label">Name</label>
                                         <input
                                             type="text"
                                             className="form-control"
                                             name='name'
-                                            id="InputName"
+                                            id="InputUserName"
                                             aria-describedby="emailHelp"
                                         />
                                         <div className="invalid-feedback">
@@ -90,30 +96,28 @@ export default function AddUserModal() {
                                         </div>
                                     </div>
                                     <div className="col-5">
-                                        <label htmlFor="UserRole" className="form-label">Staff Role</label>
+                                        <label htmlFor="UserRole" className="form-label">User Role</label>
                                         <select
                                             className="form-control"
                                             id="UserRole"
                                             name='role'
                                         >
                                             <option >choose</option>
-                                            <option value="trainee">Trainee</option>
-                                            <option value="sales">Sales</option>
-                                            <option value="security">Security</option>
-                                            <option value="cleaner">Cleaner</option>
+                                            <option value="user">User</option>
+                                            <option value="admin">Admin</option>
                                         </select>
                                         <div className="invalid-feedback">
                                             {/* {errors.role} */}
                                         </div>
                                     </div>
                                     <div className="col-3">
-                                        <label htmlFor="InputAge" className="form-label">Age</label>
+                                        <label htmlFor="UserAge" className="form-label">Age</label>
                                         <div className="input-group">
                                             <input
                                                 type="text"
                                                 maxLength="3"
                                                 className="form-control"
-                                                id="InputAge"
+                                                id="UserAge"
                                                 name='age'
                                             />
                                             <div className="invalid-feedback">
