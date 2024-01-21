@@ -1,4 +1,4 @@
-import React, {  useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { useFormik } from 'formik'
 import StaffYup from '../../Validation/Staff/StaffYup'
 import StaffService from '../../Services/Staff/StaffService'
@@ -7,7 +7,7 @@ import LocalStore from '../../Store/LocalStore'
 import Toaster from '../../Utils/Constants/Toaster'
 import { ToastContainer } from 'react-toastify'
 
-export default function AddStaffModal({onModalSubmit}) {
+export default function AddStaffModal({ onModalSubmit }) {
     const closeModel = useRef();
 
     const initValues = {
@@ -35,20 +35,20 @@ export default function AddStaffModal({onModalSubmit}) {
                     })
                 }
             } catch (error) {
-                
+
                 if (error.response.data.code === 404 || error.response.data.code === 403) {
-                    Toaster.justToast('error', error.response.data.data.message, () => {})
+                    Toaster.justToast('error', error.response.data.data.message, () => { })
                 }
                 if (error.response.data.code === 401) {
                     Toaster.justToast('error', error.response.data.data.message, () => {
                         LocalStore.removeToken()
-                        navigate('/login' , {replace:true})
+                        navigate('/login', { replace: true })
                         // Force a full-page refresh
                         window.location.reload(true);
                     })
                 }
                 if (error.response.data.code === 500) {
-                    Toaster.justToast('error', error.response.data.data.message, () => {})
+                    Toaster.justToast('error', error.response.data.data.message, () => { })
                 }
             } finally {
                 closeModel.current.click()
@@ -120,9 +120,9 @@ export default function AddStaffModal({onModalSubmit}) {
                                                 onChange={handleChange}
                                             />
                                             {/* <span className="input-group-text">.00</span> */}
-                                        </div>
-                                        <div className="invalid-feedback">
-                                            {errors.salary}
+                                            <div className="invalid-feedback">
+                                                {errors.salary}
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="col-12 col-md-6">
