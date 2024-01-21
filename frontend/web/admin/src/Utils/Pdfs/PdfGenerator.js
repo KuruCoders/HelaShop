@@ -1,6 +1,7 @@
 
 import jsPDF from "jspdf";
 import 'jspdf-autotable'
+import DateFormatter from "../Constants/DateFormatter";
 
 class PdfGenerator {
     generatePdf(data, titles, headers) {
@@ -45,19 +46,23 @@ class PdfGenerator {
         doc.setFontSize(12);
         doc.setTextColor("#000000");
 
+        //add the body dynamically mathcing to header
+        const body = data.map(item => {
+            const rowData = headers.map(header => {
+                const propName = header.toLowerCase();
+                if (propName === "created_at" && item[propName]) {
+                    const formattedDate = DateFormatter.formatDate(item[propName]);
+                    return formattedDate;
+                }
+                return item[propName];
+            })
+            return rowData
+        })
+
         doc.autoTable({
             startY: 145,
             head: [headers],
-            body: data.map((item) => {
-                return [
-                    item.email,
-                    item.name,
-                    item.telephone,
-                    item.role,
-                    item.salary,
-                    item.gender
-                ]
-            }),
+            body: body,
             theme: "grid"
         })
         doc.save(`${name}.pdf`)

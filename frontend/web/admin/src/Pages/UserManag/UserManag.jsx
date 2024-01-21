@@ -4,6 +4,8 @@ import UserTable from './UserTable'
 import UserService from '../../Services/User/UserService'
 import ResponseHandler from '../../Utils/Constants/ResponseHandler'
 import Toaster from '../../Utils/Constants/Toaster'
+import PdfGenerator from '../../Utils/Pdfs/PdfGenerator'
+import userHeader from '../../Utils/Pdfs/UserMHeader'
 
 export default function UserManag() {
     const [loading, setLoading] = useState(false)
@@ -36,7 +38,17 @@ export default function UserManag() {
             Toaster.dismissLoadingToast()
         }
     }
-
+    const gneratePDF = () => {
+        Toaster.loadingToast('Generating Pdf')
+        try {
+            Toaster.updateLoadingToast('success', 'Creating The Pdf For You', () => {})
+            PdfGenerator.generatePdf(users, "User List", userHeader)
+        } catch (error) {
+            Toaster.updateLoadingToast('error', 'genration failed', () => { })
+        } finally {
+            Toaster.dismissLoadingToast()
+        }
+    }
     useEffect(() => {
         fetchUser()
     }, [])
@@ -50,7 +62,7 @@ export default function UserManag() {
                         <div className="card w-100 shadow-sm">
                             <div className="card-body p-4">
                                 <div className='d-flex justify-content-end align-items-center mb-4'>
-                                    <button className='btn btn-outline-dark mx-2'>Export</button>
+                                    <button className='btn btn-outline-dark mx-2' onClick={gneratePDF}>Export</button>
                                     <button className='btn btn-success' data-bs-toggle="modal" data-bs-target="#addUserModal">Add New</button>
                                 </div>
                                 <AddUserModal />
