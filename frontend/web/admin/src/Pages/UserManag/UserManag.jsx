@@ -3,12 +3,13 @@ import AddUserModal from './AddUserModal'
 import UserTable from './UserTable'
 import UserService from '../../Services/User/UserService'
 import ResponseHandler from '../../Utils/Constants/ResponseHandler'
+import Toaster from '../../Utils/Constants/Toaster'
 
 export default function UserManag() {
     const [loading, setLoading] = useState(false)
     const [users, setUsers] = useState([])
-    
-    const fetchUser = async() =>{
+
+    const fetchUser = async () => {
         setLoading(true)
         try {
             const result = await UserService.getUsers()
@@ -21,10 +22,25 @@ export default function UserManag() {
             setLoading(false)
         }
     }
+    const handleUserDelete = async (email) => {
+        Toaster.loadingToast('Deleting User ........')
+        const result = await UserService.deleteUser(email)
+        try {
+            if (result.data.code === 200) {
+                Toaster.justToast('success', "Staff Deleted", () => { })
+            }
+        } catch (error) {
+            ResponseHandler.handleResponse(error)
+        } finally {
+            fetchUser()
+            Toaster.dismissLoadingToast()
+        }
+    }
+
     useEffect(() => {
-      fetchUser()
+        fetchUser()
     }, [])
-    
+
     return (
         <div className="body-wrapper">
             <div className="container-fluid">
@@ -37,7 +53,7 @@ export default function UserManag() {
                                     <button className='btn btn-outline-dark mx-2'>Export</button>
                                     <button className='btn btn-success' data-bs-toggle="modal" data-bs-target="#addUserModal">Add New</button>
                                 </div>
-                                <AddUserModal/>
+                                <AddUserModal />
                                 <div className="d-flex justify-content-between align-items-center mb-2">
                                     <h5 className="card-title fw-semibold">List Of Users</h5>
                                     <form className="position-relative">
@@ -46,7 +62,7 @@ export default function UserManag() {
                                     </form>
                                 </div>
                                 <div className="table-responsive">
-                                    <UserTable users={users} loading={loading}/>
+                                    <UserTable handleUserDelete={handleUserDelete} users={users} loading={loading} />
                                 </div>
                             </div>
                         </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import DateFormatter from '../../Utils/Constants/DateFormatter'
 
-export default function UserItem({ users }) {
+export default function UserItem({ users,handleUserDelete }) {
   return (
     <>
       {
@@ -40,7 +40,7 @@ export default function UserItem({ users }) {
                 <ul className="dropdown-menu bg-white" style={{ minWidth: "auto" }}>
                   <li><NavLink to={`edit/${user.email}`} className="dropdown-item" >Edit</NavLink></li>
                   <li><button type='button' onClick={() => {
-                    // handleStaffDelete(user.email)
+                    handleUserDelete(user.email)
                   }} className="dropdown-item" >Delete</button></li>
                 </ul>
               </td>

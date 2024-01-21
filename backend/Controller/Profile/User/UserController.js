@@ -8,7 +8,7 @@ class UserController {
     //getAllUsers
     getAllUsers = async (req, res) => {
         try {
-            const users = await User.find({})
+            const users = await User.find({isActive:true})
             if (!users) return response(res, 404, HttpStatus.getStatus(404), ResTypes.errors.no_user)
             return response(res, 200, HttpStatus.getStatus(200), { ...ResTypes.successMessages.data_retrieved, users })
         } catch (error) {
