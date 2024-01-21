@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import UserJoined from './UserJoined/UserJoined'
+import UserAddress from './UserAddress/UserAddress'
 import UserProPic from './UserProPic/UserProPic'
 import UserForm from './UserForm/UserForm'
-import UserActDelete from './UserActDelete/UserActDelete'
+import UserChangePassword from './UserChangePassword/UserChangePassword'
 import { useParams } from 'react-router-dom'
 import ResponseHandler from '../../Utils/Constants/ResponseHandler'
 import UserService from '../../Services/User/UserService'
@@ -33,11 +33,11 @@ export default function EditUser() {
                     <div className="row">
                         <div className="col-lg-5">
                             <UserProPic user={user} />
-                            <UserJoined data={user} />
+                            <UserAddress data={user} />
                         </div>
                         <div className="col-lg-7">
+                            <UserChangePassword data={user} />
                             <UserForm onFormSubmit={fetchData} data={user} />
-                            <UserActDelete data={user} />
                         </div>
                     </div>
                 ) : (

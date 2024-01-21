@@ -30,7 +30,6 @@ export default function ProHeader() {
                     </NavLink>
                 </li> */}
             </ul>
-           
         </div>
     )
 }

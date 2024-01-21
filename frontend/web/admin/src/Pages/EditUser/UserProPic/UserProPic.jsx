@@ -65,7 +65,7 @@ export default function UserProPic({ user }) {
             <div className="card w-100 position-relative overflow-hidden">
                 <div className="card-body p-4">
                     <h5 className="card-title fw-semibold">Change Profile</h5>
-                    <p className="card-subtitle mb-2">Change your profile picture from here</p>
+                    <p className="card-subtitle mb-2">Allowed JPG, GIF or PNG. Max size of 800K</p>
                     <div className="text-center">
                         {
                             loading ? (
@@ -79,11 +79,10 @@ export default function UserProPic({ user }) {
 
                             )
                         }
-                        <form className="d-flex align-items-center justify-content-center my-4 gap-3" onSubmit={handleApi}>
+                        <form className="d-flex align-items-center justify-content-center my-4 mb-0 gap-3" onSubmit={handleApi}>
                             <input required disabled={loading} onChange={handleImage} accept="image/*" className="form-control" type="file" id="formFile" />
                             <button type='submit' disabled={loading} className="btn btn-outline-success">Add</button>
                         </form>
-                        <p className="mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
                     </div>
                 </div>
             </div>

@@ -5,8 +5,11 @@ import UserService from '../../../Services/User/UserService.js'
 import ResponseHandler from '../../../Utils/Constants/ResponseHandler.js'
 import Toaster from '../../../Utils/Constants/Toaster.js'
 import DateFormatter from '../../../Utils/Constants/DateFormatter.js'
+import { useNavigate } from 'react-router-dom'
+import CusSwal from '../../../Utils/CustomSwal/CusSwal.js'
 
 export default function UserForm({ data, onFormSubmit }) {
+    const navigate = useNavigate()
     const [showEye, setShowEye] = useState(false)
     const handleShowPassword = () => {
         if (showEye) setShowEye(false)
@@ -44,6 +47,21 @@ export default function UserForm({ data, onFormSubmit }) {
             }
         }
     })
+    const onClickDelete = () => {
+        CusSwal.deleteConfiramation(async () => {
+            try {
+                const result = await UserService.deleteUser(values.email)
+                if (result) {
+                    Toaster.justToast('success', "User Deleted", () => {
+                        navigate('/main/user')
+                    })
+                }
+            } catch (error) {
+                ResponseHandler.handleResponse(error)
+            }
+        })
+
+    }
     useEffect(() => {
         if (data) {
             setValues({
@@ -53,7 +71,7 @@ export default function UserForm({ data, onFormSubmit }) {
                 password: data.password || '',
                 age: data.age || '',
                 role: data.role || '',
-                updated_at: data.updated_at || '',
+                created_at: data.created_at || '',
                 gender: data.gender || '',
             })
         }
@@ -64,7 +82,7 @@ export default function UserForm({ data, onFormSubmit }) {
                 <h5 className="card-title fw-semibold">Personal Details</h5>
                 <p className="card-subtitle mb-3">To change your personal detail , edit and save from here</p>
                 <form className='needs-validation' onSubmit={handleSubmit} noValidate>
-                    <div className="row mb-2">
+                    <div className="row mb-3">
                         <div className="col-9 col-md-9">
                             <label htmlFor="InputEmail" className="form-label">Email address</label>
                             <input
@@ -101,7 +119,6 @@ export default function UserForm({ data, onFormSubmit }) {
 
                     </div>
                     <div className="row mb-3">
-                        
                         <div className="col-12 col-md-6">
                             <label htmlFor="InputName" className="form-label">Name</label>
                             <input
@@ -118,11 +135,11 @@ export default function UserForm({ data, onFormSubmit }) {
                             </div>
                         </div>
                         <div className="col-12 col-md-6">
-                            <label htmlFor="InputSalary" className="form-label">Last Updated</label>
+                            <label htmlFor="InputSalary" className="form-label">Joined Date</label>
                             <div className="input-group">
                                 <input
                                     disabled
-                                    value={values.updated_at?DateFormatter.formatDate(values.updated_at):'N/A'}
+                                    value={values.created_at?DateFormatter.formatDate(values.created_at):'N/A'}
                                     type={'text'}
                                     name='updated_at'
                                     className={`form-control`}
@@ -192,6 +209,7 @@ export default function UserForm({ data, onFormSubmit }) {
                         </div>
                     </div>
                     <div className="d-flex justify-content-end mb-0">
+                        <button type="button" onClick={onClickDelete} className="btn btn-danger mx-2">Delete Account</button>
                         <button type="submit" className="btn btn-warning">Edit Details</button>
                     </div>
                 </form>
