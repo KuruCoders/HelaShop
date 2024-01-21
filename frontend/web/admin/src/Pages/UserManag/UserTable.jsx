@@ -1,7 +1,7 @@
 import React from 'react'
 import UserItem from './UserItem'
 
-export default function UserTable({ loading,users }) {
+export default function UserTable({ loading,users,handleUserDelete }) {
 
     return (
         <>
@@ -44,7 +44,7 @@ export default function UserTable({ loading,users }) {
                             </tr>
                         </thead>
                             <tbody>
-                                <UserItem users={ users } />
+                                <UserItem handleUserDelete={handleUserDelete} users={ users } />
                         </tbody>
                     </table>
                 )
