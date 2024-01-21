@@ -28,6 +28,7 @@ function App() {
             <Route index element={<Dashboard />} />
             <Route path='dashboard' element={<Dashboard />} />
             <Route path='user' element={<UserManag />} />
+            <Route path='user/edit/:email'  />
             <Route path='payment' element={<PaymentManag />} />
             <Route path='inventory' element={<InventoryManag />} />
             <Route path='staff' element={<StaffManag />} />
