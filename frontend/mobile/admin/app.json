@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "fontie",
-    "slug": "fontie",
+    "name": "admin",
+    "slug": "admin",
     "version": "1.0.0",
     "orientation": "potrait",
     "icon": "./assets/icon.png",
