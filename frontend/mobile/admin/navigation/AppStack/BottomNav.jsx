@@ -13,7 +13,7 @@ export default function BottomNav() {
             activeColor="#017aff"
             inactiveColor="grey"
             activeIndicatorStyle={{ backgroundColor: "#f7f7f7" }}
-            barStyle={{ backgroundColor: '#ffffff',height:70 }}
+            barStyle={{ backgroundColor: '#ffffff', height: 70 }}
             screenOptions={({ route }) => ({
                 headerShown: false,
                 tabBarIcon: ({ focused, color }) => {
