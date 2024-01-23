@@ -19,14 +19,21 @@ export default function DrawerNav() {
             <Drawer.Navigator
                 screenOptions={
                     ({ route, navigation }) => ({
-                        headerTitleStyle: {fontSize:0},
+                        headerTitleStyle: { fontSize: 0 },
                         headerRight: () => (
-                            <TouchableOpacity activeOpacity={0.9} onPress={navigation.toggleDrawer}>
-                                <Image className="rounded-full w-9 h-9 mr-3" source={require('../../assets/logos/user-1.jpg')} />
-                            </TouchableOpacity>),
+                            <View className="flex-row items-center">
+                                <Image className="rounded-lg w-[30px] h-[30px] mx-2" source={require('../../assets/lk.jpg')} />
+                                <TouchableOpacity className="bg-slate-100 rounded-full p-1 mx-2" activeOpacity={0.6}>
+                                    <Ionicons name={'notifications-circle-outline'} color={'grey'} size={26} />
+                                </TouchableOpacity>
+                                <TouchableOpacity activeOpacity={0.9} onPress={navigation.toggleDrawer}>
+                                    <Image className="rounded-full w-9 h-9 mx-2" source={require('../../assets/logos/user-1.jpg')} />
+                                </TouchableOpacity>
+                            </View>
+                        ),
                         headerLeft: () => {
                             if (route.name === "Dashboard") {
-                                return <Image className="w-[140px] h-[28px] ml-3" onPre source={require('../../assets/logos/logoAll.jpg')} />
+                                return <Image className="w-[155px] h-[30px] ml-4" onPre source={require('../../assets/logos/logoAll.jpg')} />
                             } else {
                                 return <Text className="ml-2 text-xl font-montBold ">{route.name}</Text>
                             }
@@ -39,7 +46,7 @@ export default function DrawerNav() {
                                 iconName = focused ? "person" : "person-outline"
                             } else if (route.name === "Payment Management") {
                                 iconName = focused ? "card" : "card-outline"
-                            } else if (route.name === "Inventory Management") {
+                            } else if (route.name === "Store Management") {
                                 iconName = focused ? "medkit" : "medkit-outline"
                             } else if (route.name === "Staff Management") {
                                 iconName = focused ? "people" : "people-outline"
@@ -54,7 +61,7 @@ export default function DrawerNav() {
                 <Drawer.Screen name="Dashboard" component={StackNav} />
                 <Drawer.Screen name="User Management" component={UserM} />
                 <Drawer.Screen name="Payment Management" component={PaymentM} />
-                <Drawer.Screen name="Inventory Management" component={InventoryM} />
+                <Drawer.Screen name="Store Management" component={InventoryM} />
                 <Drawer.Screen name="Staff Management" component={StaffM} />
             </Drawer.Navigator>
         </>

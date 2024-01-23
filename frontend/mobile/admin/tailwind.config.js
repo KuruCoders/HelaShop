@@ -3,6 +3,9 @@ module.exports = {
   content: ["./App.{js,jsx,ts,tsx}", "./screens/**/*.{js,jsx,ts,tsx}","./constants/**/*.{js,jsx,ts,tsx}","./navigation/**/*.{js,jsx,ts,tsx}","./components/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      backgroundColor: {
+        back: '#f4f6f8', // Replace with your desired color code
+      },
       fontFamily: {
         mont: ["Montserrat-Regular"],
         montBold: ["Montserrat-Bold"],
