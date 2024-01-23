@@ -10,7 +10,7 @@ export default function CustomDrawerNav({ prop }) {
                 {...prop}
                 contentContainerStyle={{ backgroundColor: '#017aff' }}>
                 <View
-                    source={require('../../assets/logos/logoAll.jpg')}
+                    // source={require('../../assets/logos/logoAll.jpg')}
                     style={{ padding: 20 }}>
                     <Image className="h-32 w-32 rounded-full mb-5 -ml-1"
                         source={require('../../assets/logos/user-1.jpg')}/>
