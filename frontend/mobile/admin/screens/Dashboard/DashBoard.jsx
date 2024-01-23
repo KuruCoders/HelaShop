@@ -1,13 +1,13 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { ScrollView } from "react-native-gesture-handler";
 import { Ionicons } from '@expo/vector-icons'
 export default function DashBoard() {
   return (
-    <ScrollView className="px-[16px] pt-3  bg-slate-50">
+    <ScrollView className="px-[16px] pt-3 bg-back">
       {/* row 1 */}
       <View className="flex-row justify-around items-center space-x-4">
-        <View className="bg-green-100 py-3 rounded-xl flex-grow flex-col justify-center items-center" >
+        <View className="bg-green-100 py-3 rounded-xl flex-grow flex-col justify-center items-center" style={{ elevation: 1 }}>
           <Image
             className="mb-2"
             source={require("../../assets/images/card04.png")}
@@ -17,7 +17,7 @@ export default function DashBoard() {
             Total Sales
           </Text>
         </View>
-        <View className="bg-blue-100 py-3 rounded-xl flex-grow flex-col justify-center items-center">
+        <View className="bg-blue-100 py-3 rounded-xl flex-grow flex-col justify-center items-center" style={{ elevation: 1 }}>
           <Image
             className="mb-2"
             source={require("../../assets/images/card03.png")}
@@ -30,7 +30,7 @@ export default function DashBoard() {
       </View>
       {/* row 2 */}
       <View className="flex-row justify-around items-center space-x-4 mt-4">
-        <View className="bg-yellow-100 py-3 rounded-xl flex-grow flex-col justify-center items-center">
+        <View className="bg-yellow-100 py-3 rounded-xl flex-grow flex-col justify-center items-center" style={{ elevation: 1 }}>
           <Image
             className="mb-2"
             source={require("../../assets/images/card02.png")}
@@ -40,7 +40,7 @@ export default function DashBoard() {
             Total Items
           </Text>
         </View>
-        <View className="bg-red-100 py-3 rounded-xl flex-grow flex-col justify-center items-center">
+        <View className="bg-red-100 py-3 rounded-xl flex-grow flex-col justify-center items-center" style={{ elevation: 1 }}>
           <Image
             className="mb-2"
             source={require("../../assets/images/card01.png")}
@@ -62,7 +62,7 @@ export default function DashBoard() {
           </View>
           {/* section 02 */}
           <View>
-          <Ionicons name={'notifications-circle-outline'} color={'grey'} size={30} />
+            <Ionicons name={'notifications-circle-outline'} color={'grey'} size={30} />
           </View>
         </View>
         {/* card mid header */}
@@ -86,7 +86,7 @@ export default function DashBoard() {
         {/* card edscription */}
         <View className="my-2">
           <Text className="text-justify font-mont">
-          Atque eaque ducimus minima distinctio velit. Laborum et veniam officiis.Atque eaque ducimus minima distinctio velit. Laborum et veniam officiis. Delectus ex saepe hic id laboriosam officia. Odit nostrum qui illum saepe debitis ullam. Laudantium beatae modi fugit ut. Dolores consequatur beatae nihil voluptates rem maiores.
+            Atque eaque ducimus minima distinctio velit. Laborum et veniam officiis.Atque eaque ducimus minima distinctio velit. Laborum et veniam officiis. Delectus ex saepe hic id laboriosam officia. Odit nostrum qui illum saepe debitis ullam. Laudantium beatae modi fugit ut. Dolores consequatur beatae nihil voluptates rem maiores.
           </Text>
         </View>
         {/* tags */}
@@ -104,6 +104,10 @@ export default function DashBoard() {
             <Text className="font-montSemiBold opacity-60">#Trust</Text>
           </View>
         </View>
+        {/* see more */}
+        <TouchableOpacity className="bg-green-200 p-2 rounded-md  mt-2" activeOpacity={0.7}>
+          <Text className="text-center text-green-800 font-montSemiBold text-base">See More</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );

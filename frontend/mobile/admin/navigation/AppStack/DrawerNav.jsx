@@ -23,7 +23,7 @@ export default function DrawerNav() {
                         headerRight: () => (
                             <View className="flex-row items-center">
                                 <Image className="rounded-lg w-[30px] h-[30px] mx-2" source={require('../../assets/lk.jpg')} />
-                                <TouchableOpacity className="bg-slate-200 rounded-full p-1 mx-2" activeOpacity={0.6}>
+                                <TouchableOpacity className="bg-slate-100 rounded-full p-1 mx-2" activeOpacity={0.6}>
                                     <Ionicons name={'notifications-circle-outline'} color={'grey'} size={26} />
                                 </TouchableOpacity>
                                 <TouchableOpacity activeOpacity={0.9} onPress={navigation.toggleDrawer}>
