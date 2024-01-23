@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import React from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import StackNav from './StackNav'
@@ -9,39 +9,54 @@ import StaffM from '../../screens/StaffMangement/StaffM'
 import Profile from '../../screens/Profile/Profile'
 import CustomDrawerNav from './CustomDrawerNav'
 import { Ionicons } from '@expo/vector-icons'
+import AppHeader from '../../components/Header/AppHeader'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 export default function DrawerNav() {
     const Drawer = createDrawerNavigator()
     return (
-        <Drawer.Navigator
-            screenOptions={
-                ({ route }) => ({
-                    drawerIcon: ({ focused, color }) => {
-                        let iconName
-                        if (route.name === "Dashboard") {
-                            iconName = focused ? "home" : "home-outline"
-                        } else if (route.name === "User Management") {
-                            iconName = focused ? "person" : "person-outline"
-                        } else if (route.name === "Payment Management") {
-                            iconName = focused ? "card" : "card-outline"
-                        } else if (route.name === "Inventory Management") {
-                            iconName = focused ? "medkit" : "medkit-outline"
-                        } else if (route.name === "Staff Management") {
-                            iconName = focused ? "people" : "people-outline"
-                        }
-                        return <Ionicons name={iconName} size={20} color={color} />
-                    },
-                    drawerLabelStyle: {fontSize: 13 , marginStart:-12, fontFamily:"Montserrat-SemiBold"}
-                })
-            }
-            drawerContent={(props) => <CustomDrawerNav prop={props} />}
-        >
-            <Drawer.Screen name="Dashboard" component={StackNav} />
-            <Drawer.Screen name="User Management" component={UserM} />
-            <Drawer.Screen name="Payment Management" component={PaymentM} />
-            <Drawer.Screen name="Inventory Management" component={InventoryM} />
-            <Drawer.Screen name="Staff Management" component={StaffM} />
-            {/* <Drawer.Screen name="Logout" component={''}/> */}
-        </Drawer.Navigator>
+        <>
+            <Drawer.Navigator
+                screenOptions={
+                    ({ route, navigation }) => ({
+                        headerTitleStyle: {fontSize:0},
+                        headerRight: () => (
+                            <TouchableOpacity activeOpacity={0.9} onPress={navigation.toggleDrawer}>
+                                <Image className="rounded-full w-9 h-9 mr-3" source={require('../../assets/logos/user-1.jpg')} />
+                            </TouchableOpacity>),
+                        headerLeft: () => {
+                            if (route.name === "Dashboard") {
+                                return <Image className="w-[140px] h-[28px] ml-3" onPre source={require('../../assets/logos/logoAll.jpg')} />
+                            } else {
+                                return <Text className="ml-2 text-xl font-montBold ">{route.name}</Text>
+                            }
+                        },
+                        drawerIcon: ({ focused, color }) => {
+                            let iconName
+                            if (route.name === "Dashboard") {
+                                iconName = focused ? "home" : "home-outline"
+                            } else if (route.name === "User Management") {
+                                iconName = focused ? "person" : "person-outline"
+                            } else if (route.name === "Payment Management") {
+                                iconName = focused ? "card" : "card-outline"
+                            } else if (route.name === "Inventory Management") {
+                                iconName = focused ? "medkit" : "medkit-outline"
+                            } else if (route.name === "Staff Management") {
+                                iconName = focused ? "people" : "people-outline"
+                            }
+                            return <Ionicons name={iconName} size={20} color={color} />
+                        },
+                        drawerLabelStyle: { fontSize: 13, marginStart: -12, fontFamily: "Montserrat-SemiBold" }
+                    })
+                }
+                drawerContent={(props) => <CustomDrawerNav prop={props} />}
+            >
+                <Drawer.Screen name="Dashboard" component={StackNav} />
+                <Drawer.Screen name="User Management" component={UserM} />
+                <Drawer.Screen name="Payment Management" component={PaymentM} />
+                <Drawer.Screen name="Inventory Management" component={InventoryM} />
+                <Drawer.Screen name="Staff Management" component={StaffM} />
+            </Drawer.Navigator>
+        </>
     )
 }

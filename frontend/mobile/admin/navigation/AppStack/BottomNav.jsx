@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createMaterialBottomTabNavigator } from 'react-native-paper/react-navigation';
@@ -15,7 +15,6 @@ export default function BottomNav() {
             activeIndicatorStyle={{ backgroundColor: "#f7f7f7" }}
             barStyle={{ backgroundColor: '#ffffff', height: 70 }}
             screenOptions={({ route }) => ({
-                headerShown: false,
                 tabBarIcon: ({ focused, color }) => {
                     let iconName;
                     if (route.name === 'Dashboard') {
