@@ -15,8 +15,6 @@ import { SharePdf } from "../../constants/PdfHtml";
 
 export default function StaffM() {
   const navigation = useNavigation();
-
-
   const [filteredData, setFilteredData] = useState(staffList)
   const handleSearch = (text) => {
     const searchedData = (text) ? staffList.filter((staff) => {
@@ -29,14 +27,13 @@ export default function StaffM() {
   }
   const generatePdf = async () => {
     try {
-      const html = SharePdf('Staff List',10,['email','name','age','gender'],staffList)
+      const html = SharePdf('Staff List',staffList.length,['id','email','name'],staffList.map((item)=>([item.id,item.name,item.email])))
       const file = await Print.printToFileAsync({  html, height:842, width:595 })
       await shareAsync(file.uri)
     } catch (error) {
       console.log(error)
     }
   }
-
   
   return (
     <>
