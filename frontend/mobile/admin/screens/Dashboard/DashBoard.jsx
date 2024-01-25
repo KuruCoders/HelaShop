@@ -4,7 +4,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import { Ionicons } from '@expo/vector-icons'
 export default function DashBoard() {
   return (
-    <ScrollView className="px-[16px] pt-3 bg-back">
+    <ScrollView className="px-[12px] pt-3 bg-back">
       {/* row 0 */}
       <View className="rounded-lg bg-white flex-row justify-between p-4">
         {/* left */}
