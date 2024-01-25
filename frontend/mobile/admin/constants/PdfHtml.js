@@ -2,33 +2,27 @@ export function SharePdf(title, total, header, body) {
     const today = new Date()
     const date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
 
-    const headerCells = header.map((item) => `
-        <td style="width:182pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C6C6C6" bgcolor="#19BC9B">
-            <p class="s4" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">${item}</p>
-        </td>`
-    ).join('');
+    const headerCells = `<tr style="height:22pt">
+        ${header.map((item) => `
+                <td style="width:182pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C6C6C6" bgcolor="#19BC9B">
+                    <p class="s4" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">${item}</p>
+                </td>`
+            ).join('')
+        }
+    </tr>`   ;
 
-    const generateTableHeader = Object.keys(body[0]).map((key) => (`
-        <th style="width:182pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C6C6C6" bgcolor="#19BC9B" 
-            key=${key}>
-            <p class="s4" style="padding-top: 4pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">
-                ${key.charAt(0).toUpperCase() + key.slice(1)}
-            </p>        
-        </th>`
+    const generateTableBody = body.map((data) => (
+        `<tr style="height:22pt">
+            ${data.map((item) => (
+                `<td style="width:182pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C6C6C6;border-left-style:solid;border-left-width:1pt;border-left-color:#C6C6C6;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C6C6C6;border-right-style:solid;border-right-width:1pt;border-right-color:#C6C6C6">
+                    <p style="padding-top: 4pt;padding-left: 4pt;text-indent: 0pt;text-align: left;">
+                        <a class="s5">${item}</a>
+                    </p>
+                </td>`
+            )).join('')}
+        </tr>`   
     )).join('');
-
-    const generateTableBody = body.map((data) => (`
-        <tr style="width:182pt;border-top: 1pt solid #C6C6C6; border-left: 1pt solid #C6C6C6; border-bottom: 1pt solid #C6C6C6; border-right: 1pt solid #C6C6C6;" 
-            key=${data.id}>
-                <p style="padding-top: 4pt; padding-left: 4pt; text-indent: 0pt; text-align: left;">
-                    <a class="s5">
-                        ${Object.values(data).map((value, index) => (
-                            `<td key=${index}>${value}</td>`
-                         ))}
-                    </a>
-                </p>
-        </tr>`
-    )).join('');
+    
 
     return `<!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -157,12 +151,8 @@ export function SharePdf(title, total, header, body) {
     </p>
     <p style="text-indent: 0pt;text-align: left;"><br /></p>
     <table style="border-collapse:collapse;margin-left:6.05833pt" cellspacing="0">
-       <thead>
-            ${generateTableHeader}
-       </thead>
-        <tbody>
-            ${generateTableBody}
-        </tbody>
+        ${headerCells}      
+        ${generateTableBody}
     </table>
 </body>
 
