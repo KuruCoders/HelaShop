@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity, PermissionsAndroid } from "react-native";
+import { View, Text, Image } from "react-native";
 import React, { useState } from "react";
 import AppHeader from "../../components/Header/AppHeader";
 import { useNavigation } from "@react-navigation/native";
@@ -8,10 +8,7 @@ import { staffList } from "./staff";
 import { Ionicons } from '@expo/vector-icons'
 import { TouchableRipple } from 'react-native-paper';
 import FabCustom from "../../components/FloatingButton/FabCustom";
-import * as Print from 'expo-print';
-import { shareAsync } from 'expo-sharing'
-import * as FileSystem from 'expo-file-system';
-import { SharePdf } from "../../constants/PdfHtml";
+import PdfHtml from "../../constants/PdfHtml";
 
 export default function StaffM() {
   const navigation = useNavigation();
@@ -26,13 +23,7 @@ export default function StaffM() {
     setFilteredData(searchedData)
   }
   const generatePdf = async () => {
-    try {
-      const html = SharePdf('Staff List',staffList.length,['id','email','name'],staffList.map((item)=>([item.id,item.name,item.email])))
-      const file = await Print.printToFileAsync({  html, height:842, width:595 })
-      await shareAsync(file.uri)
-    } catch (error) {
-      console.log(error)
-    }
+    PdfHtml.sharePdf('Staff List',staffList.length,['id','email','name'],staffList.map((item)=>([item.id,item.name,item.email])))
   }
   
   return (
