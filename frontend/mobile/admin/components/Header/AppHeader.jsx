@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons'
 
-export default function AppHeader({ navigation, title }) {
+export default function AppHeader({ navigation, title,handleSearch }) {
     const openDrawer = () => {
         navigation.openDrawer();
     };
@@ -25,7 +25,9 @@ export default function AppHeader({ navigation, title }) {
                         {/* search icon*/}
                         <Ionicons name="search" color={'grey'} size={20} />
                         {/* input field */}
-                        <TextInput className="w-full text-base font-montSemiBold ml-3 text-gray-500" placeholder={`Search ${title} here ....`} placeholderTextColor={'grey'} />
+                        <TextInput onChangeText={(text) => {
+                            handleSearch(text)
+                        }} className="w-full text-base font-montSemiBold ml-3 text-gray-500" placeholder={`Search ${title} here ....`} placeholderTextColor={'grey'} />
                     </TouchableOpacity>
                 </View>
                 {/* download pdf */}

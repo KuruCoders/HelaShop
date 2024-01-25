@@ -1,5 +1,5 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import AppHeader from "../../components/Header/AppHeader";
 import { useNavigation } from "@react-navigation/native";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
@@ -11,20 +11,25 @@ import FabCustom from "../../components/FloatingButton/FabCustom";
 
 export default function StaffM() {
   const navigation = useNavigation();
-  const [state, setState] = React.useState({ open: false });
-
-  const onStateChange = ({ open }) => setState({ open });
-
-  const { open } = state;
+  const [filteredData,setFilteredData] = useState(staffList)
+  const handleSearch = (text) => {
+    const searchedData = (text) ? staffList.filter((staff) => {
+      return (
+        staff.name.toLowerCase().includes(text.toLowerCase()) ||
+        staff.email.toLowerCase().includes(text.toLowerCase()) 
+      )
+    }) : staffList
+    setFilteredData(searchedData)
+  }
   return (
     <>
-      <AppHeader navigation={navigation} title={"staffs"} />
+      <AppHeader navigation={navigation} title={"staffs"} handleSearch={ handleSearch} />
 
       {/* the categoryscroll view slider */}
 
       <FlatList
         showsVerticalScrollIndicator={false}
-        data={staffList}
+        data={filteredData}
         ListHeaderComponent={
           <>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} className="px-[12px] bg-white">
@@ -35,7 +40,7 @@ export default function StaffM() {
               <StaffCategoryCard />
               <StaffCategoryCard />
             </ScrollView>
-            <Text className="bg-white px-[16px] pt-2 pb-0 text-xl font-montBold mt-1">Staff List</Text>
+            <Text className="bg-white px-[16px] py-2 text-xl font-montBold mt-1">Staff List</Text>
           </>
         }
         ListEmptyComponent={
