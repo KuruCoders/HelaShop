@@ -11,20 +11,32 @@ export default function AppHeader({ navigation, title }) {
     };
     return (
         <>
-            <Appbar.Header className="flex-row justify-between items-center px-[16px] bg-white shadow-sm">
+            <Appbar.Header className="flex-row justify-between items-center px-[12px] bg-white shadow-sm">
                 <Text className="font-montBold text-3xl capitalize">{title}</Text>
                 <TouchableOpacity onPress={openDrawer}>
                     <Avatar.Image size={35} source={require('../../assets/logos/user-1.jpg')} />
                 </TouchableOpacity>
             </Appbar.Header>
-            {/* search view */}
-            <View className="w-full bg-white px-[16px] pb-3">
-                <TouchableOpacity className="rounded-full bg-back flex-row items-center p-2" activeOpacity={0.9}>
-                    {/* search icon*/}
-                    <Ionicons name="search" color={'grey'} size={20} />
-                    {/* input field */}
-                    <TextInput className="w-full text-base font-montSemiBold ml-3 text-gray-500" placeholder={ `Search ${title} here ....`} placeholderTextColor={'grey'}/>
-                </TouchableOpacity>
+            {/* row 2 view */}
+            <View className="flex-row justify-between items-center bg-white px-[12px] pb-3">
+                {/* search view */}
+                <View className="flex-1">
+                    <TouchableOpacity className="rounded-full bg-back flex-row items-center p-2" activeOpacity={0.9}>
+                        {/* search icon*/}
+                        <Ionicons name="search" color={'grey'} size={20} />
+                        {/* input field */}
+                        <TextInput className="w-full text-base font-montSemiBold ml-3 text-gray-500" placeholder={`Search ${title} here ....`} placeholderTextColor={'grey'} />
+                    </TouchableOpacity>
+                </View>
+                {/* download pdf */}
+                <View className='ml-3'>
+                    <TouchableOpacity className="rounded-full bg-red-400 flex-row items-center p-2" activeOpacity={0.9}>
+                        {/* search icon*/}
+                        <Ionicons name="cloud-download-sharp" color={'white'} size={20} />
+                        {/* download btn */}
+                        <Text className="font-montSemiBold text-white mx-2">PDF</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         </>
     )
