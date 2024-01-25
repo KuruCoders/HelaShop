@@ -1,29 +1,31 @@
-import { View, Text, Image, Alert } from 'react-native'
+import { View, Text, Image, Alert, TextInput } from 'react-native'
 import React from 'react'
 import { Appbar, Avatar } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native'
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Ionicons } from '@expo/vector-icons'
 
-export default function AppHeader() {
-    const navigation = useNavigation();
-
+export default function AppHeader({ navigation, title }) {
     const openDrawer = () => {
-        Alert.alert('Alert Title', 'My Alert Msg', [
-            {
-              text: 'Cancel',
-              onPress: () => console.log('Cancel Pressed'),
-              style: 'cancel',
-            },
-            {text: 'OK', onPress: () => console.log('OK Pressed')},
-          ]);
-      navigation.openDrawer();
+        navigation.openDrawer();
     };
-    
-  
     return (
-        <Appbar.Header className="flex-row justify-between items-center px-[16px] bg-white shadow-sm">
-            <Image className="w-[140px] h-[28px]" source={require('../../assets/logos/logoAll.jpg')} />
-            <Text onPress={openDrawer}>fdsfdsfsdfsdfsfsdfsdfsdf</Text>
-            <Avatar.Image size={35} source={require('../../assets/logos/user-1.jpg')} onPress={openDrawer}/>
-        </Appbar.Header>
+        <>
+            <Appbar.Header className="flex-row justify-between items-center px-[16px] bg-white shadow-sm">
+                <Text className="font-montBold text-3xl capitalize">{title}</Text>
+                <TouchableOpacity onPress={openDrawer}>
+                    <Avatar.Image size={35} source={require('../../assets/logos/user-1.jpg')} />
+                </TouchableOpacity>
+            </Appbar.Header>
+            {/* search view */}
+            <View className="w-full bg-white px-[16px] pb-3">
+                <TouchableOpacity className="rounded-full bg-back flex-row items-center p-2" activeOpacity={0.9}>
+                    {/* search icon*/}
+                    <Ionicons name="search" color={'grey'} size={20} />
+                    {/* input field */}
+                    <TextInput className="w-full text-base font-montSemiBold ml-3 text-gray-500" placeholder={ `Search ${title} here ....`} placeholderTextColor={'grey'}/>
+                </TouchableOpacity>
+            </View>
+        </>
     )
 }

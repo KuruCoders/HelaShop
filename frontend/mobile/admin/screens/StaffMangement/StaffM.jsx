@@ -1,10 +1,14 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import AppHeader from '../../components/Header/AppHeader'
+import { useNavigation } from '@react-navigation/native';
 
 export default function StaffM() {
+  
+  const navigation = useNavigation();
   return (
-    <View>
-      <Text>StaffM</Text>
-    </View>
+    <>
+      <AppHeader navigation={navigation} title={'staffs'}/>
+    </>
   )
 }
