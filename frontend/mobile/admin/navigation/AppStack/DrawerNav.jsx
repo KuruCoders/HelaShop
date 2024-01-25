@@ -17,6 +17,7 @@ export default function DrawerNav() {
     return (
         <>
             <Drawer.Navigator
+                initialRouteName='Staff Management'
                 screenOptions={
                     ({ route, navigation }) => ({
                         headerTitleStyle: { fontSize: 0 },
@@ -62,7 +63,7 @@ export default function DrawerNav() {
                 <Drawer.Screen name="User Management" component={UserM} />
                 <Drawer.Screen name="Payment Management" component={PaymentM} />
                 <Drawer.Screen name="Store Management" component={InventoryM} />
-                <Drawer.Screen name="Staff Management" component={StaffM} />
+                <Drawer.Screen  options={{headerShown:false}} name="Staff Management" component={StaffM} />
             </Drawer.Navigator>
         </>
     )
