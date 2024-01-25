@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, PermissionsAndroid } from "react-native";
 import React, { useState } from "react";
 import AppHeader from "../../components/Header/AppHeader";
 import { useNavigation } from "@react-navigation/native";
@@ -6,24 +6,41 @@ import { FlatList, ScrollView } from "react-native-gesture-handler";
 import StaffCategoryCard from "./components/StaffCategoryCard";
 import { staffList } from "./staff";
 import { Ionicons } from '@expo/vector-icons'
-import { FAB, Portal } from 'react-native-paper';
+import { TouchableRipple } from 'react-native-paper';
 import FabCustom from "../../components/FloatingButton/FabCustom";
+import * as Print from 'expo-print';
+import { shareAsync } from 'expo-sharing'
+import * as FileSystem from 'expo-file-system';
+import { SharePdf } from "../../constants/PdfHtml";
 
 export default function StaffM() {
   const navigation = useNavigation();
-  const [filteredData,setFilteredData] = useState(staffList)
+
+
+  const [filteredData, setFilteredData] = useState(staffList)
   const handleSearch = (text) => {
     const searchedData = (text) ? staffList.filter((staff) => {
       return (
         staff.name.toLowerCase().includes(text.toLowerCase()) ||
-        staff.email.toLowerCase().includes(text.toLowerCase()) 
+        staff.email.toLowerCase().includes(text.toLowerCase())
       )
     }) : staffList
     setFilteredData(searchedData)
   }
+  const generatePdf = async () => {
+    try {
+      const html = SharePdf('Staff List',10,['email','name','age','gender'],staffList)
+      const file = await Print.printToFileAsync({  html, height:842, width:595 })
+      await shareAsync(file.uri)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  
   return (
     <>
-      <AppHeader navigation={navigation} title={"staffs"} handleSearch={ handleSearch} />
+      <AppHeader navigation={navigation} title={"staffs"} handleSearch={handleSearch} generatePdf={generatePdf} />
 
       {/* the categoryscroll view slider */}
 
@@ -63,7 +80,7 @@ export default function StaffM() {
               <View className="flex-col justify-center items-start ml-4">
                 <Text className="font-montSemiBold text-base capitalize">{item.name}</Text>
                 <Text className="opacity-50 font-mont ">{item.email}</Text>
-                <Text className="font-mont text-green-500">Joined : 20th Jan 2024</Text>
+                <Text className="font-montSemiBold text-green-500">Joined : 20th Jan 2024</Text>
               </View>
             </View>
             {/* right */}
@@ -74,7 +91,7 @@ export default function StaffM() {
         }}
       />
       {/* fab */}
-      <FabCustom/>
+      <FabCustom />
     </>
   );
 }
