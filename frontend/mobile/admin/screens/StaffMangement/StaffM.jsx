@@ -35,10 +35,10 @@ export default function StaffM() {
       );
   };
   const handleAdd = () => {
-      console.log("Adding btn pressed");
+    navigation.navigate('Dashboard',{screen:'staffDetail'})
   };
   return (
-      <>
+    <>
           <AppHeader navigation={navigation} title={"staffs"} handleSearch={handleSearch} generatePdf={generatePdf}/>
           {/* the categoryscroll view slider */}
           <FlatList
@@ -67,7 +67,7 @@ export default function StaffM() {
               }}
           />
           {/* fab */}
-          <FabCustom generatePdf={generatePdf} handleAdd={handleAdd} />
+          <FabCustom  generatePdf={generatePdf} handleAdd={handleAdd} />
       </>
   );
 }
