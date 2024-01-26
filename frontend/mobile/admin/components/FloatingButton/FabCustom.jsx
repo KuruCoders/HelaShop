@@ -1,38 +1,14 @@
-import { View, Text } from 'react-native'
-import React, { useState } from 'react'
-import { FAB, Portal } from 'react-native-paper';
-export default function FabCustom({generatePdf,handleAdd}) {
+import { View,TouchableNativeFeedback } from "react-native";
+import { Ionicons } from '@expo/vector-icons'
 
-  const [state, setState] = useState({ open: false });
-  const onStateChange = ({ open }) => setState({ open });
-  const { open } = state;
+export default function FabCustom() {
   return (
-    <Portal>
-      <FAB.Group
-        variant='surface'
-        color='white'
-        open={open}
-        visible
-        icon={open ? 'pencil' : 'plus'}
-        actions={[
-          {
-            icon: 'plus',
-            label: 'Add New',
-            onPress: handleAdd
-          },
-          {
-            icon: 'share',
-            label: 'Share PDF',
-            onPress: generatePdf
-          },
-        ]}
-        onStateChange={onStateChange}
-        onPress={() => {
-          if (open) {
-            // do something if the speed dial is open
-          }
-        }}
-      />
-    </Portal>
+    <View className="absolute bottom-5 right-5 rounded-xl bg-black overflow-hidden" style={{ elevation: 9 }}>
+      <TouchableNativeFeedback background={TouchableNativeFeedback.Ripple('grey')}>
+        <View className="p-3 flex justify-center items-center">
+          <Ionicons name="add-outline" size={33} color={'white'} />
+        </View>
+      </TouchableNativeFeedback>
+    </View>
   )
 }
