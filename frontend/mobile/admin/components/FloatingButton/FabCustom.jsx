@@ -1,11 +1,10 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { FAB, Portal } from 'react-native-paper';
-export default function FabCustom() {
-  const [state, setState] = React.useState({ open: false });
+export default function FabCustom({generatePdf,handleAdd}) {
 
+  const [state, setState] = useState({ open: false });
   const onStateChange = ({ open }) => setState({ open });
-
   const { open } = state;
   return (
     <Portal>
@@ -14,23 +13,17 @@ export default function FabCustom() {
         color='white'
         open={open}
         visible
-        icon={open ? 'calendar-today' : 'plus'}
+        icon={open ? 'pencil' : 'plus'}
         actions={[
-          { icon: 'plus', onPress: () => console.log('Pressed add') },
           {
-            icon: 'star',
-            label: 'Star',
-            onPress: () => console.log('Pressed star'),
+            icon: 'plus',
+            label: 'Add New',
+            onPress: handleAdd
           },
           {
-            icon: 'email',
-            label: 'Email',
-            onPress: () => console.log('Pressed email'),
-          },
-          {
-            icon: 'bell',
-            label: 'Remind',
-            onPress: () => console.log('Pressed notifications'),
+            icon: 'share',
+            label: 'Share PDF',
+            onPress: generatePdf
           },
         ]}
         onStateChange={onStateChange}
