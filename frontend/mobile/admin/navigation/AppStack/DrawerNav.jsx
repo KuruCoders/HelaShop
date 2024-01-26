@@ -20,6 +20,7 @@ export default function DrawerNav() {
                 initialRouteName='Staff Management'
                 screenOptions={
                     ({ route, navigation }) => ({
+                        headerShown:false,
                         headerTitleStyle: { fontSize: 0 },
                         headerRight: () => (
                             <View className="flex-row items-center">
@@ -34,7 +35,7 @@ export default function DrawerNav() {
                         ),
                         headerLeft: () => {
                             if (route.name === "Dashboard") {
-                                return <Image className="w-[155px] h-[30px] ml-4" onPre source={require('../../assets/logos/logoAll.jpg')} />
+                                return <Image className="w-[155px] h-[30px] ml-4" source={require('../../assets/logos/logoAll.jpg')} />
                             } else {
                                 return <Text className="ml-2 text-xl font-montBold ">{route.name}</Text>
                             }
