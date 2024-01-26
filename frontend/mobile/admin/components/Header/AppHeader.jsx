@@ -34,7 +34,7 @@ export default function AppHeader({ navigation, title,handleSearch,generatePdf }
                 <View className='ml-3'>
                     <TouchableOpacity onPress={()=>{generatePdf()}} className="rounded-full bg-red-400 flex-row items-center p-2" activeOpacity={0.9}>
                         {/* search icon*/}
-                        <Ionicons name="cloud-download-sharp" color={'white'} size={20} />
+                        <Ionicons name="share-social-sharp" color={'white'} size={20} />
                         {/* download btn */}
                         <Text className="font-montSemiBold text-white mx-2">PDF</Text>
                     </TouchableOpacity>
