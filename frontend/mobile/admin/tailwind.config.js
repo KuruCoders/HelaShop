@@ -7,8 +7,11 @@ module.exports = {
         back: '#f4f6f8', // Replace with your desired color code
       },
       fontFamily: {
+        montThin: ["Montserrat-Thin"],
         mont: ["Montserrat-Regular"],
+        montMedium: ["Montserrat-Medium"],
         montBold: ["Montserrat-Bold"],
+        montSemiBold: ["Montserrat-SemiBold"],
         montBlack: ["Montserrat-Black"],
         montItalic: ["Montserrat-Italic"],
         montBlackItalic: ["Montserrat-BlackItalic"],
@@ -20,11 +23,8 @@ module.exports = {
         montExtraLightItalic: ["Montserrat-ExtraLightItalic"],
         montLight: ["Montserrat-Light"],
         montLightItalic: ["Montserrat-LightItalic"],
-        montMedium: ["Montserrat-Medium"],
         montMediumItalic: ["Montserrat-MediumItalic"],
-        montSemiBold: ["Montserrat-SemiBold"],
         montSemiBoldItalic: ["Montserrat-SemiBoldItalic"],
-        montThin: ["Montserrat-Thin"],
         montThinItalic: ["Montserrat-ThinItalic"],
       },      
     },
