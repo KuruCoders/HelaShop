@@ -1,11 +1,13 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { ScrollView } from 'react-native-gesture-handler'
 import { Ionicons } from '@expo/vector-icons'
 import { TextInput } from 'react-native-paper'
 import CusColors from '../../constants/Colors'
+import Input from '../../components/Input/Input'
 
 export default function StaffAdd() {
+    const [errors, setErrors] = useState('njnjnjj')
     return (
         <ScrollView className="px-[12px] bg-back mt-2">
             {/* image card */}
@@ -38,21 +40,27 @@ export default function StaffAdd() {
                 <Text className="text-center font-montBold opacity-60 text-lg">Personal Details</Text>
                 {/* form start */}
                 <View className="my-2">
-                    <TextInput
-                        textColor='grey'
-                        // if formic error add CusColors.TEXTINPUTERROR
-                        theme={{ colors: CusColors.TEXTINPUTNORMAL }}
-                        className="bg-white"
-                        mode="outlined"
+                    <Input
+                        iconName={'email'}
                         label="Email"
-                        placeholder="example@gmail.com" />
-                    <TextInput
-                        // if formic error add CusColors.TEXTINPUTERROR 
-                        theme={{ colors: CusColors.TEXTINPUTERROR}}
-                        className="bg-white mt-4"
-                        mode="outlined"
+                        placeholder="example@gmail.com"
+                        error={errors}
+                        onFocus={() => {
+                            setErrors(null)
+                        }}
+                    />
+
+                    <Input
+                        iconName={'phone'}
                         label="Email"
-                        placeholder="example@gmail.com" />
+                        placeholder="example@gmail.com"
+                        error={errors}
+                        password={true}
+                        onFocus={() => {
+                            setErrors(null)
+                        }}
+                    />
+
                 </View>
             </View>
         </ScrollView>
