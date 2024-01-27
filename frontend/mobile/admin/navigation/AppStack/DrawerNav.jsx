@@ -5,12 +5,10 @@ import StackNav from './StackNav'
 import UserM from '../../screens/UserMangement/UserM'
 import PaymentM from '../../screens/PaymentManagement/PaymentM'
 import InventoryM from '../../screens/InventoryManagement/InventoryM'
-import StaffM from '../../screens/StaffMangement/StaffM'
-import Profile from '../../screens/Profile/Profile'
 import CustomDrawerNav from './CustomDrawerNav'
 import { Ionicons } from '@expo/vector-icons'
-import AppHeader from '../../components/Header/AppHeader'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import StaffStackNav from './StaffStack/StaffStackNav'
 
 export default function DrawerNav() {
     const Drawer = createDrawerNavigator()
@@ -64,7 +62,7 @@ export default function DrawerNav() {
                 <Drawer.Screen name="User Management" component={UserM} />
                 <Drawer.Screen name="Payment Management" component={PaymentM} />
                 <Drawer.Screen name="Store Management" component={InventoryM} />
-                <Drawer.Screen  options={{headerShown:false}} name="Staff Management" component={StaffM} />
+                <Drawer.Screen  options={{headerShown:false}} name="Staff Management" component={StaffStackNav} />
             </Drawer.Navigator>
         </>
     )

@@ -1,7 +1,6 @@
 import {
   View,
-  Text,
-  TouchableNativeFeedback
+  Text
 } from "react-native";
 import React, { useState } from "react";
 import AppHeader from "../../components/Header/AppHeader";
@@ -37,7 +36,7 @@ export default function StaffM() {
     );
   };
   const handleAdd = () => {
-    navigation.navigate('Dashboard', { screen: 'staffDetail' })
+    navigation.navigate('staffDetail')
   };
   return (
     <>
@@ -69,7 +68,7 @@ export default function StaffM() {
         }}
       />
       {/* fab */}
-      <FabCustom/>
+      <FabCustom handleAdd={handleAdd} />
     </>
   );
 }
