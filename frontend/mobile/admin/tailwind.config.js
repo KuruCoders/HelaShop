@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       backgroundColor: {
         back: '#f4f6f8', // Replace with your desired color code
+        bgInput: "#d1d1d1", // Replace with your desired color code
       },
       fontFamily: {
         montThin: ["Montserrat-Thin"],
