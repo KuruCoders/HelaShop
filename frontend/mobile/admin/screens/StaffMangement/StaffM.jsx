@@ -36,7 +36,7 @@ export default function StaffM() {
     );
   };
   const handleAdd = () => {
-    navigation.navigate('staffDetail')
+    navigation.navigate('staffAdd')
   };
   return (
     <>

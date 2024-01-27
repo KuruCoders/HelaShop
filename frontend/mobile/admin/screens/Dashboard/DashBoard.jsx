@@ -9,7 +9,7 @@ export default function DashBoard() {
   return (
     <>
       <DashBoardHeader navigation={navigation} handleSearch={''} />
-      <ScrollView className="px-[12px] pt-3 bg-back">
+      <ScrollView className="px-[12px] pt-2 bg-back">
         {/* row 0 */}
         <View className="rounded-lg bg-white flex-row justify-between p-4">
           {/* left */}
@@ -29,7 +29,7 @@ export default function DashBoard() {
           </View>
         </View>
         {/* row 1 */}
-        <View className="flex-row justify-around items-center space-x-4 mt-4">
+        <View className="flex-row justify-around items-center space-x-2 mt-2">
           <View className="bg-green-100 bg-white py-3 rounded-xl flex-grow flex-col justify-center items-center">
             <Image
               className="mb-2"
@@ -52,7 +52,7 @@ export default function DashBoard() {
           </View>
         </View>
         {/* row 2 */}
-        <View className="flex-row justify-around items-center space-x-4 mt-4">
+        <View className="flex-row justify-around items-center space-x-2 mt-2">
           <View className="bg-yellow-100 bg-white py-3 rounded-xl flex-grow flex-col justify-center items-center">
             <Image
               className="mb-2"
@@ -75,7 +75,7 @@ export default function DashBoard() {
           </View>
         </View>
         {/* latest product */}
-        <View className="rounded-lg bg-white my-4 p-3">
+        <View className="rounded-lg bg-white my-2 p-3">
           {/* card header */}
           <View className="flex-row justify-between items-center border-b border-b-slate-100">
             {/* section 01 */}
