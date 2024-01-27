@@ -43,7 +43,7 @@ export default function StaffM() {
     <>
       <AppHeader navigation={navigation} title={"staffs"} handleSearch={handleSearch} generatePdf={generatePdf} />
       {/* the categoryscroll view slider */}
-      <FlatList
+      <FlatList 
         showsVerticalScrollIndicator={false}
         data={filteredData}
         ListHeaderComponent={
@@ -70,7 +70,6 @@ export default function StaffM() {
       />
       {/* fab */}
       <FabCustom/>
-
     </>
   );
 }
