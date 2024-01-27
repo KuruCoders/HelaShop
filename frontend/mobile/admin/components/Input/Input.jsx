@@ -44,10 +44,10 @@ export default function Input({ iconName, error, password, onFocus = () => { }, 
                             {...props}
                         />
                         <View className="absolute right-4">
-                            <TouchableOpacity activeOpacity={0.5} onPress={() => {
+                            <TouchableOpacity activeOpacity={0.7} onPress={() => {
                                  setHidePassword(!hidePassword);
                             }}>
-                                <Ionicons name='eye' color={CusColors.BGICONSINPUT} size={26} />
+                                <Ionicons name={hidePassword?'eye':'eye-off-outline'} color={CusColors.BGICONSINPUT} size={26} />
                             </TouchableOpacity>
                         </View>
                     </View>
