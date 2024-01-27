@@ -2,12 +2,10 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { ScrollView } from 'react-native-gesture-handler'
 import { Ionicons } from '@expo/vector-icons'
-import { TextInput } from 'react-native-paper'
-import CusColors from '../../constants/Colors'
 import Input from '../../components/Input/Input'
 
 export default function StaffAdd() {
-    const [errors, setErrors] = useState('njnjnjj')
+    const [errors, setErrors] = useState('fds')
     return (
         <ScrollView className="px-[12px] bg-back mt-2">
             {/* image card */}
@@ -52,7 +50,7 @@ export default function StaffAdd() {
 
                     <Input
                         iconName={'phone'}
-                        label="Email"
+                        label="Password"
                         placeholder="example@gmail.com"
                         error={errors}
                         password={true}
