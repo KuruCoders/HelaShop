@@ -8,7 +8,7 @@ const StaffStack = createNativeStackNavigator()
 
 export default function StaffStackNav() {
     return (
-        <StaffStack.Navigator initialRouteName='staffList'>
+        <StaffStack.Navigator initialRouteName='staffAdd'>
             <StaffStack.Screen options={{ headerShown: false }} name='staffList' component={StaffM} />
             <StaffStack.Screen options={{ headerShown: false }} name='staffDetail' component={StaffDetail} />
             <StaffStack.Screen
