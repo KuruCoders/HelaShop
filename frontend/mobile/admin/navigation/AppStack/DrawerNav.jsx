@@ -15,7 +15,7 @@ export default function DrawerNav() {
     return (
         <>
             <Drawer.Navigator
-                initialRouteName='DashBoard'
+                initialRouteName='Staff Management'
                 screenOptions={
                     ({ route, navigation }) => ({
                         headerShown:false,

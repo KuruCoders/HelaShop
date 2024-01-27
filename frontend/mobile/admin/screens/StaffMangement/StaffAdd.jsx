@@ -2,10 +2,12 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { ScrollView } from 'react-native-gesture-handler'
 import { Ionicons } from '@expo/vector-icons'
+import { TextInput } from 'react-native-paper'
+import CusColors from '../../constants/Colors'
 
 export default function StaffAdd() {
     return (
-        <ScrollView className="px-[16px] bg-back mt-2">
+        <ScrollView className="px-[12px] bg-back mt-2">
             {/* image card */}
             <View className="bg-white rounded-lg p-4 flex-col justify-center">
                 {/* text row */}
@@ -32,6 +34,27 @@ export default function StaffAdd() {
             </View>
 
             {/* staff form */}
+            <View className="bg-white rounded-lg p-4 mt-2">
+                <Text className="text-center font-montBold opacity-60 text-lg">Personal Details</Text>
+                {/* form start */}
+                <View className="my-2">
+                    <TextInput
+                        textColor='grey'
+                        // if formic error add CusColors.TEXTINPUTERROR
+                        theme={{ colors: CusColors.TEXTINPUTNORMAL }}
+                        className="bg-white"
+                        mode="outlined"
+                        label="Email"
+                        placeholder="example@gmail.com" />
+                    <TextInput
+                        // if formic error add CusColors.TEXTINPUTERROR 
+                        theme={{ colors: CusColors.TEXTINPUTERROR}}
+                        className="bg-white mt-4"
+                        mode="outlined"
+                        label="Email"
+                        placeholder="example@gmail.com" />
+                </View>
+            </View>
         </ScrollView>
     )
 }
