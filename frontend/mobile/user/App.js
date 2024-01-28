@@ -6,6 +6,9 @@ import AuthStack from "./navigation/AuthStack/AuthStack";
 import { PaperProvider } from "react-native-paper";
 import { SafeAreaView } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+// added to remove the warnig from parallax
+import './ignoreWarnings'
+
 export default function App() {
   const [loaded, error] = useFonts(fontFamList);
   if (!loaded) {

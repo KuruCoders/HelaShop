@@ -26,16 +26,16 @@ export default function MainHeader() {
                         {/* input field */}
                         <TextInput onChangeText={(text) => {
                             console.log('search' + text)
-                        }} className="w-full text-base font-montSemiBold ml-3 text-gray-500" placeholder={`Search  here ....`} placeholderTextColor={'grey'} />
+                        }} className="w-full text-base font-montSemiBold ml-3 text-gray-500" placeholder={`Search products`} placeholderTextColor={'grey'} />
                     </TouchableOpacity>
                 </View>
                 {/* download pdf */}
                 <View className='ml-3'>
-                    <TouchableOpacity onPress={() => { console.log('qr') }} className="rounded-full bg-green-400 flex-row items-center p-2" activeOpacity={0.9}>
+                    <TouchableOpacity onPress={() => { console.log('qr') }} className="rounded-full bg-yellow-400 flex-row items-center p-2" activeOpacity={0.9}>
                         {/* search icon*/}
-                        <Ionicons name="qr-code-sharp" color={'white'} size={20} />
+                        <Ionicons name="filter-sharp" color={'white'} size={20} />
                         {/* download btn */}
-                        <Text className="font-montSemiBold text-white mx-2 uppercase">Scan</Text>
+                        <Text className="font-montSemiBold text-white mx-2 uppercase">Filter</Text>
                     </TouchableOpacity>
                 </View>
             </View>

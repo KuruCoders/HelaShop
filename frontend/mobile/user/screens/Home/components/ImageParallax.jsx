@@ -15,12 +15,12 @@ export default function ImageParallax() {
         <Carousel
             data={imageData}
             loop={true}
-            autoplay={false}
+            autoplay={true}
             renderItem={ItemCard}
             hasParallaxImages={true}
             sliderWidth={screenWidth} // Use your desired width
             firstItem={1}
-            // autoplayInterval={4000}
+            autoplayInterval={4000}
             itemWidth={screenWidth - 70} // Use your desired width
             slideStyle={{ display: 'flex', alignItems: 'center' }}
 
