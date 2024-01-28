@@ -110,7 +110,7 @@ export default function Profile() {
           </View>
 
           {/* the version with logo */}
-          <View className="flex-col justify-center items-start p-2 mt-6">
+          <View className="flex-col justify-center items-start p-2 mt-3">
             <Image className="w-[180px] h-[30px]" source={require('../../assets/logos/logoAll.jpg')} />
             <Text className="opacity-50 font-montSemiBold capitalize text-xs">all rights reserved</Text>
             <Text className="opacity-50 font-montSemiBold text-xs">v1.0.0</Text>
