@@ -25,7 +25,7 @@ export default function BottomNav() {
                         iconName = focused ? "notifications" : "notifications-outline";
                     } else if (route.name === "Profile") {
                         iconName = focused ? "person-circle" : "person-circle-outline";
-                    }else if (route.name === "Orders") {
+                    } else if (route.name === "Orders") {
                         iconName = focused ? "wallet" : "wallet-outline";
                     }
                     return <Ionicons name={iconName} size={25} color={color} />
