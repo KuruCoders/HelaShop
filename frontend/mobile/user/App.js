@@ -4,7 +4,6 @@ import fontFamList from "./constants/FontFamil";
 import AppStack from "./navigation/AppStack/AppStack";
 import AuthStack from "./navigation/AuthStack/AuthStack";
 import { PaperProvider } from "react-native-paper";
-import { SafeAreaView } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 // added to remove the warnig from parallax
 import './ignoreWarnings'
@@ -18,10 +17,8 @@ export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <PaperProvider>
-        <SafeAreaView style={{ flex: 1 }}>
           <AppStack />
           {/* <AuthStack/> */}
-        </SafeAreaView>
       </PaperProvider>
     </GestureHandlerRootView>
 
