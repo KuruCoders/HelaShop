@@ -8,7 +8,7 @@ import HomeCategory from './components/HomeCategory'
 import { ProductList } from './ProductList'
 import ProductCard from './components/ProductCard'
 export default function Home() {
-  const navogation = useNavigation()
+  const navigation = useNavigation()
   return (
     <>
       <MainHeader />
