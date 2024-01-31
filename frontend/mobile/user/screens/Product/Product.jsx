@@ -1,5 +1,5 @@
-import { View, Text, ImageBackground, TouchableNativeFeedback, Image, Dimensions } from 'react-native'
-import React from 'react'
+import { View, Text, ImageBackground, TouchableOpacity , Image, Dimensions } from 'react-native'
+import React, { useRef, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { FlatList, ScrollView } from 'react-native-gesture-handler'
 import Header from './components/Header'
@@ -10,8 +10,13 @@ import CusColors from '../../constants/Colors'
 import ProductCard from '../Home/components/ProductCard'
 import ProductFooter from './components/ProductFooter'
 import ReviewCard from './components/ReviewCard'
-
+import ProductBottomSheet from './components/ProductBottomSheet'
 export default function Product() {
+    const bottomSheetRef = useRef()
+    const handleClosePress = () => bottomSheetRef.current?.close()
+    // const handleOpenPress = () => bottomSheetRef.current?.expand()
+    const handleOpenPress = () => bottomSheetRef.current?.snapToIndex(0)
+
     let width = Dimensions.get('screen').width / 2 - 8
     const navigation = useNavigation()
     const image = { uri: 'https://s.yimg.com/ny/api/res/1.2/QTfAk2wj4XN8g0uvTpOx0w--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQzNA--/https://o.aolcdn.com/images/dims?resize=2000%2C2000%2Cshrink&image_uri=https%3A%2F%2Fs.yimg.com%2Fos%2Fcreatr-uploaded-images%2F2018-12%2F4830f030-04d6-11e9-9efb-324de7e29ad5&client=a1acac3e1b3290917d92&signature=b6d816abc2c61973b8e76c036d99c0448c32a1f6' };
@@ -21,8 +26,6 @@ export default function Product() {
                 {/* header row */}
                 <Header />
                 {/* main content */}
-
-                {/* similar products */}
                 <FlatList
                     style={{ backgroundColor: 'white' }}
                     // columnWrapperStyle={{justifyContent:'center'}}
@@ -65,8 +68,9 @@ export default function Product() {
                                 </View>
 
                                 {/* reveiws and ratings compo */}
-                                <ReviewCard />
-                                
+                                <TouchableOpacity   onPress={() => { handleOpenPress() }} activeOpacity={1}>
+                                    <ReviewCard />
+                                </TouchableOpacity >
                                 {/* row4 */}
                                 <View className='flex-row justify-between items-center mt-3'>
                                     <Text className="font-montSemiBold text-lg opacity-60">Similar Products</Text>
@@ -93,6 +97,7 @@ export default function Product() {
                     }}
                 />
                 <ProductFooter />
+                <ProductBottomSheet ref={bottomSheetRef}/>
             </SafeAreaView>
         </>
     )
